@@ -67,7 +67,9 @@ export default function Layout({ children, ...delegated }: Props) {
         </motion.div>
       </AnimatePresence>
 
-      <Form />
+      {/* <div className="bg-black">
+        <Form />
+      </div> */}
 
       <Footer />
 

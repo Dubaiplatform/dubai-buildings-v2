@@ -118,7 +118,7 @@ export function MultiSelect({
       <PopoverContent
         className="w-[var(--radix-popover-trigger-width)] p-0 bg-black border-border/50 text-white!"
         align="start"
-        onOpenAutoFocus={(e) => {
+        onOpenAutoFocus={(e: any) => {
           e.preventDefault();
 
           if (!isMobile) {

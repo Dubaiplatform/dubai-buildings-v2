@@ -113,7 +113,7 @@ export function PhoneInput({
           <PopoverContent
             className="w-[320px] p-0 bg-card border-border/50"
             align="start"
-            onOpenAutoFocus={(e) => {
+            onOpenAutoFocus={(e: any) => {
               e.preventDefault();
 
               if (!isMobile) {

@@ -7,7 +7,7 @@ export default function Build() {
         <div className="absolute inset-0 bg-black" />
         <div className="relative z-10 flex items-center justify-center h-full">
           <h1 className="text-white text-3xl sm:text-4xl md:text-6xl lg:text-[52px]  font-light text-center">
-            Build Buildings
+            Lease Buildings
           </h1>
         </div>
       </section>
