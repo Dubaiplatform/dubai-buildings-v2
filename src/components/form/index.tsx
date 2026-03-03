@@ -45,7 +45,7 @@ export default function Form() {
       </div>
 
       {!pathnameValue && (
-        <div className="grid grid-cols-4 gap-4 px-40">
+        <div className="grid md:grid-cols-4 gap-4 md:px-40">
           {["buy", "sell", "lease", "build"].map((type) => (
             <motion.div
               key={type}
