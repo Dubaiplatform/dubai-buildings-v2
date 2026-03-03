@@ -93,7 +93,7 @@ export function PhoneInput({
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 text-white">
       <div>
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
@@ -124,7 +124,7 @@ export function PhoneInput({
             <Command className="bg-black">
               <CommandInput
                 placeholder="Search country..."
-                className="h-10 border-b border-border/30 font-light "
+                className="h-10 border-b border-white font-light text-white"
               />
               <CommandList className="max-h-[300px]">
                 <CommandEmpty className="py-6 text-center text-sm text-muted-foreground font-light">
@@ -135,9 +135,9 @@ export function PhoneInput({
                     <CommandItem
                       key={country.code}
                       onSelect={() => handleCountrySelect(country)}
-                      className="cursor-pointer px-3 py-2.5 aria-selected:bg-muted/50 font-light"
+                      className="cursor-pointer px-3 py-2.5 aria-selected:bg-muted/50 font-light text-white "
                     >
-                      <div className="flex items-center gap-3 flex-1">
+                      <div className="flex items-center gap-3 flex-1 ">
                         <span className="text-lg">{country.flag}</span>
                         <div className="flex flex-col flex-1 min-w-0">
                           <span className="text-sm truncate">

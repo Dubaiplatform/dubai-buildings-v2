@@ -2,7 +2,7 @@
 
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -80,6 +80,7 @@ interface FormData {
 export default function Form() {
   const router = useRouter();
   const formRef = React.useRef<HTMLFormElement>(null);
+  const pathname = usePathname();
 
   const [currentStep, setCurrentStep] = useState(1);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -330,6 +331,8 @@ export default function Form() {
       }, 100);
     }
   }, [hasStarted]);
+
+  const pathValidation = () => {};
 
   return (
     <div

@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import Header from "./header";
 import Footer from "./footer";
 
-import Form from "../ui/form";
+import Form from "../form/form";
 
 interface Props {
   children: React.ReactNode;
@@ -66,10 +66,6 @@ export default function Layout({ children, ...delegated }: Props) {
           <> {children}</>
         </motion.div>
       </AnimatePresence>
-
-      {/* <div className="bg-black">
-        <Form />
-      </div> */}
 
       <Footer />
 
