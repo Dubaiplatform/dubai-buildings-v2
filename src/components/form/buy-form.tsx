@@ -249,7 +249,7 @@ export default function BuySellForm({ mode }: { mode: string }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="w-full min-h-screen"
+        className="w-full "
       >
         <form
           onSubmit={handleSubmit}

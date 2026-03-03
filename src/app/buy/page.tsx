@@ -1,3 +1,4 @@
+import BuySellForm from "@/components/form/buy-form";
 import Image from "next/image";
 
 export default function Buy() {
@@ -47,6 +48,41 @@ export default function Buy() {
           </div>
         </div>
       </section>
+
+      <section className="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] w-full overflow-hidden">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-fixed bg-center bg-cover"
+          style={{ backgroundImage: "url('/hero/3.webp')" }}
+          role="img"
+          aria-label="Dubai Building"
+        />
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* Text content */}
+        <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
+          <div className="max-w-3xl">
+            <h2 className="text-lg sm:text-3xl lg:text-4xl font-light text-white mb-4">
+              Golden mashrabiyas encase majestic architectural dimensions to
+              create blissfully shaded interiors against the azure backdrop of
+              the Arabian sky
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <div className="bg-black py-20">
+        <div className="text-center text-white">
+          <h2 className="text-5xl">Share your basic information</h2>
+          <p>
+            Share your requirement with our Professional, Reliable and Efficient
+            team
+          </p>
+        </div>
+        <BuySellForm mode="buy" />
+      </div>
     </main>
   );
 }

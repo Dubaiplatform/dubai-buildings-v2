@@ -45,18 +45,18 @@ export default function Form() {
       </div>
 
       {!pathnameValue && (
-        <div className="grid md:grid-cols-4 gap-4 md:px-40">
+        <div className="grid md:grid-cols-4 grid-cols-2 gap-4 md:px-40">
           {["buy", "sell", "lease", "build"].map((type) => (
             <motion.div
               key={type}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-center space-y-10 max-w-xl px-4"
+              className="text-center space-y-10 md:max-w-xl px-4"
             >
               <Button
                 onClick={() => setPathnameValue(type)}
-                className="px-12 py-7 text-sm sm:text-base bg-white hover:bg-primary/90 text-black border-none uppercase tracking-[0.2em] font-light transition-all duration-300 hover:scale-105"
+                className="px-12 py-7 text-sm sm:text-base bg-white hover:bg-primary/90 text-black border-none uppercase tracking-[0.2em] font-light transition-all duration-300 hover:scale-105 w-full"
               >
                 {type}
               </Button>
