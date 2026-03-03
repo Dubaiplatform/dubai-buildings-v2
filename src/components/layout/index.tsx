@@ -7,8 +7,6 @@ import { usePathname } from "next/navigation";
 import Header from "./header";
 import Footer from "./footer";
 
-import Form from "../form/form";
-
 interface Props {
   children: React.ReactNode;
 }
