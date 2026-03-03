@@ -11,12 +11,12 @@ export default function Header({ isHome }: any) {
   const router = useRouter();
 
   const menuItems = [
-    { label: "BUY", href: "/new-developments" },
-    { label: "SELL", href: "/why-inverst-in-dubai" },
-    { label: "LEASE", href: "/about" },
-    { label: "BUILD", href: "/services" },
-    { label: "ABOUT US", href: "/contact" },
-    { label: "SERVICES", href: "/contact" },
+    { label: "BUY", href: "/buy" },
+    { label: "SELL", href: "/sell" },
+    { label: "LEASE", href: "/lease" },
+    { label: "BUILD", href: "/build" },
+    { label: "ABOUT US", href: "/about-us" },
+    { label: "SERVICES", href: "/services" },
   ];
 
   const [menuOpen, setMenuOpen] = useState(false);
