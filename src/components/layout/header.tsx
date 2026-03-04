@@ -55,31 +55,29 @@ export default function Header({ isHome }: any) {
     ${scrolled ? "bg-black shadow-lg" : !isHome ? "bg-black" : "bg-transparent"}
   `}
       >
-        {/* LEFT SIDE */}
-        <div className="hidden md:flex items-center gap-8 flex-1">
-          <Link href="/buy" className="nav-link">
-            BUY
-          </Link>
-          <Link href="/sell" className="nav-link">
-            SELL
-          </Link>
-          <Link href="/lease" className="nav-link">
-            LEASE
-          </Link>
-        </div>
+        <div className="flex items-center gap-10">
+          {/* LEFT LINKS */}
+          <div className="hidden md:flex items-center gap-8">
+            <Link href="/buy" className="nav-link">
+              BUY
+            </Link>
+            <Link href="/sell" className="nav-link">
+              SELL
+            </Link>
+            <Link href="/lease" className="nav-link">
+              LEASE
+            </Link>
+          </div>
 
-        {/* CENTER LOGO */}
-        <div className="absolute left-1/2 -translate-x-1/2">
+          {/* LOGO */}
           <Link
             href="/"
-            className="text-white text-lg sm:text-xl md:text-2xl tracking-wide font-light"
+            className="text-white text-lg sm:text-xl md:text-2xl tracking-wide font-light px-6"
           >
             DUBAI BUILDINGS
           </Link>
-        </div>
 
-        {/* RIGHT SIDE */}
-        <div className="flex items-center justify-end gap-6 flex-1">
+          {/* RIGHT LINKS */}
           <div className="hidden md:flex items-center gap-8">
             <Link href="/build" className="nav-link">
               BUILD
@@ -92,7 +90,7 @@ export default function Header({ isHome }: any) {
             </Link>
           </div>
 
-          {/* Mobile Menu */}
+          {/* MOBILE MENU */}
           <button
             onClick={() => setMenuOpen(true)}
             className="md:hidden text-white text-3xl"
