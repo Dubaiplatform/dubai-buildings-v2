@@ -97,7 +97,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="max-w-2xl text-center "
             >
-              <h2 className="text-white text-3xl sm:text-4xl md:text-6xl font-light tracking-wide mb-4">
+              <h2 className="text-white text-3xl sm:text-4xl md:text-7xl font-light tracking-wide mb-4 font-semibold">
                 {slides[currentIndex].title}
               </h2>
 

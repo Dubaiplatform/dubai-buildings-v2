@@ -30,26 +30,38 @@ export default function Home() {
     <main>
       <Hero />
 
-      <section className="section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <section className="section-padding bg-black">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {card?.map((item, index: number) => {
             const Icon = item.icon;
 
             return (
               <div
                 key={index}
-                className="p-10 border border-gray-200 hover:shadow-xl transition duration-300 text-center group"
+                className="relative group overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 p-10 transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
               >
-                <div className="flex justify-center mb-6">
-                  <Icon
-                    size={40}
-                    className="text-black group-hover:scale-110 transition-transform duration-300"
-                  />
+                {/* Gradient Glow Effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-[#C9A227]/20 via-transparent to-transparent" />
+
+                {/* Content */}
+                <div className="relative z-10 text-center space-y-6">
+                  <div className="flex justify-center">
+                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-[#C9A227]/10 group-hover:bg-[#C9A227]/20 transition">
+                      <Icon
+                        size={32}
+                        className="text-[#C9A227] group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                  </div>
+
+                  <h2 className="text-2xl font-semibold text-white tracking-wide">
+                    {item?.title}
+                  </h2>
+
+                  <p className="text-gray-400 leading-relaxed text-sm">
+                    {item?.subtitle}
+                  </p>
                 </div>
-
-                <h2 className="text-xl font-semibold mb-4">{item?.title}</h2>
-
-                <p className="text-gray-600">{item?.subtitle}</p>
               </div>
             );
           })}
@@ -114,7 +126,16 @@ export default function Home() {
         </div>
       </section>
 
-      <StatsSection />
+      <Form />
+
+      <div className="w-full">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2089.605073639069!2d55.27968006320636!3d25.215158870386873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f428c4b20d9c1%3A0xda2a93cfee3dee03!2sAl%20Saqr%20Business%20Tower!5e1!3m2!1sen!2sae!4v1772597748749!5m2!1sen!2sae"
+          className="w-full h-[550px] border-0"
+          loading="lazy"
+          // referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
 
       <section className="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] w-full overflow-hidden">
         {/* Background image */}
@@ -140,7 +161,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Form />
+      <StatsSection />
     </main>
   );
 }

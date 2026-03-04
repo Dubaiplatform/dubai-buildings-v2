@@ -6,16 +6,6 @@ import { Button } from "@/components/ui/button";
 
 import BuySellForm from "./buy-form";
 
-interface FormData {
-  mode: string;
-  name: string;
-  email: string;
-  phone: string;
-  date: Date;
-  time: string;
-  category: string;
-}
-
 export default function Form() {
   const [pathnameValue, setPathnameValue] = React.useState("");
 

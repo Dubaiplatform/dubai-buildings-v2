@@ -1,32 +1,29 @@
 import BuySellForm from "@/components/form/buy-form";
-import Image from "next/image";
 
 export default function Buy() {
   return (
     <main>
-      <section className="relative w-full h-[35vh]">
-        <div className="absolute inset-0 bg-black" />
+      <section className="relative w-full h-[35vh] sm:h-[45vh] overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-center bg-cover"
+          style={{ backgroundImage: "url('/hero/1.webp')" }} // change image path if needed
+          role="img"
+          aria-label="Buy Buildings Dubai"
+        />
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60" />
+
+        {/* Content */}
         <div className="relative z-10 flex items-center justify-center h-full">
-          <h1 className="text-white text-3xl sm:text-4xl md:text-6xl lg:text-[52px]  font-light text-center">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-6xl lg:text-[52px] font-light text-center">
             Buy Buildings
           </h1>
         </div>
       </section>
 
       <section className="section-padding">
-        {/* Centered Image */}
-        <div className="flex justify-center items-center mb-16">
-          <div className="relative w-full md:w-1/2 h-[300px] sm:h-[400px] md:h-[500px]">
-            <Image
-              src="/home/home.webp"
-              alt="Building Investment"
-              fill
-              className="object-cover "
-              priority
-            />
-          </div>
-        </div>
-
         {/* Text Content */}
         <div className="text-center space-y-6 max-w-3xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-semibold">

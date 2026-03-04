@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-// import WhiteLogo from "@/white-logo.svg";
-import Image from "next/image";
 
 export default function Header({ isHome }: any) {
   const router = useRouter();
@@ -51,7 +49,7 @@ export default function Header({ isHome }: any) {
       <header
         className={`
     fixed top-0 left-0 right-0 z-50
-    flex items-center justify-between
+    flex items-center justify-center
     px-4 md:px-10 py-8
     transition-all duration-300
     ${scrolled ? "bg-black shadow-lg" : !isHome ? "bg-black" : "bg-transparent"}
