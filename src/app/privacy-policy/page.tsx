@@ -53,19 +53,19 @@ export default function PrivacyPolicy() {
           {/* Introduction */}
           <motion.div {...fadeIn} className="mb-16">
             <p className="text-black/70 leading-relaxed mb-6">
-              Condo Dubai (which term includes all subsidiaries of Condo Dubai)
-              (&quot;Company&quot;, &quot;we&quot; or &quot;us&quot;) respect
-              your privacy and are committed to protecting it through our
-              compliance with this policy.
+              Dubai Buildings (which term includes all subsidiaries of Dubai
+              Buildings) (&quot;Company&quot;, &quot;we&quot; or &quot;us&quot;)
+              respect your privacy and are committed to protecting it through
+              our compliance with this policy.
             </p>
             <p className="text-black/70 leading-relaxed mb-6">
               This policy describes the types of information we may collect from
               you or that you may provide when you visit the website{" "}
               <a
-                href="https://condodubai.com"
+                href="https://www.dubai-buildings.com/"
                 className="text-black underline underline-offset-4 hover:text-black/60 transition-colors"
               >
-                https://condodubai.com
+                https://www.dubai-buildings.com/
               </a>{" "}
               (our &quot;Website&quot;) and our practices for collecting, using,
               maintaining, protecting and disclosing that information.

@@ -65,7 +65,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="/termsAndConditions"
+              href="/terms-and-conditions"
               className="hover:text-white transition"
             >
               Terms & Conditions

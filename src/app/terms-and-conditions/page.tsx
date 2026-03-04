@@ -6,7 +6,7 @@ const sections = [
   {
     title: "Conditions of Use",
     content: [
-      "By using this website, you certify that you have read and reviewed this Agreement and that you agree to comply with its terms. If you do not want to be bound by the terms of this Agreement, you are advised to stop using the website accordingly. Condo Dubai only grants use and access of this website, its products, and its services to those who have accepted its terms.",
+      "By using this website, you certify that you have read and reviewed this Agreement and that you agree to comply with its terms. If you do not want to be bound by the terms of this Agreement, you are advised to stop using the website accordingly. Dubai Buildings only grants use and access of this website, its products, and its services to those who have accepted its terms.",
     ],
   },
   {
@@ -18,8 +18,8 @@ const sections = [
   {
     title: "Intellectual Property",
     content: [
-      "You agree that all materials, products, and services provided on this website are the property of Condo Dubai, its affiliates, directors, officers, employees, agents, suppliers, or licensors including all copyrights, trade secrets, trademarks, patents, and other intellectual property. You also agree that you will not reproduce or redistribute the Condo Dubai intellectual property in any way, including electronic, digital, or new trademark registrations.",
-      "You grant Condo Dubai a royalty-free and non-exclusive license to display, use, copy, transmit, and broadcast the content you upload and publish. For issues regarding intellectual property claims, you should contact the company in order to come to an agreement.",
+      "You agree that all materials, products, and services provided on this website are the property of Dubai Buildings, its affiliates, directors, officers, employees, agents, suppliers, or licensors including all copyrights, trade secrets, trademarks, patents, and other intellectual property. You also agree that you will not reproduce or redistribute the Dubai Buildings intellectual property in any way, including electronic, digital, or new trademark registrations.",
+      "You grant Dubai Buildings a royalty-free and non-exclusive license to display, use, copy, transmit, and broadcast the content you upload and publish. For issues regarding intellectual property claims, you should contact the company in order to come to an agreement.",
     ],
   },
   {
@@ -33,7 +33,7 @@ const sections = [
   {
     title: "Applicable Law",
     content: [
-      "By using this website, you agree that the laws of the Office 1102, Al Saqr Business Tower Sheikh Zayed Road Dubai, United Arab Emirates, without regard to principles of conflict laws, will govern these terms and conditions, or any dispute of any sort that might come between Condo Dubai and you, or its business partners and associates.",
+      "By using this website, you agree that the laws of the Office 1102, Al Saqr Business Tower Sheikh Zayed Road Dubai, United Arab Emirates, without regard to principles of conflict laws, will govern these terms and conditions, or any dispute of any sort that might come between Dubai Buildings and you, or its business partners and associates.",
     ],
   },
   {
@@ -45,14 +45,14 @@ const sections = [
   {
     title: "Indemnification",
     content: [
-      "You agree to indemnify Condo Dubai and its affiliates and hold Condo Dubai harmless against legal claims and demands that may arise from your use or misuse of our services. We reserve the right to select our own legal counsel.",
+      "You agree to indemnify Dubai Buildings and its affiliates and hold Dubai Buildings harmless against legal claims and demands that may arise from your use or misuse of our services. We reserve the right to select our own legal counsel.",
     ],
   },
   {
     title: "Limitation on Liability",
     content: [
-      "Condo Dubai is not liable for any damages that may occur to you as a result of your misuse of our website.",
-      "Condo Dubai reserves the right to edit, modify, and change this Agreement at any time. We shall let our users know of these changes through electronic mail. This Agreement is an understanding between Condo Dubai and the user, and this supersedes and replaces all prior agreements regarding the use of this website.",
+      "Dubai Buildings is not liable for any damages that may occur to you as a result of your misuse of our website.",
+      "Dubai Buildings reserves the right to edit, modify, and change this Agreement at any time. We shall let our users know of these changes through electronic mail. This Agreement is an understanding between Dubai Buildings and the user, and this supersedes and replaces all prior agreements regarding the use of this website.",
     ],
   },
 ];
@@ -122,13 +122,13 @@ export default function TermsAndConditions() {
             Please read these terms and conditions (&quot;terms and
             conditions&quot;, &quot;terms&quot;) carefully before using{" "}
             <a
-              href="https://condodubai.com"
+              href="https://www.dubai-buildings.com/"
               className="underline hover:text-black transition-colors"
             >
-              https://condodubai.com
+              https://www.dubai-buildings.com/
             </a>{" "}
-            (&quot;website&quot;, &quot;service&quot;) operated by Condo Dubai
-            (&quot;us&quot;, &quot;we&quot;, &quot;our&quot;).
+            (&quot;website&quot;, &quot;service&quot;) operated by Dubai
+            Buildings (&quot;us&quot;, &quot;we&quot;, &quot;our&quot;).
           </motion.p>
         </div>
       </section>
