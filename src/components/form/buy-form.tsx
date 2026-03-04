@@ -229,16 +229,14 @@ export default function BuySellForm({ mode }: { mode: string }) {
     }
   };
 
-  React.useEffect(() => {
-    if (formRef.current) {
-      formRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  }, [currentStep]);
-
-  const pathValidation = () => {};
+  // React.useEffect(() => {
+  //   if (formRef.current) {
+  //     formRef.current.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  //   }
+  // }, [currentStep]);
 
   return (
     <div
@@ -721,7 +719,7 @@ export default function BuySellForm({ mode }: { mode: string }) {
 
           {/* Navigation */}
           <section
-            className={`fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-md  border-t border-border/30 px-4 py-4 flex items-center justify-between ${currentStep !== 1 && "gap-4"} sm:static sm:bg-transparent sm:backdrop-blur-0 sm:border-none sm:px-0 sm:py-8`}
+            className={` bg-black/95 backdrop-blur-md  border-t border-border/30 px-4 py-4 flex items-center justify-between ${currentStep !== 1 && "gap-4"} sm:static sm:bg-transparent sm:backdrop-blur-0 sm:border-none sm:px-0 sm:py-8`}
           >
             {currentStep > 1 ? (
               <Button

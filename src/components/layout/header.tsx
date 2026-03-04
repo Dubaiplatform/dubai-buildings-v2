@@ -48,55 +48,81 @@ export default function Header({ isHome }: any) {
       {/* ================= HEADER ================= */}
       <header
         className={`
-    fixed top-0 left-0 right-0 z-50
-    flex items-center justify-center
-    px-4 md:px-10 py-8
-    transition-all duration-300
-    ${scrolled ? "bg-black shadow-lg" : !isHome ? "bg-black" : "bg-transparent"}
-  `}
+  fixed top-0 left-0 right-0 z-50
+  px-4 md:px-10 py-6
+  transition-all duration-300
+  ${scrolled ? "bg-black shadow-lg" : !isHome ? "bg-black" : "bg-transparent"}
+`}
       >
-        <div className="flex items-center gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 items-center">
           {/* LEFT LINKS */}
           <div className="hidden md:flex items-center gap-8">
-            <Link href="/buy" className="nav-link">
+            <Link
+              href="/buy"
+              className="text-white tracking-widest text-sm hover:text-gray-300 transition"
+            >
               BUY
             </Link>
-            <Link href="/sell" className="nav-link">
+
+            <Link
+              href="/sell"
+              className="text-white tracking-widest text-sm hover:text-gray-300 transition"
+            >
               SELL
             </Link>
-            <Link href="/lease" className="nav-link">
+
+            <Link
+              href="/lease"
+              className="text-white tracking-widest text-sm hover:text-gray-300 transition"
+            >
               LEASE
             </Link>
           </div>
 
           {/* LOGO */}
-          <Link
-            href="/"
-            className="text-white text-lg sm:text-xl md:text-2xl tracking-wide font-light px-6"
-          >
-            DUBAI BUILDINGS
-          </Link>
-
-          {/* RIGHT LINKS */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/build" className="nav-link">
-              BUILD
-            </Link>
-            <Link href="/about-us" className="nav-link">
-              ABOUT US
-            </Link>
-            <Link href="/services" className="nav-link">
-              SERVICES
+          <div className="flex md:justify-center">
+            <Link
+              href="/"
+              className="text-white text-lg sm:text-xl md:text-2xl tracking-wide font-light"
+            >
+              DUBAI BUILDINGS
             </Link>
           </div>
 
-          {/* MOBILE MENU */}
-          <button
-            onClick={() => setMenuOpen(true)}
-            className="md:hidden text-white text-3xl"
-          >
-            ☰
-          </button>
+          {/* RIGHT SIDE */}
+          <div className="flex justify-end items-center gap-6">
+            {/* Desktop Links */}
+            <div className="hidden md:flex items-center gap-8">
+              <Link
+                href="/build"
+                className="text-white tracking-widest text-sm hover:text-gray-300 transition"
+              >
+                BUILD
+              </Link>
+
+              <Link
+                href="/about-us"
+                className="text-white tracking-widest text-sm hover:text-gray-300 transition"
+              >
+                ABOUT US
+              </Link>
+
+              <Link
+                href="/services"
+                className="text-white tracking-widest text-sm hover:text-gray-300 transition"
+              >
+                SERVICES
+              </Link>
+            </div>
+
+            {/* Mobile Menu */}
+            <button
+              onClick={() => setMenuOpen(true)}
+              className="md:hidden text-white text-3xl"
+            >
+              ☰
+            </button>
+          </div>
         </div>
       </header>
 
