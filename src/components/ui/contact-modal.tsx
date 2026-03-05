@@ -1,11 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
-
-import Form from "../form";
 import BuySellForm from "../form/contact-form";
 
 interface ModalProps {
@@ -14,9 +12,22 @@ interface ModalProps {
 }
 
 export default function ContactModal({ isOpen, onClose }: ModalProps) {
-  if (!isOpen) return null;
-
   const [pathnameValue, setPathnameValue] = React.useState("");
+
+  // Disable background scroll
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
+  if (!isOpen) return null;
 
   const renderForm = () => {
     switch (pathnameValue) {
@@ -35,7 +46,7 @@ export default function ContactModal({ isOpen, onClose }: ModalProps) {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70">
-      <div className="bg-white  p-6 w-[100%] md:w-[50%] relative">
+      <div className="bg-black p-6 w-[100%] md:w-[50%] relative">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -44,7 +55,9 @@ export default function ContactModal({ isOpen, onClose }: ModalProps) {
           ✕
         </button>
 
-        <h2 className="text-2xl font-semibold mb-4">Select your requirement</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-white">
+          Select your requirement
+        </h2>
 
         <div className="bg-black p-6">
           {!pathnameValue && (
