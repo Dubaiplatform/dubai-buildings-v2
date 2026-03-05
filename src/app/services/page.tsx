@@ -1,10 +1,41 @@
 import Form from "@/components/form";
 import Image from "next/image";
 
+import { FAQ } from "@/components/ui/faq";
+
 export default function WhyInvestClient() {
+  const faqsQuestions = [
+    {
+      question: "What services does Dubai Buildings provide?",
+      answer:
+        "Dubai Buildings offers a wide range of real estate services including investment sales and acquisitions, land and development consultancy, residential and commercial investment advisory, asset management, and sector-specific consultancy for healthcare, education, hospitality, and logistics developments.",
+    },
+    {
+      question: "Who are your services designed for?",
+      answer:
+        "Our services are designed for institutional investors, property developers, landlords, corporate occupiers, and private investors looking for reliable real estate advisory and transaction services in Dubai and across the UAE.",
+    },
+    {
+      question: "How does Dubai Buildings help investors find opportunities?",
+      answer:
+        "Our team uses market intelligence, industry partnerships, and an extensive network of property owners and developers to source verified investment opportunities. We provide data-backed insights to help clients make informed real estate investment decisions.",
+    },
+    {
+      question: "Do you provide consultancy for property development projects?",
+      answer:
+        "Yes. Our consultants assist clients throughout the entire development cycle, including feasibility studies, market research, location analysis, development strategy, operator selection, and financial reporting to ensure successful project execution.",
+    },
+    {
+      question:
+        "What makes Dubai-Buildings.com different from other real estate firms?",
+      answer:
+        "Dubai Buildings focuses on business-to-business real estate services, offering a professional, transparent, and data-driven approach. Our strong industry network and market expertise allow us to deliver tailored solutions and verified opportunities for our clients.",
+    },
+  ];
+
   return (
     <main>
-      <section className="relative w-full h-[35vh] sm:h-[45vh] overflow-hidden">
+      <section className="relative w-full h-[35vh] sm:h-[55vh] overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-center bg-cover"
@@ -501,6 +532,8 @@ export default function WhyInvestClient() {
         </div>
       </div>
 
+      <Form />
+
       <section className="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] w-full overflow-hidden">
         {/* Background image */}
         <div
@@ -517,15 +550,14 @@ export default function WhyInvestClient() {
         <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
           <div className="max-w-3xl">
             <h2 className="text-lg sm:text-3xl lg:text-4xl font-light text-white mb-4">
-              Golden mashrabiyas encase majestic architectural dimensions to
-              create blissfully shaded interiors against the azure backdrop of
-              the Arabian sky
+              Comprehensive Real Estate Investment, Development, Advisory, and
+              Asset Management Services
             </h2>
           </div>
         </div>
       </section>
 
-      <Form />
+      <FAQ questions={faqsQuestions} />
     </main>
   );
 }

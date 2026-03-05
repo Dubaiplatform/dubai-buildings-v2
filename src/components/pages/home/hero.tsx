@@ -97,7 +97,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="max-w-2xl text-center "
             >
-              <h2 className="text-white text-3xl sm:text-4xl md:text-7xl font-light tracking-wide mb-4 font-semibold">
+              <h2 className="text-white text-3xl sm:text-4xl md:text-7xl font-light tracking-wide mb-4 ">
                 {slides[currentIndex].title}
               </h2>
 
@@ -121,7 +121,7 @@ export default function Hero() {
       </AnimatePresence>
 
       {/* Progress Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[49] pointer-events-auto flex gap-2">
+      <div className="absolute bottom-30 left-1/2 -translate-x-1/2 z-[49] pointer-events-auto flex gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -139,31 +139,6 @@ export default function Hero() {
           </button>
         ))}
       </div>
-
-      {/* ================= BOTTOM NAV ================= */}
-      {/* <div className="absolute bottom-0 left-0 right-0 z-40 grid grid-cols-1 md:grid-cols-3 bg-white/10">
-        {["NEW DEVELOPEMENTS", "BRANDED RESIDENCES", "SERVICE"].map(
-          (item, index) => (
-            <motion.div
-              key={item}
-              onClick={() => setCurrentIndex(index)}
-              initial={{ y: 40, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-              className={`px-6 py-4 md:px-8 md:py-6 cursor-pointer backdrop-blur-sm
-                ${
-                  index === currentIndex
-                    ? "bg-black/60 text-white"
-                    : "bg-black/30 hover:bg-black/50 text-white/80"
-                }`}
-            >
-              <h3 className="text-xs md:text-sm tracking-widest font-medium">
-                {item}
-              </h3>
-            </motion.div>
-          )
-        )}
-      </div> */}
     </section>
   );
 }

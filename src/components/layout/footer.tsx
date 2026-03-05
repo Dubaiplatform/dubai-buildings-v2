@@ -20,20 +20,20 @@ export default function Footer() {
         {/* Navigation */}
         <div>
           <h3 className="text-sm tracking-widest text-gray-300 mb-5">
-            NAVIGATION
+            EXPLORE
           </h3>
 
           <div className="flex flex-col gap-3 text-gray-400 text-sm">
             <Link href="/buy" className="hover:text-white transition">
-              Buy
+              Buy Buildings
             </Link>
 
             <Link href="/sell" className="hover:text-white transition">
-              Sell
+              Sell Buildings
             </Link>
 
             <Link href="/lease" className="hover:text-white transition">
-              Lease
+              Lease Buildings
             </Link>
 
             <Link href="/build" className="hover:text-white transition">
@@ -81,21 +81,21 @@ export default function Footer() {
 
           <div className="space-y-3 text-gray-400 text-sm">
             <p>Al Saqr Business Tower</p>
-            <p>Dubai, United Arab Emirates</p>
+            <p>Sheikh Zayed Road Dubai, United Arab Emirates</p>
 
             <a
-              href="tel:+971581514623"
+              href="tel:+97143807533"
               className="block hover:text-white transition"
             >
-              +971 58 151 4623
+              +971 4 380 7533
             </a>
 
-            <a
+            {/* <a
               href="mailto:info@dubaibuildings.com"
               className="block hover:text-white transition"
             >
               info@dubaibuildings.com
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

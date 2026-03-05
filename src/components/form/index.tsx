@@ -4,7 +4,7 @@ import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
-import BuySellForm from "./buy-form";
+import BuySellForm from "./contact-form";
 
 export default function Form() {
   const [pathnameValue, setPathnameValue] = React.useState("");
