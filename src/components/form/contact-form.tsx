@@ -209,6 +209,9 @@ export default function BuySellForm({
         },
       );
 
+      router.push("/thank-you");
+      onClose();
+
       setFormData({
         mode: mode,
         name: "",
@@ -218,10 +221,6 @@ export default function BuySellForm({
         time: "",
         category: "",
       });
-
-      onClose();
-
-      router.push("/thank-you");
     } catch (error) {
       setFormData({
         mode: mode,

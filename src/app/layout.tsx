@@ -15,24 +15,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://distresseddealsdubai.com"),
+  metadataBase: new URL("https://www.dubai-buildings.com"),
 
   title: {
-    default: "Dubai Buildings",
-    template: "%s | Distressed Deals Dubai",
+    default: "Buy, Sell, Lease & Develop Buildings in Dubai | Dubai Buildings",
+    template: "%s | Dubai Buildings",
   },
 
   description:
-    "Discover exclusive Distressed Deals in Dubai. Off-market, below-market value apartments, villas, and investor opportunities for serious cash buyers.",
+    "Dubai Buildings is a leading B2B real estate service provider in Dubai helping investors, developers, and occupiers buy, sell, lease, and develop commercial and residential buildings with professional guidance.",
 
   keywords: [
-    "distressed property Dubai",
-    "Dubai off market deals",
-    "Dubai below market value property",
-    "Dubai investor deals",
-    "Dubai real estate opportunities",
-    "cash buyer property Dubai",
-    "Distressed Property Deals Dubai",
+    "Dubai buildings for sale",
+    "buildings for lease Dubai",
+    "commercial buildings Dubai",
+    "buy building Dubai",
+    "sell building Dubai",
+    "Dubai real estate investment",
+    "commercial property Dubai",
+    "Dubai building development",
+    "Dubai real estate consultancy",
+    "Dubai B2B real estate services",
   ],
 
   alternates: {
@@ -40,11 +43,11 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Dubai Buildings",
+    title: "Dubai Buildings | Buy, Sell, Lease & Develop Buildings in Dubai",
     description:
-      "Access exclusive Distressed Deals in Dubai for serious investors and cash buyers.",
-    url: "https://distresseddealsdubai.com",
-    siteName: "Distressed Deals Dubai",
+      "Discover commercial and residential building opportunities in Dubai. Dubai Buildings helps investors, developers, and businesses buy, sell, lease, and develop properties.",
+    url: "https://www.dubai-buildings.com",
+    siteName: "Dubai Buildings",
     locale: "en_US",
     type: "website",
     images: [
@@ -52,16 +55,17 @@ export const metadata: Metadata = {
         url: "/hero/home.webp",
         width: 1200,
         height: 630,
-        alt: "Distressed Deals in Dubai",
+        alt: "Dubai Buildings Real Estate Services",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Dubai Buildings",
+    title: "Dubai Buildings | Real Estate Services in Dubai",
     description:
-      "Exclusive distressed and below-market value property deals in Dubai.",
+      "Buy, sell, lease, and develop buildings in Dubai with trusted B2B real estate experts.",
+    images: ["/hero/home.webp"],
   },
 
   robots: {
@@ -76,7 +80,7 @@ export const metadata: Metadata = {
     },
   },
 
-  category: "real estate",
+  category: "Real Estate",
   verification: {
     // google: "bPTUu8_dHIXrPdqDdkwuxJu0VkJKvf_rJBaLKFSpG_g",
   },

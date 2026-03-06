@@ -30,8 +30,10 @@ export default function Form() {
       className="section-padding text-white bg-black space-y-10"
     >
       <div className="text-center">
-        <h2 className="text-5xl">Select your requirement</h2>
-        <p>
+        <h2 className="md:text-5xl sm:text-xl text-xl">
+          Select your requirement
+        </h2>
+        <p className="text-sm">
           Share your requirement with our Professional, Reliable and Efficient
           team
         </p>
@@ -49,9 +51,9 @@ export default function Form() {
             >
               <Button
                 onClick={() => setPathnameValue(type)}
-                className="px-12 py-7 text-sm sm:text-base bg-white hover:bg-primary/90 text-black border-none uppercase tracking-[0.2em] font-light transition-all duration-300 hover:scale-105 w-full"
+                className="px-12 py-7 text-sm sm:text-base bg-white hover:bg-primary/90 text-black border-none uppercase tracking-[0.2em] font-light transition-all duration-300 hover:scale-105 w-full cursor-pointer"
               >
-                {type}
+                <span>{type}</span>
               </Button>
             </motion.div>
           ))}

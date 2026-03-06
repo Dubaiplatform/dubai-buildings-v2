@@ -7,34 +7,34 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const slides = [
   {
-    image: "/hero/2.webp",
+    image: "/hero/slider1.webp",
     title: "Find the building that best meets your investment goals",
     subtitle: "Discover Premium Properties",
     link: "/buy",
   },
   {
-    image: "/hero/1.webp",
+    image: "/hero/slider2.webp",
     title: "Source the best buyer for your building",
     subtitle: "Exclusive Beachfront Living",
-    link: "/buy",
+    link: "/sell",
   },
   {
-    image: "/hero/3.webp",
+    image: "/hero/slider3.webp",
     title: "Find the building that best fits your requirements",
     subtitle: "Sky High Sophistication",
-    link: "/buy",
+    link: "/lease",
   },
   {
-    image: "/hero/3.webp",
+    image: "/hero/slider4.webp",
     title: "Source the best tenant for your building",
     subtitle: "Sky High Sophistication",
-    link: "/buy",
+    link: "/lease",
   },
   {
-    image: "/hero/3.webp",
+    image: "/hero/slider5.webp",
     title: "Develop your building with the best in the business",
     subtitle: "Sky High Sophistication",
-    link: "/buy",
+    link: "/build",
   },
 ];
 
