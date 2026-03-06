@@ -83,10 +83,15 @@ function Calendar({ onSelect }: { onSelect?: () => void }) {
   const { date, setDate } = useDateTimePicker();
 
   const today = new Date();
+  const todayStart = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate(),
+  );
 
   const [currentMonth, setCurrentMonth] = React.useState<Date>(date || today);
 
-  // 🔥 Sync month when external date changes
+  // Sync month when external date changes
   React.useEffect(() => {
     if (date) {
       setCurrentMonth(new Date(date));
@@ -103,10 +108,9 @@ function Calendar({ onSelect }: { onSelect?: () => void }) {
 
   const daysArray = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 
-  const isSameDay = (d1: Date, d2: Date) =>
-    d1.getFullYear() === d2.getFullYear() &&
-    d1.getMonth() === d2.getMonth() &&
-    d1.getDate() === d2.getDate();
+  // Prevent navigating to previous months if already at current month
+  const isCurrentMonth =
+    year === today.getFullYear() && month === today.getMonth();
 
   return (
     <div className="w-72 select-none">
@@ -114,8 +118,13 @@ function Calendar({ onSelect }: { onSelect?: () => void }) {
       <div className="flex justify-between items-center mb-4">
         <button
           type="button"
+          disabled={isCurrentMonth}
           onClick={() => setCurrentMonth(new Date(year, month - 1, 1))}
-          className="px-2 py-1 hover:bg-primary/20 rounded"
+          className={`px-2 py-1 rounded ${
+            isCurrentMonth
+              ? "text-white/20 cursor-not-allowed"
+              : "hover:bg-primary/20"
+          }`}
         >
           ←
         </button>
@@ -158,23 +167,29 @@ function Calendar({ onSelect }: { onSelect?: () => void }) {
             newDate.getMonth() === date.getMonth() &&
             newDate.getDate() === date.getDate();
 
+          const isPast = newDate < todayStart;
+
           return (
             <button
               key={day}
               type="button"
+              disabled={isPast}
               onClick={() => {
+                if (isPast) return;
                 setDate(newDate);
                 onSelect?.();
               }}
               className={`
-        h-9 w-9 rounded-md flex items-center justify-center
-        transition-all duration-200
-        ${
-          selected
-            ? "bg-white text-black font-semibold ring-2 ring-primary"
-            : "hover:bg-white/20 text-white"
-        }
-      `}
+                h-9 w-9 rounded-md flex items-center justify-center
+                transition-all duration-200
+                ${
+                  isPast
+                    ? "text-white/20 cursor-not-allowed"
+                    : selected
+                      ? "bg-white text-black font-semibold ring-2 ring-primary"
+                      : "hover:bg-white/20 text-white"
+                }
+              `}
             >
               {day}
             </button>
@@ -188,10 +203,19 @@ function Calendar({ onSelect }: { onSelect?: () => void }) {
 function TimeSelect() {
   const { time, setTime } = useDateTimePicker();
 
-  const times = Array.from(
-    { length: 24 },
-    (_, h) => `${h.toString().padStart(2, "0")}:00`,
-  );
+  const formatHour = (h: number) => {
+    const period = h < 12 ? "am" : "pm";
+    const displayHour = h % 12 === 0 ? 12 : h % 12;
+    return `${displayHour}:00 ${period}`;
+  };
+
+  const times = Array.from({ length: 10 }, (_, i) => {
+    const h = 9 + i; // 9am to 6pm (last slot: 6:00 to 7:00 pm)
+    return {
+      value: `${h.toString().padStart(2, "0")}:00`,
+      label: `${formatHour(h)} to ${formatHour(h + 1)}`,
+    };
+  });
 
   return (
     <select
@@ -200,9 +224,9 @@ function TimeSelect() {
       className="h-12 px-4 border border-border/50 bg-secondary/50 w-full"
     >
       <option value="">Select time</option>
-      {times.map((t) => (
-        <option key={t} value={t}>
-          {t}
+      {times.map(({ value, label }) => (
+        <option key={value} value={value}>
+          {label}
         </option>
       ))}
     </select>

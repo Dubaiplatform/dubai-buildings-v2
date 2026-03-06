@@ -24,7 +24,13 @@ interface FormData {
   userRole?: string;
 }
 
-export default function BuySellForm({ mode }: { mode: string }) {
+export default function BuySellForm({
+  mode,
+  onClose,
+}: {
+  mode: string;
+  onClose?: any;
+}) {
   const router = useRouter();
   const formRef = React.useRef<HTMLFormElement>(null);
 
@@ -191,17 +197,17 @@ export default function BuySellForm({ mode }: { mode: string }) {
     };
 
     try {
-      // const res = await fetch(
-      //   "https://hooks.zapier.com/hooks/catch/15977350/uegwy0b/",
-      //   {
-      //     method: "POST",
-      //     mode: "no-cors",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body: JSON.stringify(payload),
-      //   },
-      // );
+      const res = await fetch(
+        "https://hooks.zapier.com/hooks/catch/15977350/uxbi82k/",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        },
+      );
 
       setFormData({
         mode: mode,
@@ -212,6 +218,8 @@ export default function BuySellForm({ mode }: { mode: string }) {
         time: "",
         category: "",
       });
+
+      onClose();
 
       router.push("/thank-you");
     } catch (error) {

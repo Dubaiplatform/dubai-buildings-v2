@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import Form from "@/components/form";
 import { FAQ } from "@/components/ui/faq";
+import StatsSection from "@/components/pages/home/stats-section";
 
 export default function About() {
   const [showMoreAbout, setShowMoreAbout] = useState(false);
@@ -114,7 +115,7 @@ export default function About() {
 
       <Form />
 
-      <section className="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] w-full overflow-hidden">
+      <section className="relative h-[50vh] sm:h-[60vh]  w-full overflow-hidden">
         {/* Background image */}
         <div
           className="absolute inset-0 bg-fixed bg-center bg-cover"
@@ -137,6 +138,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <StatsSection />
 
       <FAQ questions={faqsQuestions} />
     </main>

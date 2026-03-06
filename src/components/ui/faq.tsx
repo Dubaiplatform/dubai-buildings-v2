@@ -3,7 +3,6 @@
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Button } from "./button";
 import Link from "next/link";
 
 const containerVariants = {

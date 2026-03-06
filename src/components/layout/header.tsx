@@ -13,8 +13,9 @@ export default function Header({ isHome }: any) {
     { label: "SELL", href: "/sell" },
     { label: "LEASE", href: "/lease" },
     { label: "BUILD", href: "/build" },
-    { label: "ABOUT US", href: "/about-us" },
     { label: "SERVICES", href: "/services" },
+    { label: "ABOUT US", href: "/about-us" },
+    { label: "CONTACT US", href: "/contact-us" },
   ];
 
   const [menuOpen, setMenuOpen] = useState(false);
@@ -83,7 +84,7 @@ export default function Header({ isHome }: any) {
           <div className="flex md:justify-center">
             <Link
               href="/"
-              className="text-white text-lg sm:text-xl md:text-2xl tracking-wide font-light"
+              className="text-white text-lg sm:text-xl md:text-2xl tracking-wide md:font-light font-medium"
             >
               DUBAI BUILDINGS
             </Link>

@@ -57,18 +57,8 @@ export default function Footer() {
               Services
             </Link>
 
-            <Link
-              href="/privacy-policy"
-              className="hover:text-white transition"
-            >
-              Privacy Policy
-            </Link>
-
-            <Link
-              href="/terms-and-conditions"
-              className="hover:text-white transition"
-            >
-              Terms & Conditions
+            <Link href="/contact-us" className="hover:text-white transition">
+              Contact Us
             </Link>
           </div>
         </div>
@@ -102,7 +92,18 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10 py-6 text-center text-gray-400 text-sm">
-        © {currentYear} Dubai Buildings. All Rights Reserved.
+        <div>
+          <Link href="/privacy-policy" className="hover:text-white transition">
+            Privacy Policy
+          </Link>
+          <Link
+            href="/terms-and-conditions"
+            className="hover:text-white transition"
+          >
+            Terms & Conditions
+          </Link>
+        </div>
+        <div>© {currentYear} Dubai Buildings. All Rights Reserved.</div>
       </div>
     </footer>
   );

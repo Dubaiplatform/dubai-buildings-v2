@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
+
 import BuySellForm from "../form/contact-form";
 
 interface ModalProps {
@@ -32,13 +33,13 @@ export default function ContactModal({ isOpen, onClose }: ModalProps) {
   const renderForm = () => {
     switch (pathnameValue) {
       case "buy":
-        return <BuySellForm mode="buy" />;
+        return <BuySellForm mode="buy" onClose={onClose} />;
       case "sell":
-        return <BuySellForm mode="sell" />;
+        return <BuySellForm mode="sell" onClose={onClose} />;
       case "lease":
-        return <BuySellForm mode="lease" />;
+        return <BuySellForm mode="lease" onClose={onClose} />;
       case "build":
-        return <BuySellForm mode="build" />;
+        return <BuySellForm mode="build" onClose={onClose} />;
       default:
         return null;
     }
@@ -46,7 +47,7 @@ export default function ContactModal({ isOpen, onClose }: ModalProps) {
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70">
-      <div className="bg-black p-6 w-[100%] md:w-[50%] relative">
+      <div className="bg-black w-[100%] md:w-[50%] relative">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -55,13 +56,13 @@ export default function ContactModal({ isOpen, onClose }: ModalProps) {
           ✕
         </button>
 
-        <h2 className="text-2xl font-semibold mb-4 text-white">
+        <h2 className="text-2xl font-semibold mb-4 text-white px-6 pt-3">
           Select your requirement
         </h2>
 
         <div className="bg-black p-6">
           {!pathnameValue && (
-            <div className="grid md:grid-cols-2 grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
               {["buy", "sell", "lease", "build"].map((type) => (
                 <motion.div
                   key={type}

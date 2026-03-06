@@ -25,7 +25,10 @@ export default function Form() {
   };
 
   return (
-    <section className="section-padding text-white bg-black space-y-10">
+    <section
+      id="contact-form"
+      className="section-padding text-white bg-black space-y-10"
+    >
       <div className="text-center">
         <h2 className="text-5xl">Select your requirement</h2>
         <p>
@@ -35,7 +38,7 @@ export default function Form() {
       </div>
 
       {!pathnameValue && (
-        <div className="grid md:grid-cols-4 grid-cols-2 gap-4 md:px-40">
+        <div className="grid md:grid-cols-4 grid-cols-1 gap-4 md:px-40">
           {["buy", "sell", "lease", "build"].map((type) => (
             <motion.div
               key={type}
