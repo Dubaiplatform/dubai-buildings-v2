@@ -36,6 +36,7 @@ export default function BuySellForm({
 
   const [currentStep, setCurrentStep] = useState(1);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [isDisabled, setIsDisabled] = React.useState(false);
 
   const isExtendedFlow = mode === "build" || mode === "lease";
 
@@ -184,8 +185,8 @@ export default function BuySellForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
 
+    setIsDisabled(true);
     const payload = {
       mode: formData?.mode,
       name: formData?.name,
@@ -221,6 +222,7 @@ export default function BuySellForm({
         time: "",
         category: "",
       });
+      setIsDisabled(false);
     } catch (error) {
       setFormData({
         mode: mode,
@@ -231,6 +233,7 @@ export default function BuySellForm({
         time: "",
         category: "",
       });
+      setIsDisabled(false);
 
       console.error(error);
     }
@@ -320,7 +323,7 @@ export default function BuySellForm({
                     <>
                       {mode === "build" && (
                         <>
-                          <Label className="text-sm font-semibold tracking-wide mb-4 block">
+                          <Label className="text-sm font-light tracking-wide mb-4 block">
                             Do you need assistance in?
                           </Label>
 
@@ -362,7 +365,7 @@ export default function BuySellForm({
 
                       {mode === "lease" && (
                         <>
-                          <Label className="text-sm font-semibold tracking-wide mb-4 block">
+                          <Label className="text-sm font-light tracking-wide mb-4 block">
                             You are a?
                           </Label>
 
@@ -402,12 +405,12 @@ export default function BuySellForm({
                   ) : (
                     <>
                       {/* Normal name/email */}
-                      <div className="space-y-2">
-                        <Label className="text-sm font-semibold tracking-wide">
+                      <div className="">
+                        <Label className="text-sm font-light tracking-wide">
                           Full Name
                         </Label>
                         <Input
-                          className="h-12 px-4 bg-secondary/50 mt-2"
+                          className="h-12 px-4 bg-secondary/50 "
                           value={formData.name}
                           onChange={(e) =>
                             setFormData((prev) => ({
@@ -424,12 +427,12 @@ export default function BuySellForm({
                       </div>
 
                       <div className="space-y-2">
-                        <Label className="text-sm font-semibold tracking-wide">
+                        <Label className="text-sm font-light tracking-wide">
                           Email Address
                         </Label>
                         <Input
                           type="email"
-                          className="h-12 px-4 bg-secondary/50 mt-2"
+                          className="h-12 px-4 bg-secondary/50 "
                           value={formData.email}
                           onChange={(e) =>
                             setFormData((prev) => ({
@@ -453,7 +456,7 @@ export default function BuySellForm({
                         >
                           Phone / WhatsApp Number{" "}
                         </Label>
-                        <div className="mt-2">
+                        <div className="">
                           <PhoneInput
                             value={formData.phone}
                             onChange={(value) =>
@@ -484,7 +487,9 @@ export default function BuySellForm({
                     <>
                       {/* Name + Email */}
                       <div className="space-y-2">
-                        <Label>Full Name</Label>
+                        <Label className="text-sm font-light tracking-wide">
+                          Full Name
+                        </Label>
                         <Input
                           value={formData.name}
                           onChange={(e) =>
@@ -500,7 +505,9 @@ export default function BuySellForm({
                       </div>
 
                       <div className="space-y-2">
-                        <Label>Email Address</Label>
+                        <Label className="text-sm font-light tracking-wide">
+                          Email Address
+                        </Label>
                         <Input
                           type="email"
                           value={formData.email}
@@ -517,14 +524,14 @@ export default function BuySellForm({
                       </div>
 
                       {/* Phone */}
-                      <div className="space-y-2">
+                      <div className="">
                         <Label
                           htmlFor="phone"
                           className="text-sm font-light tracking-wide"
                         >
                           Phone / WhatsApp Number{" "}
                         </Label>
-                        <div className="mt-2">
+                        <div className="">
                           <PhoneInput
                             value={formData.phone}
                             onChange={(value) =>
@@ -655,7 +662,7 @@ export default function BuySellForm({
                   ) : (
                     <>
                       <div>
-                        <Label className="text-sm font-semibold tracking-wide mb-4 block">
+                        <Label className="text-sm font-light tracking-wide mb-4 block">
                           Select Property Category
                         </Label>
 
@@ -712,7 +719,7 @@ export default function BuySellForm({
               {isExtendedFlow && currentStep === 4 && (
                 <section className="space-y-6">
                   <div>
-                    <Label className="text-sm font-semibold tracking-wide mb-4 block">
+                    <Label className="text-sm font-light tracking-wide mb-4 block">
                       Select Property Category
                     </Label>
 
@@ -796,6 +803,7 @@ export default function BuySellForm({
                 type="button"
                 onClick={handleNext}
                 className="px-6 sm:px-10 py-5 sm:py-6 text-xs sm:text-sm bg-primary hover:bg-primary/90 text-white uppercase tracking-[0.15em] border border-white transition-all hover:scale-105 w-full"
+                disabled={isDisabled}
               >
                 Submit
               </Button>
