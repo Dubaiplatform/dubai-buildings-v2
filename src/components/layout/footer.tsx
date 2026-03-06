@@ -91,8 +91,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10 py-6 text-center text-gray-400 text-sm">
-        <div>
+      <div className="border-t border-white/10 py-6 px-4 sm:px-6 md:px-50 text-gray-400 text-sm flex justify-between items-center">
+        <div className="flex gap-4">
           <Link href="/privacy-policy" className="hover:text-white transition">
             Privacy Policy
           </Link>
