@@ -2,6 +2,8 @@
 
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 
 import BuySellForm from "./contact-form";
@@ -47,13 +49,14 @@ export default function Form() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-center space-y-10 md:max-w-xl px-4"
+              className=" space-y-10 md:max-w-xl px-4"
             >
               <Button
                 onClick={() => setPathnameValue(type)}
-                className="px-12 py-7 text-sm sm:text-base bg-white hover:bg-primary/90 text-black border-none uppercase tracking-[0.2em] font-light transition-all duration-300 hover:scale-105 w-full cursor-pointer"
+                className="px-6 py-7 text-sm sm:text-base bg-white hover:bg-primary/90 text-black border-none uppercase tracking-[0.2em] font-light transition-all duration-300 hover:scale-105 w-full cursor-pointer flex justify-between items-center "
               >
                 <span>{type}</span>
+                <ArrowRight className="text-black w-4 h-4" />
               </Button>
             </motion.div>
           ))}

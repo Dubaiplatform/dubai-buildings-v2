@@ -113,7 +113,7 @@ function Calendar({ onSelect }: { onSelect?: () => void }) {
     year === today.getFullYear() && month === today.getMonth();
 
   return (
-    <div className="w-72 select-none">
+    <div className="w-72 select-none ">
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <button

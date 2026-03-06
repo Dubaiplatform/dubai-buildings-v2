@@ -245,6 +245,20 @@ export default function BuySellForm({
   //   }
   // }, [currentStep]);
 
+  const scrollToForm = () => {
+    const el = document.getElementById("form-section");
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  React.useEffect(() => {
+    scrollToForm();
+  }, [currentStep]);
+
   return (
     <div
       id="form-section"
@@ -269,7 +283,7 @@ export default function BuySellForm({
           }}
         >
           {/* Sticky Header */}
-          <div className="sticky top-0 z-50 bg-black/95 backdrop-blur-md  -mx-4 sm:mx-0 px-4 sm:px-0 py-4">
+          <div className="sticky top-20 bg-black/95 backdrop-blur-md  -mx-4 sm:mx-0 px-4 sm:px-0 py-4">
             {/* Step Indicator */}
             <div className="flex items-center justify-between text-xs uppercase tracking-[0.15em] text-muted-foreground font-light">
               <span>Step {currentStep}</span>
@@ -288,10 +302,6 @@ export default function BuySellForm({
                   className="absolute left-0 top-0 h-full bg-white shadow-[0_0_20px_rgba(220,160,100,0.3)]"
                 />
               </div>
-
-              {/* <h2 className="text-2xl sm:text-3xl font-light tracking-wide text-white">
-                {steps[currentStep - 1].title}
-              </h2> */}
             </div>
           </div>
 
@@ -434,6 +444,34 @@ export default function BuySellForm({
                           </p>
                         )}
                       </div>
+
+                      {/* Phone */}
+                      <div className="space-y-2">
+                        <Label
+                          htmlFor="phone"
+                          className="text-sm font-light tracking-wide"
+                        >
+                          Phone / WhatsApp Number{" "}
+                        </Label>
+                        <div className="mt-2">
+                          <PhoneInput
+                            value={formData.phone}
+                            onChange={(value) =>
+                              setFormData((prev) => ({
+                                ...prev,
+                                phone: value,
+                              }))
+                            }
+                            placeholder="Enter phone number"
+                            required
+                          />
+                        </div>
+                        {errors.phone && (
+                          <p className="text-red-500 text-sm mt-1">
+                            {errors.phone}
+                          </p>
+                        )}
+                      </div>
                     </>
                   )}
                 </section>
@@ -477,9 +515,7 @@ export default function BuySellForm({
                           <p className="text-red-500 text-sm">{errors.email}</p>
                         )}
                       </div>
-                    </>
-                  ) : (
-                    <>
+
                       {/* Phone */}
                       <div className="space-y-2">
                         <Label
@@ -507,27 +543,31 @@ export default function BuySellForm({
                           </p>
                         )}
                       </div>
-
+                    </>
+                  ) : (
+                    <>
                       <div className="space-y-2">
-                        <Label className="text-sm font-semibold tracking-wide">
+                        <Label className="text-sm mb-2 font-light tracking-wide">
                           Preferred Viewing Date & Time
                         </Label>
 
-                        <DateTimePicker.Root
-                          date={formData.date}
-                          time={formData.time}
-                          onDateChange={(value) =>
-                            setFormData((prev) => ({ ...prev, date: value }))
-                          }
-                          onTimeChange={(value) =>
-                            setFormData((prev) => ({ ...prev, time: value }))
-                          }
-                        >
-                          <div className="grid grid-cols-2 gap-4">
-                            <DateTimePicker.DateTrigger />
-                            <DateTimePicker.TimeSelect />
-                          </div>
-                        </DateTimePicker.Root>
+                        <div>
+                          <DateTimePicker.Root
+                            date={formData.date}
+                            time={formData.time}
+                            onDateChange={(value) =>
+                              setFormData((prev) => ({ ...prev, date: value }))
+                            }
+                            onTimeChange={(value) =>
+                              setFormData((prev) => ({ ...prev, time: value }))
+                            }
+                          >
+                            <div className="grid grid-cols-1 gap-4">
+                              <DateTimePicker.DateTrigger />
+                              <DateTimePicker.TimeSelect />
+                            </div>
+                          </DateTimePicker.Root>
+                        </div>
 
                         {errors.date && (
                           <p className="text-red-500 text-sm mt-1">
@@ -550,7 +590,7 @@ export default function BuySellForm({
                 <section className="space-y-4">
                   {isExtendedFlow ? (
                     <>
-                      <div className="space-y-2">
+                      {/* <div className="space-y-2">
                         <Label
                           htmlFor="phone"
                           className="text-sm font-light tracking-wide"
@@ -575,28 +615,30 @@ export default function BuySellForm({
                             {errors.phone}
                           </p>
                         )}
-                      </div>
+                      </div> */}
 
                       <div className="space-y-2">
-                        <Label className="text-sm font-semibold tracking-wide">
+                        <Label className="text-sm  font-light tracking-wide">
                           Preferred Viewing Date & Time
                         </Label>
 
-                        <DateTimePicker.Root
-                          date={formData.date}
-                          time={formData.time}
-                          onDateChange={(value) =>
-                            setFormData((prev) => ({ ...prev, date: value }))
-                          }
-                          onTimeChange={(value) =>
-                            setFormData((prev) => ({ ...prev, time: value }))
-                          }
-                        >
-                          <div className="grid grid-cols-2 gap-4">
-                            <DateTimePicker.DateTrigger />
-                            <DateTimePicker.TimeSelect />
-                          </div>
-                        </DateTimePicker.Root>
+                        <div>
+                          <DateTimePicker.Root
+                            date={formData.date}
+                            time={formData.time}
+                            onDateChange={(value) =>
+                              setFormData((prev) => ({ ...prev, date: value }))
+                            }
+                            onTimeChange={(value) =>
+                              setFormData((prev) => ({ ...prev, time: value }))
+                            }
+                          >
+                            <div className="grid grid-cols-1 gap-4">
+                              <DateTimePicker.DateTrigger />
+                              <DateTimePicker.TimeSelect />
+                            </div>
+                          </DateTimePicker.Root>
+                        </div>
 
                         {errors.date && (
                           <p className="text-red-500 text-sm mt-1">

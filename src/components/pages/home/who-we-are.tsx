@@ -39,7 +39,7 @@ export default function WhoWeAre() {
             <div className=" mt-6">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="border px-4 py-3 bg-black hover:bg-black/90 text-white"
+                className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer"
               >
                 Learn More
               </button>
@@ -77,7 +77,7 @@ export default function WhoWeAre() {
             <div className=" mt-6">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="border px-4 py-3 bg-black hover:bg-black/90 text-white"
+                className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer"
               >
                 Learn More
               </button>

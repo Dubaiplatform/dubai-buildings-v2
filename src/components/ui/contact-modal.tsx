@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 import BuySellForm from "../form/contact-form";
+import { ArrowRight } from "lucide-react";
 
 interface ModalProps {
   isOpen: boolean;
@@ -46,7 +47,10 @@ export default function ContactModal({ isOpen, onClose }: ModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70">
+    <div
+      id="main-contact-form"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70"
+    >
       <div className="bg-black w-[100%] md:w-[50%] relative">
         {/* Close Button */}
         <button
@@ -73,9 +77,10 @@ export default function ContactModal({ isOpen, onClose }: ModalProps) {
                 >
                   <Button
                     onClick={() => setPathnameValue(type)}
-                    className="px-12 py-7 text-sm sm:text-base bg-white hover:bg-primary/90 text-black border-none uppercase tracking-[0.2em] font-light transition-all duration-300 hover:scale-105 w-full"
+                    className="px-6 py-7 text-sm sm:text-base bg-white hover:bg-primary/90 text-black border-none uppercase tracking-[0.2em] font-light transition-all duration-300 hover:scale-105 w-full cursor-pointer flex justify-between items-center "
                   >
-                    {type}
+                    <span>{type}</span>
+                    <ArrowRight className="text-black w-4 h-4" />
                   </Button>
                 </motion.div>
               ))}
