@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const slides = [
   {
-    image: "/hero/slider1.webp",
+    image: "/hero/slider4.webp",
     title: "Find the building that best meets your investment goals",
     subtitle: "Discover Premium Properties",
     link: "/buy-buildings-dubai",
@@ -25,7 +25,7 @@ const slides = [
     link: "/lease-buildings-dubai",
   },
   {
-    image: "/hero/slider4.webp",
+    image: "/hero/slider1.webp",
     title: "Source the best tenant for your building",
     subtitle: "Sky High Sophistication",
     link: "/lease-buildings-dubai",
