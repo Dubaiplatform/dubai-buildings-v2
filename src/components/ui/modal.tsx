@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { X } from "lucide-react";
 
 interface ModalProps {
   isOpen: boolean;
@@ -27,7 +28,7 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
       onClick={onClose}
     >
       <div
-        className="bg-white w-[100%] md:w-[60%]  max-h-[90vh] overflow-y-auto relative "
+        className="bg-white w-[100%] md:w-[60%]  max-h-[90vh] overflow-y-auto relative p-4"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -35,10 +36,10 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
           onClick={onClose}
           className="absolute top-3 right-3 text-gray-500 text-xl hover:text-black transition-colors"
         >
-          ✕
+          <X className="text-black w-4 h-4" />
         </button>
 
-        {children}
+        <div className="">{children}</div>
       </div>
     </div>
   );

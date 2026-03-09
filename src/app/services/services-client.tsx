@@ -109,7 +109,7 @@ export default function WhyInvestClient() {
               onClick={() => setIsModalOpen(true)}
               className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
             >
-              Register Your Interest
+              Enquire Now
             </button>
           </div>
         </div>
@@ -202,7 +202,7 @@ export default function WhyInvestClient() {
               onClick={() => setIsModalOpen(true)}
               className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
             >
-              Register Your Interest
+              Enquire Now
             </button>
           </div>
         </div>
@@ -248,7 +248,7 @@ export default function WhyInvestClient() {
               onClick={() => setIsModalOpen(true)}
               className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
             >
-              Register Your Interest
+              Enquire Now
             </button>
           </div>
         </div>
@@ -296,7 +296,7 @@ export default function WhyInvestClient() {
               onClick={() => setIsModalOpen(true)}
               className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
             >
-              Register Your Interest
+              Enquire Now
             </button>
           </div>
         </div>
@@ -343,7 +343,7 @@ export default function WhyInvestClient() {
               onClick={() => setIsModalOpen(true)}
               className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
             >
-              Register Your Interest
+              Enquire Now
             </button>
           </div>
         </div>
@@ -395,7 +395,7 @@ export default function WhyInvestClient() {
               onClick={() => setIsModalOpen(true)}
               className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
             >
-              Register Your Interest
+              Enquire Now
             </button>
           </div>
         </div>
@@ -448,7 +448,7 @@ export default function WhyInvestClient() {
               onClick={() => setIsModalOpen(true)}
               className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
             >
-              Register Your Interest
+              Enquire Now
             </button>
           </div>
         </div>
@@ -510,7 +510,7 @@ export default function WhyInvestClient() {
               onClick={() => setIsModalOpen(true)}
               className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
             >
-              Register Your Interest
+              Enquire Now
             </button>
           </div>
         </div>
@@ -588,7 +588,7 @@ export default function WhyInvestClient() {
               onClick={() => setIsModalOpen(true)}
               className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
             >
-              Register Your Interest
+              Enquire Now
             </button>
           </div>
         </div>
@@ -602,7 +602,7 @@ export default function WhyInvestClient() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-center bg-cover"
-          style={{ backgroundImage: "url('/hero/1.webp')" }} // change image path if needed
+          style={{ backgroundImage: "url('/services/our-services.webp')" }}
           role="img"
           aria-label="Buy Buildings Dubai"
         />
@@ -623,7 +623,7 @@ export default function WhyInvestClient() {
           <div className="bg-[#E8EBEA] flex justify-center items-center md:p-20 sm:p-5 p-5 md:h-[70vh]  sm:h-[50vh] h-[50vh] md:w-[50%] sm:w-full w-full">
             <div className="relative w-full h-full">
               <Image
-                src="/home/home.webp"
+                src="/services/Investment Sales and Acquisition services .webp"
                 alt="UAE Currency"
                 fill
                 className="object-cover"
@@ -947,7 +947,7 @@ export default function WhyInvestClient() {
           <div className="bg-[#E8EBEA] flex justify-center items-center md:p-20 sm:p-5 p-5 md:h-[70vh] sm:h-[50vh] h-[50vh]  md:w-[50%] sm:w-full w-full">
             <div className="relative w-full h-full">
               <Image
-                src="/home/home.webp"
+                src="/services/Asset Management.webp"
                 alt="UAE Currency"
                 fill
                 className="object-cover"
