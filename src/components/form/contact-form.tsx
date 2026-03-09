@@ -273,7 +273,7 @@ export default function BuySellForm({
   return (
     <div
       id="form-section"
-      className="flex items-center justify-center text-white! px-2 sm:px-6 py-8 sm:py-16"
+      className="flex items-center justify-center text-white! px-2 sm:px-6 "
     >
       <motion.div
         initial={{ opacity: 0 }}

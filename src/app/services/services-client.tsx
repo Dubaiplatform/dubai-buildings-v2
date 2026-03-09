@@ -483,7 +483,7 @@ export default function WhyInvestClient() {
           <div className="bg-[#E8EBEA] flex justify-center items-center md:p-20 sm:p-5 p-5 md:h-[70vh] sm:h-[50vh] h-[50vh]  md:w-[50%] sm:w-full w-full ">
             <div className="relative w-full h-full">
               <Image
-                src="/home/home.webp"
+                src="/services/Education Development and Consultancy .webp"
                 alt="UAE Currency"
                 fill
                 className="object-cover"
@@ -498,7 +498,7 @@ export default function WhyInvestClient() {
           <div className="bg-[#E8EBEA] flex justify-center items-center md:p-20 sm:p-5 p-5 md:h-[70vh] sm:h-[50vh] h-[50vh]  md:w-[50%] sm:w-full w-full">
             <div className="relative w-full h-full">
               <Image
-                src="/services/Education Development and Consultancy .webp"
+                src="/home/home.webp"
                 alt="UAE Currency"
                 fill
                 className="object-cover"
@@ -777,30 +777,7 @@ export default function WhyInvestClient() {
         </div>
       </div>
 
-      <section className="relative h-[50vh] sm:h-[60vh]  w-full overflow-hidden">
-        {/* Background image */}
-        <div
-          className="absolute inset-0 bg-fixed bg-center bg-cover"
-          style={{ backgroundImage: "url('/hero/3.webp')" }}
-          role="img"
-          aria-label="Dubai Building"
-        />
-
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/40" />
-
-        {/* Text content */}
-        <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
-          <div className="max-w-3xl">
-            <h2 className="text-lg sm:text-3xl lg:text-4xl font-light text-white mb-4">
-              Comprehensive Real Estate Investment, Development, Advisory, and
-              Asset Management Services
-            </h2>
-          </div>
-        </div>
-      </section>
-
-      <FAQ questions={faqsQuestions} />
+      {/* <FAQ questions={faqsQuestions} /> */}
 
       <Modal
         isOpen={isModalInvestmentOpen}
