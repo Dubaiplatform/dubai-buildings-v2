@@ -106,6 +106,12 @@ export default function BuySellForm({
         } else if (!validateEmail(formData.email)) {
           newErrors.email = "Please enter a valid email address.";
         }
+
+        if (!formData.phone.trim()) {
+          newErrors.phone = "Phone number is required.";
+        } else if (!validatePhone(formData.phone)) {
+          newErrors.phone = "Enter a valid phone number (e.g. +971501234567).";
+        }
       }
     }
 
