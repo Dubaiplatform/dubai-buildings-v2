@@ -59,7 +59,7 @@ export default function Hero() {
 
   const handleIndicatorClick = (index: number) => {
     setCurrentIndex(index);
-    startAutoSlide(); // 🔥 reset timer
+    startAutoSlide();
   };
   return (
     <section className="relative w-screen h-screen overflow-hidden bg-black">
@@ -97,9 +97,9 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="max-w-2xl text-center "
             >
-              <h2 className="text-white text-3xl sm:text-4xl md:text-7xl font-light tracking-wide mb-4 ">
+              <h1 className="text-white text-3xl sm:text-4xl md:text-7xl font-light tracking-wide mb-4 ">
                 {slides[currentIndex].title}
-              </h2>
+              </h1>
 
               <p className="text-white/80 text-base sm:text-lg md:text-xl tracking-wider mb-8">
                 {slides[currentIndex].subtitle}

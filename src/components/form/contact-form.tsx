@@ -32,6 +32,7 @@ export default function BuySellForm({
   onClose?: any;
 }) {
   const router = useRouter();
+  const pathname = usePathname();
   const formRef = React.useRef<HTMLFormElement>(null);
 
   const [currentStep, setCurrentStep] = useState(1);
@@ -259,7 +260,14 @@ export default function BuySellForm({
   };
 
   React.useEffect(() => {
-    scrollToForm();
+    if (
+      pathname !== "/buy" &&
+      pathname !== "/sell" &&
+      pathname !== "/lease" &&
+      pathname !== "/build"
+    ) {
+      scrollToForm();
+    }
   }, [currentStep]);
 
   return (

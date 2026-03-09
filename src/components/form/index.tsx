@@ -26,11 +26,18 @@ export default function Form() {
     }
   };
 
+  // Scroll modal to top when form type is selected
+  React.useEffect(() => {
+    if (pathnameValue) {
+      const el = document.getElementById("main-contact-form");
+      if (el) {
+        el.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+  }, [pathnameValue]);
+
   return (
-    <section
-      id="contact-form"
-      className="section-padding text-white bg-black space-y-10"
-    >
+    <section id="contact-form" className="section-padding text-white bg-black ">
       <div className="text-center">
         <h2 className="md:text-5xl sm:text-xl text-xl">
           Select your requirement
