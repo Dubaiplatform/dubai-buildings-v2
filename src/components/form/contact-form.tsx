@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter, usePathname } from "next/navigation";
+import { ArrowRight } from "lucide-react";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -766,14 +767,14 @@ export default function BuySellForm({
 
           {/* Navigation */}
           <section
-            className={` bg-black/95 backdrop-blur-md  border-t border-border/30 px-4 py-4 flex items-center justify-between ${currentStep !== 1 && "gap-4"} sm:static sm:bg-transparent sm:backdrop-blur-0 sm:border-none sm:px-0 sm:py-8`}
+            className={` bg-black/95 backdrop-blur-md   px-4 py-4 flex items-center justify-between ${currentStep !== 1 && "gap-4"} sm:static sm:bg-transparent sm:backdrop-blur-0 sm:border-none sm:px-0 sm:py-8`}
           >
             {currentStep > 1 ? (
               <Button
                 type="button"
                 variant="outline"
                 onClick={handlePrevious}
-                className="px-6 sm:px-10 py-5 sm:py-6 text-xs sm:text-sm uppercase tracking-[0.15em]  border-white text-white hover:border-primary/50 transition-all bg-transparent"
+                className="px-6 py-7 text-xs sm:text-sm uppercase tracking-[0.15em]  border-white text-white hover:border-primary/50 transition-all bg-transparent"
               >
                 Back
               </Button>
@@ -782,22 +783,51 @@ export default function BuySellForm({
             )}
 
             {currentStep < steps.length ? (
-              <Button
-                type="button"
-                onClick={handleNext}
-                className=" px-6 sm:px-10 py-5 sm:py-6 text-xs sm:text-sm bg-primary hover:bg-primary/90 text-white uppercase tracking-[0.15em] border border-white transition-all hover:scale-105 w-full"
-              >
-                Continue
-              </Button>
+              <>
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className=" space-y-10 md:max-w-xl px-4 w-full"
+                >
+                  <Button
+                    type="button"
+                    onClick={handleNext}
+                    className="px-6 py-7 text-sm sm:text-base bg-white hover:bg-primary/90 text-black border-none uppercase tracking-[0.2em] font-light transition-all duration-300 hover:scale-105 w-full cursor-pointer flex justify-between items-center "
+                  >
+                    <span>Continue</span>
+                    <ArrowRight className="text-black w-4 h-4" />
+                  </Button>
+                </motion.div>
+              </>
             ) : (
-              <Button
-                type="button"
-                onClick={handleNext}
-                className="px-6 sm:px-10 py-5 sm:py-6 text-xs sm:text-sm bg-primary hover:bg-primary/90 text-white uppercase tracking-[0.15em] border border-white transition-all hover:scale-105 w-full"
-                disabled={isDisabled}
-              >
-                Submit
-              </Button>
+              <>
+                {/* <Button
+                  type="button"
+                  onClick={handleNext}
+                  className="px-6 sm:px-10 py-5 sm:py-6 text-xs sm:text-sm bg-primary hover:bg-primary/90 text-white uppercase tracking-[0.15em] border border-white transition-all hover:scale-105 w-full"
+                  disabled={isDisabled}
+                >
+                  Submit
+                </Button> */}
+
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className=" space-y-10 md:max-w-xl px-4 w-full"
+                >
+                  <Button
+                    type="button"
+                    onClick={handleNext}
+                    className="px-6 py-7 text-sm sm:text-base bg-white hover:bg-primary/90 text-black border-none uppercase tracking-[0.2em] font-light transition-all duration-300 hover:scale-105  cursor-pointer flex justify-between items-center w-full"
+                    disabled={isDisabled}
+                  >
+                    <span>Submit</span>
+                    <ArrowRight className="text-black w-4 h-4" />
+                  </Button>
+                </motion.div>
+              </>
             )}
           </section>
         </form>
