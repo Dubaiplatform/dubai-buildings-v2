@@ -212,7 +212,7 @@ function TimeSelect() {
   const times = Array.from({ length: 10 }, (_, i) => {
     const h = 9 + i; // 9am to 6pm (last slot: 6:00 to 7:00 pm)
     return {
-      value: `${h.toString().padStart(2, "0")}:00`,
+      value: `${formatHour(h)} to ${formatHour(h + 1)}`,
       label: `${formatHour(h)} to ${formatHour(h + 1)}`,
     };
   });

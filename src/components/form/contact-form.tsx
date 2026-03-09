@@ -176,6 +176,14 @@ export default function BuySellForm({
         setCurrentStep((prev) => prev + 1);
       }
     }
+
+    setTimeout(() => {
+      const el = document.getElementById("contact-form");
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - 70;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }, 100);
   };
 
   const handlePrevious = () => {
@@ -196,6 +204,8 @@ export default function BuySellForm({
       date: formData?.date,
       time: formData?.time,
       category: formData?.category,
+      assistanceType: formData?.assistanceType,
+      userRole: formData?.userRole,
     };
 
     try {
