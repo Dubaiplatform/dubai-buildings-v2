@@ -40,7 +40,7 @@ export default function BuyClient() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-center bg-cover"
-          style={{ backgroundImage: "url('/hero/1.webp')" }}
+          style={{ backgroundImage: "url('/buy/buy.webp')" }}
           role="img"
           aria-label="Buy Buildings In Dubai"
         />
@@ -143,7 +143,7 @@ export default function BuyClient() {
         {/* Background image */}
         <div
           className="absolute inset-0 bg-fixed bg-center bg-cover"
-          style={{ backgroundImage: "url('/hero/3.webp')" }}
+          style={{ backgroundImage: "url('/buy/buy1.webp')" }}
           role="img"
           aria-label="Dubai Building"
         />

@@ -51,7 +51,7 @@ export default function Home() {
         {/* Background image */}
         <div
           className="absolute inset-0 bg-fixed bg-center bg-cover"
-          style={{ backgroundImage: "url('/hero/3.webp')" }}
+          style={{ backgroundImage: "url('/home/home-page.webp')" }}
           role="img"
           aria-label="Dubai Building"
         />
