@@ -11,7 +11,7 @@ export default function WhoWeAre() {
     <section className="section-padding bg-white">
       <div className="space-y-0 divide-y divide-gray-100">
         {/* Who Are We */}
-        <div className="flex flex-col md:flex-row items-stretch gap-0 pb-20">
+        <div className="flex flex-col md:flex-row items-stretch gap-0 md:pb-20">
           {/* Image */}
           <div className="w-full md:w-[45%] relative h-[320px] md:h-[500px] overflow-hidden">
             <Image
