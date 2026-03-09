@@ -141,7 +141,9 @@ export default function Build() {
 
       <section id="contact-form" className="bg-black py-20">
         <div className="text-center text-white">
-          <h2 className="text-5xl">Share your basic information</h2>
+          <h2 className="md:text-5xl sm:text-xl text-xl">
+            Share your basic information
+          </h2>
           <p>
             Share your requirement with our Professional, Reliable and Efficient
             team
