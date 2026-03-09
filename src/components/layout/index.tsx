@@ -32,7 +32,6 @@ export default function Layout({ children, ...delegated }: Props) {
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.35, ease: "easeInOut" }}
           className={`relative ${isHome ? "" : "pt-10"}`}
-          // className={`relative min-h-screen ${isHome ? "" : ""}`}
         >
           <> {children}</>
         </motion.div>

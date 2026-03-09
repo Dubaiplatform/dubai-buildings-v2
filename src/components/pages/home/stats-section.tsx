@@ -50,7 +50,7 @@ export default function StatsSection() {
     <section className="bg-black py-24 px-6 md:px-20">
       <div className="max-w-6xl mx-auto space-y-16">
         {/* Top Description */}
-        <p className="text-center text-white/70 text-lg md:text-xl">
+        <p className="text-center text-white/70 text-3xl md:text-5xl">
           More than 100 buildings which have been reviewed, evaluated, and
           vetted by our team.
         </p>

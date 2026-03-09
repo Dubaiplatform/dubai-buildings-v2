@@ -101,9 +101,9 @@ export default function Hero() {
                 {slides[currentIndex].title}
               </h1>
 
-              <p className="text-white/80 text-base sm:text-lg md:text-xl tracking-wider mb-8">
+              {/* <p className="text-white/80 text-base sm:text-lg md:text-xl tracking-wider mb-8">
                 {slides[currentIndex].subtitle}
-              </p>
+              </p> */}
 
               <Link
                 href={slides[currentIndex].link}

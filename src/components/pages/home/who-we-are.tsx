@@ -16,7 +16,7 @@ export default function WhoWeAre() {
           <div className="w-full md:w-[45%] relative h-[320px] md:h-[500px] overflow-hidden">
             <Image
               alt="Dubai Building"
-              src="/home/home.webp"
+              src="/home/who we are.webp"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
             />
@@ -53,7 +53,7 @@ export default function WhoWeAre() {
           <div className="w-full md:w-[45%] relative h-[320px] md:h-[500px] overflow-hidden">
             <Image
               alt="Dubai Building"
-              src="/home/home.webp"
+              src="/home/why are we best.webp"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
             />
