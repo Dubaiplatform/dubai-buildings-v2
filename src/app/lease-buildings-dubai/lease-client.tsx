@@ -42,7 +42,7 @@ export default function LeaseClient() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-center bg-cover"
-          style={{ backgroundImage: "url('/hero/1.webp')" }}
+          style={{ backgroundImage: "url('/lease/lease.webp')" }}
           role="img"
           aria-label="Lease Buildings in Dubai"
         />
@@ -153,7 +153,7 @@ export default function LeaseClient() {
         {/* Background image */}
         <div
           className="absolute inset-0 bg-fixed bg-center bg-cover"
-          style={{ backgroundImage: "url('/hero/3.webp')" }}
+          style={{ backgroundImage: "url('/lease/lease2.webp')" }}
           role="img"
           aria-label="Dubai Building"
         />

@@ -46,7 +46,7 @@ export default function About() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-center bg-cover"
-          style={{ backgroundImage: "url('/hero/1.webp')" }} // change image path if needed
+          style={{ backgroundImage: "url('/about.webp')" }} // change image path if needed
           role="img"
           aria-label="Buy Buildings Dubai"
         />
@@ -113,13 +113,15 @@ export default function About() {
         </div>
       </section>
 
-      <Form isHome={true} />
+      {/* <Form isHome={true} /> */}
+
+      <StatsSection />
 
       <section className="relative h-[50vh] sm:h-[60vh]  w-full overflow-hidden">
         {/* Background image */}
         <div
           className="absolute inset-0 bg-fixed bg-center bg-cover"
-          style={{ backgroundImage: "url('/hero/3.webp')" }}
+          style={{ backgroundImage: "url('/lease/lease2.webp')" }}
           role="img"
           aria-label="Dubai Building"
         />
@@ -131,17 +133,14 @@ export default function About() {
         <div className="relative z-10 h-full flex items-center justify-center text-center px-6">
           <div className="max-w-3xl">
             <h2 className="text-lg sm:text-3xl lg:text-4xl font-light text-white mb-4">
-              Golden mashrabiyas encase majestic architectural dimensions to
-              create blissfully shaded interiors against the azure backdrop of
-              the Arabian sky
+              Dubai Buildings is a premier business-to-business real estate
+              service provider in Dubai
             </h2>
           </div>
         </div>
       </section>
 
-      <StatsSection />
-
-      <FAQ questions={faqsQuestions} />
+      {/* <FAQ questions={faqsQuestions} /> */}
     </main>
   );
 }

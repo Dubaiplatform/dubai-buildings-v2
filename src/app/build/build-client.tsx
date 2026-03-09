@@ -42,9 +42,9 @@ export default function Build() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-center bg-cover"
-          style={{ backgroundImage: "url('/hero/1.webp')" }} // change image path if needed
+          style={{ backgroundImage: "url('/build/build.webp')" }}
           role="img"
-          aria-label="Buy Buildings Dubai"
+          aria-label="Dubai Buildings"
         />
 
         {/* Dark Overlay */}
@@ -154,7 +154,7 @@ export default function Build() {
         {/* Background image */}
         <div
           className="absolute inset-0 bg-fixed bg-center bg-cover"
-          style={{ backgroundImage: "url('/hero/3.webp')" }}
+          style={{ backgroundImage: "url('/build/build2.webp')" }}
           role="img"
           aria-label="Dubai Building"
         />

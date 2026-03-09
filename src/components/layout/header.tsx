@@ -9,9 +9,9 @@ export default function Header({ isHome }: any) {
   const router = useRouter();
 
   const menuItems = [
-    { label: "BUY", href: "/buy" },
-    { label: "SELL", href: "/sell" },
-    { label: "LEASE", href: "/lease" },
+    { label: "BUY", href: "/buy-buildings-dubai" },
+    { label: "SELL", href: "/sell-building-dubai" },
+    { label: "LEASE", href: "/lease-buildings-dubai" },
     { label: "BUILD", href: "/build" },
     { label: "SERVICES", href: "/services" },
     { label: "ABOUT US", href: "/about-us" },
@@ -59,21 +59,21 @@ export default function Header({ isHome }: any) {
           {/* LEFT LINKS */}
           <div className="hidden md:flex items-center gap-8">
             <Link
-              href="/buy"
+              href="/buy-buildings-dubai"
               className="text-white tracking-widest text-sm hover:text-gray-300 transition"
             >
               BUY
             </Link>
 
             <Link
-              href="/sell"
+              href="/sell-building-dubai"
               className="text-white tracking-widest text-sm hover:text-gray-300 transition"
             >
               SELL
             </Link>
 
             <Link
-              href="/lease"
+              href="/lease-buildings-dubai"
               className="text-white tracking-widest text-sm hover:text-gray-300 transition"
             >
               LEASE
