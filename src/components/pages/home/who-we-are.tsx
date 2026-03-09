@@ -9,7 +9,7 @@ export default function WhoWeAre() {
 
   return (
     <section className="section-padding bg-white">
-      <div className="space-y-0 divide-y divide-gray-100">
+      <div className="space-y-0 ">
         {/* Who Are We */}
         <div className="flex flex-col md:flex-row items-stretch gap-0 md:pb-20">
           {/* Image */}

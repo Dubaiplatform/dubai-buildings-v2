@@ -158,12 +158,8 @@ export default function ContactFormInContact() {
   );
 
   return (
-    <div className=" bg-white flex items-center justify-center md:p-4">
+    <div className=" bg-white flex items-center justify-center ">
       <div className="w-full max-w-2xl bg-white ">
-        <h2 className="text-3xl sm:text-4xl font-light text-[#2a2a2a] mb-8 text-center">
-          Register Your Interest
-        </h2>
-
         <div className="text-black text-center mb-8">
           Your information will be used to respond to your query and send you
           information about this development.

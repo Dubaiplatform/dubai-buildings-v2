@@ -37,10 +37,7 @@ export default function Form({ isHome }: { isHome?: boolean }) {
   }, [pathnameValue]);
 
   return (
-    <section
-      id="contact-form main-contact-section"
-      className="section-padding text-white bg-black "
-    >
+    <section id="contact-form" className="section-padding text-white bg-black ">
       <div className={`text-center ${isHome ? "md:mb-8 sm:mb-4 mb-4" : ""}`}>
         <h2 className="md:text-5xl sm:text-xl text-xl">
           Select your requirement
@@ -62,7 +59,14 @@ export default function Form({ isHome }: { isHome?: boolean }) {
               className=" space-y-10 md:max-w-xl px-4"
             >
               <Button
-                onClick={() => setPathnameValue(type)}
+                onClick={() => {
+                  setPathnameValue(type);
+                  setTimeout(() => {
+                    document
+                      .getElementById("contact-form")
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }, 100);
+                }}
                 className="px-6 py-7 text-sm sm:text-base bg-white hover:bg-primary/90 text-black border-none uppercase tracking-[0.2em] font-light transition-all duration-300 hover:scale-105 w-full cursor-pointer flex justify-between items-center "
               >
                 <span>{type}</span>
