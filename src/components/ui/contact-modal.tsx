@@ -51,7 +51,7 @@ export default function ContactModal({ isOpen, onClose }: ModalProps) {
       id="main-contact-form"
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70"
     >
-      <div className="bg-black w-[100%] md:w-[50%] relative">
+      <div className="bg-black w-[100%] md:w-[50%] relative py-4">
         {/* Close Button */}
         <button
           onClick={onClose}
