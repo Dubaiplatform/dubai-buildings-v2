@@ -11,13 +11,17 @@ interface ModalProps {
 export default function Modal({ isOpen, onClose, children }: ModalProps) {
   if (!isOpen) return null;
 
+  React.useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  }, [isOpen]);
+
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70"
       onClick={onClose}
     >
       <div
-        className="bg-white w-[100%] md:w-[40%]  max-h-[90vh] overflow-y-auto relative "
+        className="bg-white w-[100%] md:w-[50%]  max-h-[90vh] overflow-y-auto relative "
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}

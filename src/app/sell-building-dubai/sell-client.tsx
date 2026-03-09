@@ -42,7 +42,7 @@ export default function SellClient() {
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-center bg-cover"
-          style={{ backgroundImage: "url('/hero/1.webp')" }}
+          style={{ backgroundImage: "url('/sell/sell.webp')" }}
           role="img"
           aria-label="Sell Your Building in Dubai"
         />
@@ -153,7 +153,7 @@ export default function SellClient() {
         {/* Background image */}
         <div
           className="absolute inset-0 bg-fixed bg-center bg-cover"
-          style={{ backgroundImage: "url('/hero/3.webp')" }}
+          style={{ backgroundImage: "url('/sell/sell2.webp')" }}
           role="img"
           aria-label="Dubai Building"
         />
