@@ -605,33 +605,6 @@ export default function BuySellForm({
                 <section className="space-y-4">
                   {isExtendedFlow ? (
                     <>
-                      {/* <div className="space-y-2">
-                        <Label
-                          htmlFor="phone"
-                          className="text-sm font-light tracking-wide"
-                        >
-                          Phone / WhatsApp Number{" "}
-                        </Label>
-                        <div className="mt-2">
-                          <PhoneInput
-                            value={formData.phone}
-                            onChange={(value) =>
-                              setFormData((prev) => ({
-                                ...prev,
-                                phone: value,
-                              }))
-                            }
-                            placeholder="Enter phone number"
-                            required
-                          />
-                        </div>
-                        {errors.phone && (
-                          <p className="text-red-500 text-sm mt-1">
-                            {errors.phone}
-                          </p>
-                        )}
-                      </div> */}
-
                       <div className="space-y-2">
                         <Label className="text-sm  font-light tracking-wide">
                           Preferred Viewing Date & Time

@@ -26,15 +26,16 @@ export default function Form({ isHome }: { isHome?: boolean }) {
     }
   };
 
-  // Scroll modal to top when form type is selected
-  React.useEffect(() => {
-    if (pathnameValue) {
-      const el = document.getElementById("main-contact-form");
+  const handleSelect = (type: string) => {
+    setPathnameValue(type);
+    setTimeout(() => {
+      const el = document.getElementById("contact-form");
       if (el) {
-        el.scrollTo({ top: 0, behavior: "smooth" });
+        const top = el.getBoundingClientRect().top + window.scrollY - 70;
+        window.scrollTo({ top, behavior: "smooth" });
       }
-    }
-  }, [pathnameValue]);
+    }, 100);
+  };
 
   return (
     <section id="contact-form" className="section-padding text-white bg-black ">
@@ -59,14 +60,7 @@ export default function Form({ isHome }: { isHome?: boolean }) {
               className=" space-y-10 md:max-w-xl px-4"
             >
               <Button
-                onClick={() => {
-                  setPathnameValue(type);
-                  setTimeout(() => {
-                    document
-                      .getElementById("contact-form")
-                      ?.scrollIntoView({ behavior: "smooth" });
-                  }, 100);
-                }}
+                onClick={() => handleSelect(type)}
                 className="px-6 py-7 text-sm sm:text-base bg-white hover:bg-primary/90 text-black border-none uppercase tracking-[0.2em] font-light transition-all duration-300 hover:scale-105 w-full cursor-pointer flex justify-between items-center "
               >
                 <span>{type}</span>
