@@ -1,9 +1,15 @@
-import Form from "@/components/form";
+"use client";
+
+import React from "react";
 import Image from "next/image";
 
+import Modal from "@/components/ui/modal";
+import Form from "@/components/form";
 import { FAQ } from "@/components/ui/faq";
 
 export default function WhyInvestClient() {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
   const faqsQuestions = [
     {
       question: "What services does Dubai Buildings provide?",
@@ -32,6 +38,73 @@ export default function WhyInvestClient() {
         "Dubai Buildings focuses on business-to-business real estate services, offering a professional, transparent, and data-driven approach. Our strong industry network and market expertise allow us to deliver tailored solutions and verified opportunities for our clients.",
     },
   ];
+
+  const ModalBody = (
+    <div>
+      <div className=" p-6">
+        <h3 className="tracking-widest font-medium text-[24px]">
+          Investment Sales and Acquisition services
+        </h3>
+        <div className="space-y-4">
+          <p className="tracking-wider text-gray-700 ">
+            Dubai Buildings has established itself as a partner of one of the
+            UAE’s most dominant real estate agencies. Our successful track
+            record has earned us an expansive network of property owners, real
+            estate developers, occupiers, operators, and institutional
+            investors.
+          </p>
+
+          <p className="tracking-wider text-gray-700 ">
+            The Investment Sales and Acquisitions team at Dubai-Buildings.com is
+            a market leader. We provide our clients with a full spectrum of
+            services to source the best investment opportunities in the market.
+            We leverage our partnership with one of the leading real estate
+            agencies in the UAE to provide our clients with accurate and up to
+            date information for data-backed decision making.
+          </p>
+
+          <div className="text-gray-700 space-y-1">
+            <p>
+              Our Investment Sales and Acquisitions team operate in the
+              following sectors:
+            </p>
+            <ul className="list-disc pl-4 ">
+              <li>Residential</li>
+              <li>Industrial & Logistics</li>
+              <li>Education</li>
+              <li>Healthcare</li>
+              <li>Office</li>
+              <li>Hospitality</li>
+              <li>Retail</li>
+            </ul>
+          </div>
+
+          <div className="text-gray-700 space-y-1">
+            <p>Our Investment Sales and Acquisitions services include:</p>
+            <ul className="list-disc pl-4">
+              {[
+                "Acquisitions and Disposals",
+                "Strategic Consulting",
+                "Tailored Market Research & Analysis",
+                "Competitor Analysis",
+                "Feasibility Studies",
+                "Portfolio Planning",
+                "Deal Structuring and Due Diligence",
+                "Contract Negotiation",
+                "Pricing Strategy",
+                "Bespoke Marketing Campaigns",
+                "Sourcing of Investment Opportunities",
+                "Sourcing of Corporate Occupiers",
+                "Liaison Services",
+              ].map((list, index) => (
+                <li key={index}>{list}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <main>
@@ -78,8 +151,8 @@ export default function WhyInvestClient() {
             </h3>
             <div className="space-y-4">
               <p className="tracking-wider text-gray-700 ">
-                Dubai-Buildings.com has established itself as a partner of one
-                of the UAE’s most dominant real estate agencies. Our successful
+                Dubai Buildings has established itself as a partner of one of
+                the UAE’s most dominant real estate agencies. Our successful
                 track record has earned us an expansive network of property
                 owners, real estate developers, occupiers, operators, and
                 institutional investors.
@@ -94,6 +167,33 @@ export default function WhyInvestClient() {
                 our clients with accurate and up to date information for
                 data-backed decision making.
               </p>
+
+              <p className="tracking-wider text-gray-700 ">
+                Dubai Buildings has established itself as a partner of one of
+                the UAE’s most dominant real estate agencies. Our successful
+                track record has earned us an expansive network of property
+                owners, real estate developers, occupiers, operators, and
+                institutional investors.
+              </p>
+
+              <p className="tracking-wider text-gray-700 ">
+                The Investment Sales and Acquisitions team at
+                Dubai-Buildings.com is a market leader. We provide our clients
+                with a full spectrum of services to source the best investment
+                opportunities in the market. We leverage our partnership with
+                one of the leading real estate agencies in the UAE to provide
+                our clients with accurate and up to date information for
+                data-backed decision making.
+              </p>
+
+              <div className="">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
+                >
+                  Learn More
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -558,6 +658,10 @@ export default function WhyInvestClient() {
       </section>
 
       <FAQ questions={faqsQuestions} />
+
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        {ModalBody}
+      </Modal>
     </main>
   );
 }
