@@ -250,7 +250,7 @@ export default function BuySellForm({
   // }, [currentStep]);
 
   const scrollToForm = () => {
-    const el = document.getElementById("form-section");
+    const el = document.getElementById("main-contact-section");
     if (el) {
       el.scrollIntoView({
         behavior: "smooth",

@@ -35,7 +35,7 @@ export function FAQ({ questions }: any) {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <p className="text-lg text-primary mb-4">FAQ's</p>
+          <p className="text-3xl md:text-5xl text-primary mb-4">FAQ's</p>
         </motion.div>
 
         <motion.div
@@ -84,7 +84,7 @@ export function FAQ({ questions }: any) {
                     {/* Trigger */}
                     <AccordionPrimitive.Header asChild>
                       <AccordionPrimitive.Trigger
-                        className="flex w-full items-center justify-between py-4 pl-4 pr-4 text-left text-lg font-light hover:cursor-pointer relative z-10"
+                        className="flex w-full items-center justify-between py-4 pl-4 pr-4 text-left md:text-lg  hover:cursor-pointer relative z-10 font-[550]"
                         style={{
                           color: isOpen ? "var(--primary, black)" : "inherit",
                           transition: "color 0.3s ease",

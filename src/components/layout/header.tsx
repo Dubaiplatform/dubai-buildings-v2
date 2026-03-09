@@ -84,7 +84,7 @@ export default function Header({ isHome }: any) {
           <div className="flex md:justify-center">
             <Link
               href="/"
-              className="text-white text-lg sm:text-xl md:text-2xl tracking-wide md:font-light font-medium"
+              className="text-white text-xl sm:text-xl md:text-2xl tracking-wide md:font-light font-[550]"
             >
               DUBAI BUILDINGS
             </Link>

@@ -19,7 +19,7 @@ export default function Footer() {
 
         {/* Navigation */}
         <div>
-          <h3 className="text-sm tracking-widest text-gray-300 mb-5">
+          <h3 className="text-sm tracking-widest text-gray-300 mb-5 font-semibold">
             EXPLORE
           </h3>
 
@@ -44,7 +44,7 @@ export default function Footer() {
 
         {/* Company */}
         <div>
-          <h3 className="text-sm tracking-widest text-gray-300 mb-5">
+          <h3 className="text-sm tracking-widest text-gray-300 mb-5 font-semibold">
             COMPANY
           </h3>
 
@@ -65,7 +65,7 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h3 className="text-sm tracking-widest text-gray-300 mb-5">
+          <h3 className="text-sm tracking-widest text-gray-300 mb-5 font-semibold">
             CONTACT
           </h3>
 
@@ -91,8 +91,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10 py-6 px-4 sm:px-6 md:px-50 text-gray-400 text-sm flex justify-between items-center">
-        <div className="flex gap-4">
+      <div className="border-t border-white/10 py-6 px-4 sm:px-6 md:px-50 text-gray-400 text-sm flex md:flex-row sm:flex-col flex-col gap-2 justify-between items-center">
+        <div className="flex  gap-4">
           <Link href="/privacy-policy" className="hover:text-white transition">
             Privacy Policy
           </Link>

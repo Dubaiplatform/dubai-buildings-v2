@@ -113,7 +113,7 @@ export default function About() {
         </div>
       </section>
 
-      <Form />
+      <Form isHome={true} />
 
       <section className="relative h-[50vh] sm:h-[60vh]  w-full overflow-hidden">
         {/* Background image */}

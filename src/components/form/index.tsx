@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 import BuySellForm from "./contact-form";
 
-export default function Form() {
+export default function Form({ isHome }: { isHome?: boolean }) {
   const [pathnameValue, setPathnameValue] = React.useState("");
 
   const renderForm = () => {
@@ -37,8 +37,11 @@ export default function Form() {
   }, [pathnameValue]);
 
   return (
-    <section id="contact-form" className="section-padding text-white bg-black ">
-      <div className="text-center">
+    <section
+      id="contact-form main-contact-section"
+      className="section-padding text-white bg-black "
+    >
+      <div className={`text-center ${isHome ? "md:mb-8 sm:mb-4 mb-4" : ""}`}>
         <h2 className="md:text-5xl sm:text-xl text-xl">
           Select your requirement
         </h2>

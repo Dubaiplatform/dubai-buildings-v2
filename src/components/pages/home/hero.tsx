@@ -77,7 +77,7 @@ export default function Hero() {
           <motion.div
             className="absolute inset-0"
             initial={{ scale: 1 }}
-            animate={{ scale: 1.1 }}
+            // animate={{ scale: 1.1 }}
             exit={{ scale: 1.2 }}
             transition={{ duration: 3, ease: "linear" }}
           >
