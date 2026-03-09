@@ -64,7 +64,7 @@ export default function ContactModal({ isOpen, onClose }: ModalProps) {
           Select your requirement
         </h2>
 
-        <div className="bg-black p-6">
+        <div className="bg-black md:p-6">
           {!pathnameValue && (
             <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
               {["buy", "sell", "lease", "build"].map((type) => (
