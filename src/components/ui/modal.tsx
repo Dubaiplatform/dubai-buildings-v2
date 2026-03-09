@@ -9,11 +9,17 @@ interface ModalProps {
 }
 
 export default function Modal({ isOpen, onClose, children }: ModalProps) {
-  if (!isOpen) return null;
-
   React.useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [isOpen]);
+
+  if (!isOpen) return null;
 
   return (
     <div
