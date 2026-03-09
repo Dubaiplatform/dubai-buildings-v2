@@ -767,7 +767,7 @@ export default function BuySellForm({
 
           {/* Navigation */}
           <section
-            className={` bg-black/95 backdrop-blur-md   px-4 py-4 flex items-center justify-between ${currentStep !== 1 && "gap-4"} sm:static sm:bg-transparent sm:backdrop-blur-0 sm:border-none sm:px-0 sm:py-8`}
+            className={` bg-black/95 backdrop-blur-md   md:px-4 py-4 flex items-center justify-between ${currentStep !== 1 && "gap-4"} sm:static sm:bg-transparent sm:backdrop-blur-0 sm:border-none sm:px-0 sm:py-8`}
           >
             {currentStep > 1 ? (
               <Button
@@ -788,7 +788,7 @@ export default function BuySellForm({
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
-                  className=" space-y-10 md:max-w-xl px-4 w-full"
+                  className=" space-y-10 md:max-w-xl md:px-4 w-full"
                 >
                   <Button
                     type="button"
@@ -815,7 +815,7 @@ export default function BuySellForm({
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
-                  className=" space-y-10 md:max-w-xl px-4 w-full"
+                  className=" space-y-10 md:max-w-xl md:px-4 w-full"
                 >
                   <Button
                     type="button"
