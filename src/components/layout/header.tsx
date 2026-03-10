@@ -78,6 +78,13 @@ export default function Header({ isHome }: any) {
             >
               LEASE
             </Link>
+
+            <Link
+              href="/build"
+              className="text-white tracking-widest text-sm hover:text-gray-300 transition"
+            >
+              BUILD
+            </Link>
           </div>
 
           {/* LOGO */}
@@ -95,13 +102,6 @@ export default function Header({ isHome }: any) {
             {/* Desktop Links */}
             <div className="hidden md:flex items-center gap-8">
               <Link
-                href="/build"
-                className="text-white tracking-widest text-sm hover:text-gray-300 transition"
-              >
-                BUILD
-              </Link>
-
-              <Link
                 href="/about-us"
                 className="text-white tracking-widest text-sm hover:text-gray-300 transition"
               >
@@ -112,7 +112,14 @@ export default function Header({ isHome }: any) {
                 href="/services"
                 className="text-white tracking-widest text-sm hover:text-gray-300 transition"
               >
-                SERVICES
+                OUR SERVICES
+              </Link>
+
+              <Link
+                href="/contact-us"
+                className="text-white tracking-widest text-sm hover:text-gray-300 transition"
+              >
+                CONTACT US
               </Link>
             </div>
 
