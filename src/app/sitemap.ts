@@ -12,17 +12,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/buy`,
+      url: `${baseUrl}/buy-buildings-dubai`,
       lastModified: new Date(),
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/sell`,
+      url: `${baseUrl}/sell-building-dubai`,
       lastModified: new Date(),
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/lease`,
+      url: `${baseUrl}/lease-buildings-dubai`,
       lastModified: new Date(),
       priority: 0.9,
     },
@@ -37,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/service`,
+      url: `${baseUrl}/services`,
       lastModified: new Date(),
       priority: 0.9,
     },

@@ -787,7 +787,7 @@ export default function WhyInvestClient() {
           <div className="bg-[#E8EBEA] flex justify-center items-center md:p-20 sm:p-5 p-5 md:h-[70vh] sm:h-[50vh] h-[50vh]  md:w-[50%] sm:w-full w-full">
             <div className="relative w-full h-full">
               <Image
-                src="/home/home.webp"
+                src="/services/Hospitality Development and Consultancy.webp"
                 alt="UAE Currency"
                 fill
                 className="object-cover"

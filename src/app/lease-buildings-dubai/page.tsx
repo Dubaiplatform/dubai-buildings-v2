@@ -16,14 +16,14 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.dubai-buildings.com/lease",
+    canonical: "https://www.dubai-buildings.com/lease-buildings-dubai",
   },
 
   openGraph: {
     title: "Lease Buildings in Dubai | Dubai Buildings",
     description:
       "Find buildings for lease in Dubai or source the best tenants for your property with professional real estate guidance.",
-    url: "https://www.dubai-buildings.com/lease",
+    url: "https://www.dubai-buildings.com/lease-buildings-dubai",
     siteName: "Dubai Buildings",
     locale: "en_US",
     type: "website",

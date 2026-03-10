@@ -16,14 +16,14 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.dubai-buildings.com/sell",
+    canonical: "https://www.dubai-buildings.com/sell-building-dubai",
   },
 
   openGraph: {
     title: "Sell Your Building in Dubai | Dubai Buildings",
     description:
       "Looking to sell a building in Dubai? Dubai Buildings connects landlords with qualified investors and buyers for secure and professional property transactions.",
-    url: "https://www.dubai-buildings.com/sell",
+    url: "https://www.dubai-buildings.com/sell-building-dubai",
     siteName: "Dubai Buildings",
     locale: "en_US",
     type: "website",

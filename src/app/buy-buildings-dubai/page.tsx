@@ -16,14 +16,14 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.dubai-buildings.com/buy",
+    canonical: "https://www.dubai-buildings.com/buy-buildings-dubai",
   },
 
   openGraph: {
     title: "Buy Buildings In Dubai",
     description:
       "Discover investment buildings for sale in Dubai. Dubai Buildings connects investors with exclusive commercial and residential building opportunities.",
-    url: "https://www.dubai-buildings.com/buy",
+    url: "https://www.dubai-buildings.com/buy-buildings-dubai",
     siteName: "Dubai Buildings",
     locale: "en_US",
     type: "website",
