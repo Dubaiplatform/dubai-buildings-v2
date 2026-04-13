@@ -12,32 +12,77 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/buy-buildings-dubai`,
+      url: `${baseUrl}/buy-buildings-dubai/`,
       lastModified: new Date(),
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/sell-building-dubai`,
+      url: `${baseUrl}/sell-building-dubai/`,
       lastModified: new Date(),
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/lease-buildings-dubai`,
+      url: `${baseUrl}/lease-buildings-dubai/`,
       lastModified: new Date(),
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/build`,
+      url: `${baseUrl}/build/`,
       lastModified: new Date(),
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/about-us`,
+      url: `${baseUrl}/about-us/`,
       lastModified: new Date(),
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/services`,
+      url: `${baseUrl}/services/`,
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/investment-sales-acquisition-services/`,
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/land-development-consultancy/`,
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/healthcare-development/`,
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/education-development-consultancy/`,
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/hospitality-development-consultancy/`,
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/investments-logistics-investments/`,
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/residential-investment/`,
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/commercial-agency/`,
+      lastModified: new Date(),
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/asset-management/`,
       lastModified: new Date(),
       priority: 0.9,
     },

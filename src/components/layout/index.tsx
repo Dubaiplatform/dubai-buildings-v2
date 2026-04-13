@@ -2,7 +2,7 @@
 
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import NotFound from "@/app/not-found";
 
@@ -16,29 +16,9 @@ interface Props {
 
 export default function Layout({ children, ...delegated }: Props) {
   const pathname = usePathname();
+  const router = useRouter();
 
   const isHome = pathname === "/";
-
-  // const validRoutes = [
-  //   "/",
-  //   "/buy-buildings-dubai/",
-  //   "/sell-building-dubai/",
-  //   "/lease-buildings-dubai/",
-  //   "/build/",
-  //   "/privacy-policy/",
-  //   "/services/",
-  //   "/terms-and-conditions/",
-  //   "/thank-you/",
-  //   "/about-us/",
-  //   "/contact-us/",
-  //   "/sitemap.xml/",
-  //   "/robots.txt/",
-  //   "/_not-found/",
-  // ];
-
-  // if (!validRoutes.includes(pathname)) {
-  //   return <NotFound />;
-  // }
 
   return (
     <main className="relative min-h-screen">

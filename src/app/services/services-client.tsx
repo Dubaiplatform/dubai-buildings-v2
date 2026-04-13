@@ -7,6 +7,7 @@ import Modal from "@/components/ui/modal";
 import Form from "@/components/form";
 import { FAQ } from "@/components/ui/faq";
 import ContactModal from "@/components/ui/contact-modal";
+import Link from "next/link";
 
 export default function WhyInvestClient() {
   const [activeModal, setActiveModal] = React.useState<any>(null);
@@ -460,7 +461,7 @@ export default function WhyInvestClient() {
     <div>
       <div className=" p-6">
         <h3 className="tracking-widest font-medium text-[24px]">
-          Residential Investment
+          Commercial Agency
         </h3>
         <div className="space-y-4 mt-2">
           <p className="tracking-wider text-gray-700 ">
@@ -648,12 +649,12 @@ export default function WhyInvestClient() {
               </p>
 
               <div className="">
-                <button
-                  onClick={() => setActiveModal("investment")}
+                <Link
+                  href={"/services/investment-sales-acquisition-services/"}
                   className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
                 >
                   Learn More
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -678,12 +679,12 @@ export default function WhyInvestClient() {
               </p>
 
               <div className="">
-                <button
-                  onClick={() => setActiveModal("land")}
+                <Link
+                  href={"/services/land-development-consultancy/"}
                   className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
                 >
                   Learn More
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -732,12 +733,12 @@ export default function WhyInvestClient() {
             </div>
 
             <div className="">
-              <button
-                onClick={() => setActiveModal("healthcare")}
+              <Link
+                href={"/services/healthcare-development/"}
                 className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
               >
                 Learn More
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -759,12 +760,12 @@ export default function WhyInvestClient() {
               </p>
 
               <div className="">
-                <button
-                  onClick={() => setActiveModal("education")}
+                <Link
+                  href={"/services/education-development-consultancy/"}
                   className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
                 >
                   Learn More
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -814,12 +815,12 @@ export default function WhyInvestClient() {
               </p>
 
               <div className="">
-                <button
-                  onClick={() => setActiveModal("hospitality")}
+                <Link
+                  href={"/services/hospitality-development-consultancy/"}
                   className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
                 >
                   Learn More
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -840,12 +841,12 @@ export default function WhyInvestClient() {
               </p>
 
               <div className="">
-                <button
-                  onClick={() => setActiveModal("InvestmentsLogistics")}
+                <Link
+                  href={"/services/investments-logistics-investments/"}
                   className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
                 >
                   Learn More
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -893,12 +894,12 @@ export default function WhyInvestClient() {
               </p>
 
               <div className="">
-                <button
-                  onClick={() => setActiveModal("Residential")}
+                <Link
+                  href={"/services/residential-investment/"}
                   className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
                 >
                   Learn More
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -919,12 +920,12 @@ export default function WhyInvestClient() {
               </p>
 
               <div className="">
-                <button
-                  onClick={() => setActiveModal("Commercial")}
+                <Link
+                  href={"/services/commercial-agency/"}
                   className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
                 >
                   Learn More
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -970,7 +971,6 @@ export default function WhyInvestClient() {
                 accurate reporting, while ensuring that all property regulations
                 are enforced to protect our clients.
               </p>
-
               <p>
                 By investing in our team and continuously developing innovative
                 processes to maximize returns for our clients, we have grown to
@@ -978,12 +978,12 @@ export default function WhyInvestClient() {
               </p>
 
               <div className="">
-                <button
-                  onClick={() => setActiveModal("asset")}
+                <Link
+                  href={"/services/asset-management/"}
                   className="border px-4 py-3 bg-black hover:bg-black/90 text-white cursor-pointer "
                 >
                   Learn More
-                </button>
+                </Link>
               </div>
             </div>
           </div>
