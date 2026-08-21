@@ -9,6 +9,7 @@ import NotFound from "@/app/not-found";
 import Header from "./header";
 import Footer from "./footer";
 import FloatingButton from "./floating-button";
+import AnalyticsClickTracker from "@/components/seo/analytics-click-tracker";
 
 interface Props {
   children: React.ReactNode;
@@ -22,6 +23,7 @@ export default function Layout({ children, ...delegated }: Props) {
 
   return (
     <main className="relative min-h-screen">
+      <AnalyticsClickTracker />
       <Header isHome={isHome} />
 
       <FloatingButton />

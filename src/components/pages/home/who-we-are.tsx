@@ -15,8 +15,8 @@ export default function WhoWeAre() {
           {/* Image */}
           <div className="w-full md:w-[45%] relative h-[320px] md:h-[500px] overflow-hidden">
             <Image
-              alt="Dubai Building"
-              src="/home/who we are.webp"
+              alt="Dubai Buildings team reviewing commercial building opportunities in Dubai"
+              src="/home/who-we-are.webp"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
             />
@@ -47,13 +47,13 @@ export default function WhoWeAre() {
           </div>
         </div>
 
-        {/* Why Are We Best */}
+        {/* Why work with us */}
         <div className="flex flex-col md:flex-row-reverse items-stretch gap-0 pt-20">
           {/* Image */}
           <div className="w-full md:w-[45%] relative h-[320px] md:h-[500px] overflow-hidden">
             <Image
-              alt="Dubai Building"
-              src="/home/why are we best.webp"
+              alt="Institutional investors meeting with Dubai Buildings advisors"
+              src="/home/why-we-work-with-us.webp"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
             />
@@ -62,17 +62,16 @@ export default function WhoWeAre() {
           {/* Text */}
           <div className="w-full md:w-[55%] flex flex-col justify-center px-0 md:pr-16 lg:pr-24 pt-10 md:pt-0 space-y-6">
             <h3 className="text-3xl md:text-5xl font-light text-gray-900 leading-tight">
-              Why are we best <br />
-              in business?
+              Why work with us
             </h3>
 
             <p className="text-gray-500 leading-relaxed text-[15px] max-w-md">
               We simplify the process of sourcing properties and clients,
-              tailoring solutions that serve each client's interests. Rather
-              than navigating hundreds of inaccurate listings or unreliable
-              agents, Dubai Buildings delivers a professional, efficient,
-              client-focused process — ensuring a smooth transaction from start
-              to finish.
+              tailoring solutions that serve each client&apos;s interests.
+              Rather than navigating hundreds of inaccurate listings or
+              unreliable agents, Dubai Buildings delivers a professional,
+              efficient, client-focused process — ensuring a smooth transaction
+              from start to finish.
             </p>
             <div className=" mt-6">
               <button

@@ -44,7 +44,7 @@ export default function InvestmentsLogisticsInvestmentsClient() {
         <div
           className="absolute inset-0 bg-center bg-cover"
           style={{
-            backgroundImage: "url('/services/Industrial and Logistics.webp')",
+            backgroundImage: "url('/services/industrial-and-logistics.webp')",
           }}
           role="img"
           aria-label="Investments and Logistics Investmentss"

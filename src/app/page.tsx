@@ -3,7 +3,10 @@ import Hero from "@/components/pages/home/hero";
 import Form from "@/components/form";
 import ServiceCard from "@/components/pages/home/service-card";
 import WhoWeAre from "@/components/pages/home/who-we-are";
+import CaseStudies from "@/components/pages/home/case-studies";
 import { FAQ } from "@/components/ui/faq";
+import JsonLd from "@/components/seo/json-ld";
+import { faqPageSchema } from "@/lib/seo";
 
 export default function Home() {
   const faqsQuestions = [
@@ -39,11 +42,15 @@ export default function Home() {
 
   return (
     <main>
+      <JsonLd data={faqPageSchema(faqsQuestions)} />
+
       <Hero />
 
       <ServiceCard />
 
       <WhoWeAre />
+
+      <CaseStudies />
 
       <Form isHome={true} />
 
@@ -53,7 +60,7 @@ export default function Home() {
           className="absolute inset-0 bg-fixed bg-center bg-cover"
           style={{ backgroundImage: "url('/home/home-page.webp')" }}
           role="img"
-          aria-label="Dubai Building"
+          aria-label="Dubai skyline commercial buildings"
         />
 
         {/* Dark overlay */}

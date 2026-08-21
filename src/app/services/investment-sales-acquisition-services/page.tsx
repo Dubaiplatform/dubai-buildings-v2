@@ -6,19 +6,6 @@ export const metadata: Metadata = {
   description:
     "Maximize your real estate returns with Dubai Buildings’ investment sales and acquisition services. We connect investors with high-value opportunities, offering market research, deal structuring, and data-driven insights across Dubai.",
 
-  keywords: [
-    "investment sales Dubai",
-    "property acquisition Dubai",
-    "real estate investment Dubai",
-    "commercial property investment UAE",
-    "Dubai real estate advisory",
-    "investment opportunities Dubai",
-    "buy commercial property Dubai",
-    "property portfolio planning Dubai",
-    "real estate deal structuring UAE",
-    "Dubai property consultants",
-  ],
-
   alternates: {
     canonical:
       "https://www.dubai-buildings.com/servicesinvestment-sales-acquisition-services/",
@@ -30,11 +17,11 @@ export const metadata: Metadata = {
       "Access exclusive real estate investment opportunities in Dubai. Dubai Buildings provides expert advisory, market research, and deal execution for investors.",
     url: "https://www.dubai-buildings.com/servicesinvestment-sales-acquisition-services/",
     siteName: "Dubai Buildings",
-    locale: "en_US",
+    locale: "en_AE",
     type: "website",
     images: [
       {
-        url: "/hero/home.webp",
+        url: "/home/og-home.webp",
         width: 1200,
         height: 630,
         alt: "Investment Sales & Acquisitions in Dubai",
@@ -47,7 +34,7 @@ export const metadata: Metadata = {
     title: "Investment Sales & Acquisitions in Dubai",
     description:
       "Discover profitable real estate investment opportunities with expert advisory services in Dubai.",
-    images: ["/hero/home.webp"],
+    images: ["/home/og-home.webp"],
   },
 
   robots: {

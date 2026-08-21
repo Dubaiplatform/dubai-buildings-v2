@@ -6,19 +6,6 @@ export const metadata: Metadata = {
   description:
     "Dubai Buildings provides expert industrial and logistics investment services in Dubai. We offer market research, property appraisals, leasing, acquisitions, and development consultancy to maximize returns for investors and occupiers.",
 
-  keywords: [
-    "industrial property Dubai",
-    "logistics property Dubai",
-    "industrial investments UAE",
-    "logistics investments Dubai",
-    "warehouse leasing Dubai",
-    "industrial property consultancy Dubai",
-    "logistics property advisory UAE",
-    "Dubai industrial real estate",
-    "Dubai warehouse investment",
-    "industrial & logistics consultancy Dubai",
-  ],
-
   alternates: {
     canonical:
       "https://www.dubai-buildings.com/services/investments-logistics-investments/",
@@ -30,11 +17,11 @@ export const metadata: Metadata = {
       "Expert consultancy for industrial and logistics investments in Dubai. From market research to leasing and acquisitions, we help investors make data-driven decisions.",
     url: "https://www.dubai-buildings.com/services/investments-logistics-investments/",
     siteName: "Dubai Buildings",
-    locale: "en_US",
+    locale: "en_AE",
     type: "website",
     images: [
       {
-        url: "/hero/home.webp",
+        url: "/home/og-home.webp",
         width: 1200,
         height: 630,
         alt: "Industrial & Logistics Investments in Dubai",
@@ -47,7 +34,7 @@ export const metadata: Metadata = {
     title: "Industrial & Logistics Investments in Dubai",
     description:
       "Invest in industrial and logistics properties in Dubai with expert market insights, leasing, and acquisition support.",
-    images: ["/hero/home.webp"],
+    images: ["/home/og-home.webp"],
   },
 
   robots: {

@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 
 import Layout from "@/components/layout";
+import JsonLd from "@/components/seo/json-ld";
+import { NAP, realEstateAgentSchema, webSiteSchema } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,45 +17,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const defaultTitle =
+  "Buy, Sell, Lease & Develop Buildings in Dubai | Dubai Buildings";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dubai-buildings.com"),
 
   title: {
-    default: "Buy, Sell, Lease & Develop Buildings in Dubai | Dubai Buildings",
+    default: defaultTitle,
     template: "%s | Dubai Buildings",
   },
 
   description:
     "Dubai Buildings is a leading B2B real estate service provider in Dubai helping investors, developers, and occupiers buy, sell, lease, and develop commercial and residential buildings with professional guidance.",
 
-  keywords: [
-    "Dubai buildings for sale",
-    "buildings for lease Dubai",
-    "commercial buildings Dubai",
-    "buy building Dubai",
-    "sell building Dubai",
-    "Dubai real estate investment",
-    "commercial property Dubai",
-    "Dubai building development",
-    "Dubai real estate consultancy",
-    "Dubai B2B real estate services",
-  ],
-
   alternates: {
     canonical: "/",
   },
 
   openGraph: {
-    title: "Dubai Buildings | Buy, Sell, Lease & Develop Buildings in Dubai",
+    title: defaultTitle,
     description:
       "Discover commercial and residential building opportunities in Dubai. Dubai Buildings helps investors, developers, and businesses buy, sell, lease, and develop properties.",
     url: "https://www.dubai-buildings.com",
     siteName: "Dubai Buildings",
-    locale: "en_US",
+    locale: "en_AE",
     type: "website",
     images: [
       {
-        url: "/hero/home.webp",
+        url: "/home/og-home.webp",
         width: 1200,
         height: 630,
         alt: "Dubai Buildings Real Estate Services",
@@ -62,10 +55,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Dubai Buildings | Real Estate Services in Dubai",
+    title: defaultTitle,
     description:
       "Buy, sell, lease, and develop buildings in Dubai with trusted B2B real estate experts.",
-    images: ["/hero/home.webp"],
+    images: ["/home/og-home.webp"],
   },
 
   robots: {
@@ -84,6 +77,13 @@ export const metadata: Metadata = {
   verification: {
     google: "SIqihCka4TL-lGCSsHs3NGB6m4flay_ACVsPpPhDD4E",
   },
+
+  other: {
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai",
+    "geo.position": `${NAP.geo.latitude};${NAP.geo.longitude}`,
+    ICBM: `${NAP.geo.latitude}, ${NAP.geo.longitude}`,
+  },
 };
 
 export default function RootLayout({
@@ -92,12 +92,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-AE">
+      <GoogleTagManager gtmId="GTM-M9NGVC6L" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* GTM noscript fallback — not included by @next/third-parties */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-M9NGVC6L"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
+        <JsonLd data={[realEstateAgentSchema, webSiteSchema]} />
         <Layout>{children}</Layout>
       </body>
+      <GoogleAnalytics gaId="G-MB41E12444" />
     </html>
   );
 }

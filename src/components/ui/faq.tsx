@@ -1,7 +1,7 @@
 "use client";
 
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -35,7 +35,7 @@ export function FAQ({ questions }: any) {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <p className="text-3xl md:text-5xl text-primary mb-4">FAQ's</p>
+          <p className="text-3xl md:text-5xl text-primary mb-4">FAQ&apos;s</p>
         </motion.div>
 
         <motion.div
@@ -61,7 +61,6 @@ export function FAQ({ questions }: any) {
                     value={value}
                     className="relative border-b border-border text-black"
                   >
-                    {/* Animated left accent bar */}
                     <motion.div
                       className="absolute left-0 top-0 bottom-0 w-[3px] bg-primary origin-top"
                       animate={
@@ -73,7 +72,6 @@ export function FAQ({ questions }: any) {
                       transition={{ duration: 0.35, ease: "easeOut" }}
                     />
 
-                    {/* Animated background fill */}
                     <motion.div
                       className="absolute inset-0 bg-primary/5 pointer-events-none rounded-md"
                       animate={isOpen ? { opacity: 1 } : { opacity: 0 }}
@@ -81,17 +79,15 @@ export function FAQ({ questions }: any) {
                       transition={{ duration: 0.3, ease: "easeOut" }}
                     />
 
-                    {/* Trigger */}
                     <AccordionPrimitive.Header asChild>
                       <AccordionPrimitive.Trigger
-                        className="flex w-full items-center justify-between py-4 pl-4 pr-4 text-left md:text-lg  hover:cursor-pointer relative z-10 font-[550]"
+                        className="flex w-full items-center justify-between py-4 pl-4 pr-4 text-left md:text-lg hover:cursor-pointer relative z-10 font-[550]"
                         style={{
                           color: isOpen ? "var(--primary, black)" : "inherit",
                           transition: "color 0.3s ease",
                         }}
                       >
                         {faq.question}
-                        {/* Animated chevron */}
                         <motion.svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="16"
@@ -111,40 +107,20 @@ export function FAQ({ questions }: any) {
                       </AccordionPrimitive.Trigger>
                     </AccordionPrimitive.Header>
 
-                    {/* Smooth animated content — bypasses Radix height animation entirely */}
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.div
-                          key="content"
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{
-                            height: { duration: 0.4, ease: [0.4, 0, 0.2, 1] },
-                            opacity: {
-                              duration: 0.25,
-                              ease: "easeOut",
-                              delay: isOpen ? 0.08 : 0,
-                            },
-                          }}
-                          style={{ overflow: "hidden" }}
-                        >
-                          <motion.div
-                            initial={{ y: -6, filter: "blur(3px)" }}
-                            animate={{ y: 0, filter: "blur(0px)" }}
-                            exit={{ y: -4, filter: "blur(2px)" }}
-                            transition={{
-                              duration: 0.3,
-                              ease: "easeOut",
-                              delay: 0.08,
-                            }}
-                            className="pl-4 pr-4 pb-4 text-gray-600 leading-relaxed relative z-10"
-                          >
-                            {faq.answer}
-                          </motion.div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                    {/* Answers always stay in the DOM for crawlers; only visibility animates */}
+                    <div
+                      className="grid transition-[grid-template-rows,opacity] duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]"
+                      style={{
+                        gridTemplateRows: isOpen ? "1fr" : "0fr",
+                        opacity: isOpen ? 1 : 0,
+                      }}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="pl-4 pr-4 pb-4 text-gray-600 leading-relaxed relative z-10">
+                          {faq.answer}
+                        </div>
+                      </div>
+                    </div>
                   </AccordionPrimitive.Item>
                 </motion.div>
               );

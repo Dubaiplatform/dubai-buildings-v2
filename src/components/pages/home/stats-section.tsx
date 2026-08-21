@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 
 type StatProps = {
   end: number;
@@ -12,10 +12,15 @@ type StatProps = {
 function Counter({ end, suffix = "+", label }: StatProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const [count, setCount] = useState(0);
+  // Server-render the real target number so crawlers never see "0+"
+  const [count, setCount] = useState(end);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || hasAnimated) return;
+
+    setHasAnimated(true);
+    setCount(0);
 
     let start = 0;
     const duration = 2000;
@@ -32,7 +37,7 @@ function Counter({ end, suffix = "+", label }: StatProps) {
     }, 16);
 
     return () => clearInterval(counter);
-  }, [isInView, end]);
+  }, [isInView, end, hasAnimated]);
 
   return (
     <div ref={ref} className="text-center space-y-4">

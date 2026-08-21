@@ -1,50 +1,43 @@
 import type { Metadata } from "next";
 import LeaseClient from "./lease-client";
+import JsonLd from "@/components/seo/json-ld";
+import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
+
+const title = "Lease Buildings in Dubai";
+const description =
+  "Lease buildings in Dubai with Dubai Buildings. We help tenants find suitable properties and assist landlords in sourcing reliable tenants for commercial and residential buildings.";
+const path = "/lease-buildings-dubai/";
 
 export const metadata: Metadata = {
-  title: "Lease Buildings in Dubai",
-  description:
-    "Lease buildings in Dubai with Dubai Buildings. We help tenants find suitable properties and assist landlords in sourcing reliable tenants for commercial and residential buildings.",
-
-  keywords: [
-    "lease building Dubai",
-    "commercial building for lease Dubai",
-    "Dubai building leasing",
-    "rent building Dubai",
-    "office building lease Dubai",
-    "Dubai commercial property lease",
-  ],
-
+  title,
+  description,
   alternates: {
-    canonical: "https://www.dubai-buildings.com/lease-buildings-dubai",
+    canonical: `https://www.dubai-buildings.com${path}`,
   },
-
   openGraph: {
-    title: "Lease Buildings in Dubai | Dubai Buildings",
+    title,
     description:
       "Find buildings for lease in Dubai or source the best tenants for your property with professional real estate guidance.",
-    url: "https://www.dubai-buildings.com/lease-buildings-dubai",
+    url: `https://www.dubai-buildings.com${path}`,
     siteName: "Dubai Buildings",
-    locale: "en_US",
+    locale: "en_AE",
     type: "website",
     images: [
       {
-        url: "/hero/home.webp",
+        url: "/home/og-home.webp",
         width: 1200,
         height: 630,
-        alt: "Lease Buildings in Dubai",
+        alt: title,
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Lease Buildings in Dubai",
+    title,
     description:
       "Discover commercial and residential buildings available for lease across Dubai.",
-    images: ["/hero/home.webp"],
+    images: ["/home/og-home.webp"],
   },
-
   robots: {
     index: true,
     follow: true,
@@ -52,5 +45,22 @@ export const metadata: Metadata = {
 };
 
 export default function Lease() {
-  return <LeaseClient />;
+  return (
+    <>
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: title,
+            description,
+            path,
+          }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: title, path },
+          ]),
+        ]}
+      />
+      <LeaseClient />
+    </>
+  );
 }

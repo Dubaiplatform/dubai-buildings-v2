@@ -1,0 +1,34 @@
+{
+  "redirects": [
+    {
+      "source": "/buy",
+      "destination": "/buy-buildings-dubai/",
+      "permanent": true
+    },
+    {
+      "source": "/buy/",
+      "destination": "/buy-buildings-dubai/",
+      "permanent": true
+    },
+    {
+      "source": "/sell",
+      "destination": "/sell-building-dubai/",
+      "permanent": true
+    },
+    {
+      "source": "/sell/",
+      "destination": "/sell-building-dubai/",
+      "permanent": true
+    },
+    {
+      "source": "/lease",
+      "destination": "/lease-buildings-dubai/",
+      "permanent": true
+    },
+    {
+      "source": "/lease/",
+      "destination": "/lease-buildings-dubai/",
+      "permanent": true
+    }
+  ]
+}

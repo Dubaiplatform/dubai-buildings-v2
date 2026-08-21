@@ -46,7 +46,7 @@ export default function InvestSalesClient() {
           className="absolute inset-0 bg-center bg-cover"
           style={{
             backgroundImage:
-              "url('/services/Investment Sales and Acquisition services .webp')",
+              "url('/services/investment-sales-acquisition-services.webp')",
           }}
           role="img"
           aria-label="Buy Buildings In Dubai"

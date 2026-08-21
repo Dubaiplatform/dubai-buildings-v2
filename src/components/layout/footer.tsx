@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NAP } from "@/lib/seo";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,19 +25,28 @@ export default function Footer() {
           </h3>
 
           <div className="flex flex-col gap-3 text-gray-400 text-sm">
-            <Link href="/buy" className="hover:text-white transition">
+            <Link
+              href="/buy-buildings-dubai/"
+              className="hover:text-white transition"
+            >
               Buy Buildings
             </Link>
 
-            <Link href="/sell" className="hover:text-white transition">
+            <Link
+              href="/sell-building-dubai/"
+              className="hover:text-white transition"
+            >
               Sell Buildings
             </Link>
 
-            <Link href="/lease" className="hover:text-white transition">
+            <Link
+              href="/lease-buildings-dubai/"
+              className="hover:text-white transition"
+            >
               Lease Buildings
             </Link>
 
-            <Link href="/build" className="hover:text-white transition">
+            <Link href="/build/" className="hover:text-white transition">
               Build
             </Link>
           </div>
@@ -49,15 +59,15 @@ export default function Footer() {
           </h3>
 
           <div className="flex flex-col gap-3 text-gray-400 text-sm">
-            <Link href="/about-us" className="hover:text-white transition">
+            <Link href="/about-us/" className="hover:text-white transition">
               About Us
             </Link>
 
-            <Link href="/services" className="hover:text-white transition">
+            <Link href="/services/" className="hover:text-white transition">
               Services
             </Link>
 
-            <Link href="/contact-us" className="hover:text-white transition">
+            <Link href="/contact-us/" className="hover:text-white transition">
               Contact Us
             </Link>
           </div>
@@ -70,22 +80,31 @@ export default function Footer() {
           </h3>
 
           <div className="space-y-3 text-gray-400 text-sm">
-            <p>Al Saqr Business Tower</p>
-            <p>Sheikh Zayed Road Dubai, United Arab Emirates</p>
+            <p>{NAP.streetAddress}</p>
+            <p>{NAP.addressLocality}, United Arab Emirates</p>
 
             <a
-              href="tel:+97143807533"
+              href={`tel:${NAP.telephone}`}
               className="block hover:text-white transition"
             >
-              +971 4 380 7533
+              {NAP.telephoneDisplay}
             </a>
 
-            {/* <a
-              href="mailto:info@dubaibuildings.com"
+            <a
+              href={`tel:${NAP.mobile}`}
               className="block hover:text-white transition"
             >
-              info@dubaibuildings.com
-            </a> */}
+              {NAP.mobileDisplay}
+            </a>
+
+            <a
+              href={NAP.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:text-white transition"
+            >
+              WhatsApp
+            </a>
           </div>
         </div>
       </div>
@@ -93,11 +112,11 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10 py-6 px-4 sm:px-6 md:px-50 text-gray-400 text-sm flex md:flex-row sm:flex-col flex-col gap-2 justify-between items-center">
         <div className="flex  gap-4">
-          <Link href="/privacy-policy" className="hover:text-white transition">
+          <Link href="/privacy-policy/" className="hover:text-white transition">
             Privacy Policy
           </Link>
           <Link
-            href="/terms-and-conditions"
+            href="/terms-and-conditions/"
             className="hover:text-white transition"
           >
             Terms & Conditions

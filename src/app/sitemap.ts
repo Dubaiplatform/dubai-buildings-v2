@@ -37,6 +37,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/contact-us/`,
+      lastModified: new Date(),
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/services/`,
       lastModified: new Date(),
       priority: 0.9,
@@ -85,6 +90,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/services/asset-management/`,
       lastModified: new Date(),
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/privacy-policy/`,
+      lastModified: new Date(),
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/terms-and-conditions/`,
+      lastModified: new Date(),
+      priority: 0.3,
     },
   ];
 }

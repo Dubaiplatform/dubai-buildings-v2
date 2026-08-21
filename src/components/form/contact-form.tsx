@@ -278,10 +278,14 @@ export default function BuySellForm({
 
   React.useEffect(() => {
     if (
-      pathname !== "/buy" &&
-      pathname !== "/sell" &&
-      pathname !== "/lease" &&
-      pathname !== "/build"
+      pathname !== "/buy-buildings-dubai" &&
+      pathname !== "/buy-buildings-dubai/" &&
+      pathname !== "/sell-building-dubai" &&
+      pathname !== "/sell-building-dubai/" &&
+      pathname !== "/lease-buildings-dubai" &&
+      pathname !== "/lease-buildings-dubai/" &&
+      pathname !== "/build" &&
+      pathname !== "/build/"
     ) {
       scrollToForm();
     }

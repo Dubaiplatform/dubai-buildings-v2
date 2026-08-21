@@ -46,7 +46,7 @@ export default function EducationDevelopmentClient() {
           className="absolute inset-0 bg-center bg-cover"
           style={{
             backgroundImage:
-              "url('/services/Education Development and Consultancy .webp')",
+              "url('/services/education-development-consultancy.webp')",
           }}
           role="img"
           aria-label="Buy Buildings In Dubai"

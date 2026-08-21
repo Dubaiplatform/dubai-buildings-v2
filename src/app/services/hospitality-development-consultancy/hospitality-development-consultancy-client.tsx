@@ -45,7 +45,7 @@ export default function HospitalityDevelopmentClient() {
           className="absolute inset-0 bg-center bg-cover"
           style={{
             backgroundImage:
-              "url('/services/Hospitality Development and Consultancy.webp')",
+              "url('/services/hospitality-development-consultancy.webp')",
           }}
           role="img"
           aria-label="Investments and Logistics Investmentss"

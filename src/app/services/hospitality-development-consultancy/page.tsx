@@ -6,19 +6,6 @@ export const metadata: Metadata = {
   description:
     "Dubai Buildings offers specialized hospitality development consultancy in Dubai. We provide feasibility studies, market research, operator sourcing, and strategic advisory to maximize returns on hotel, resort, and mixed-use projects.",
 
-  keywords: [
-    "hospitality consultancy Dubai",
-    "hotel development Dubai",
-    "resort consultancy UAE",
-    "hospitality real estate Dubai",
-    "hotel project feasibility Dubai",
-    "hotel operator sourcing Dubai",
-    "resort investment Dubai",
-    "Dubai hospitality development services",
-    "feasibility study hotels UAE",
-    "mixed-use hospitality Dubai",
-  ],
-
   alternates: {
     canonical:
       "https://www.dubai-buildings.com/services/hospitality-development-consultancy/",
@@ -30,11 +17,11 @@ export const metadata: Metadata = {
       "Expert hospitality consultancy in Dubai. From feasibility studies to operator selection, we help deliver successful hotel and resort projects.",
     url: "https://www.dubai-buildings.com/services/hospitality-development-consultancy/",
     siteName: "Dubai Buildings",
-    locale: "en_US",
+    locale: "en_AE",
     type: "website",
     images: [
       {
-        url: "/hero/home.webp",
+        url: "/home/og-home.webp",
         width: 1200,
         height: 630,
         alt: "Hospitality Development & Consultancy in Dubai",
@@ -47,7 +34,7 @@ export const metadata: Metadata = {
     title: "Hospitality Development & Consultancy in Dubai",
     description:
       "Develop hotels and resorts in Dubai with expert consultancy, feasibility studies, and operator sourcing services.",
-    images: ["/hero/home.webp"],
+    images: ["/home/og-home.webp"],
   },
 
   robots: {
