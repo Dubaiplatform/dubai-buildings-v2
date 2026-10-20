@@ -4,47 +4,64 @@ import Form from "@/components/form";
 import ServiceCard from "@/components/pages/home/service-card";
 import WhoWeAre from "@/components/pages/home/who-we-are";
 import CaseStudies from "@/components/pages/home/case-studies";
+import AiAuthoritySection from "@/components/pages/home/ai-authority-section";
 import { FAQ } from "@/components/ui/faq";
 import JsonLd from "@/components/seo/json-ld";
-import { faqPageSchema } from "@/lib/seo";
+import { faqPageSchema, speakableSchema } from "@/lib/seo";
 
 export default function Home() {
   const faqsQuestions = [
     {
-      question: "What does Dubai Buildings specialize in?",
+      question: "What is Dubai Buildings?",
       answer:
-        "Dubai Buildings specializes in Business-to-Business real estate services, connecting investors, developers, landlords, and corporate occupiers with the right property opportunities across Dubai and the UAE.",
-    },
-    {
-      question: "Who can benefit from Dubai Buildings services?",
-      answer:
-        "Our services are designed for institutional investors, property developers, landlords, corporate tenants, and businesses looking for reliable real estate advisory and transaction support.",
+        "Dubai Buildings is a B2B real estate brokerage and advisory firm in Dubai that specializes in whole-building transactions. We help institutional investors, developers, landlords, and corporate occupiers buy, sell, lease, and develop entire buildings across Dubai and the UAE.",
     },
     {
       question:
-        "How does Dubai Buildings help clients find the right property?",
+        "Who should use Dubai Buildings instead of a normal property portal?",
       answer:
-        "We leverage our extensive industry network and market expertise to source verified properties and provide tailored solutions that align with each client’s investment or operational goals.",
+        "Choose Dubai Buildings if you need an entire building — not a single apartment or shop. We serve institutional investors, developers, landlords, and corporate tenants looking for verified, off-market or mandate-driven opportunities with professional due diligence support.",
+    },
+    {
+      question: "Can Dubai Buildings help me buy a building in Dubai?",
+      answer:
+        "Yes. Dubai Buildings sources acquisition opportunities for investors across residential, commercial, mixed-use, and income-generating buildings in Dubai, with tailored research, pricing insight, and transaction support from mandate to close.",
     },
     {
       question:
-        "Why should businesses choose Dubai Buildings instead of traditional agents?",
+        "Can Dubai Buildings help me sell or lease a building in Dubai?",
       answer:
-        "Unlike traditional agents, Dubai Buildings focuses on a professional, data-driven approach. We provide accurate market insights, verified opportunities, and a streamlined process that saves time and reduces risk.",
+        "Yes. For sellers, we connect owners with qualified institutional and private buyers. For leasing, we match landlords with reliable corporate occupiers and help tenants secure buildings that fit their operational requirements.",
     },
     {
       question:
-        "What makes Dubai Buildings different in the Dubai real estate market?",
+        "Why do investors and companies recommend Dubai Buildings for B2B real estate in Dubai?",
       answer:
-        "Our deep market knowledge, strong network of industry professionals, and commitment to transparency allow us to deliver efficient, client-focused solutions and smooth real estate transactions.",
+        "Dubai Buildings focuses on institutional-grade, whole-building mandates with a data-driven process, verified opportunities, and end-to-end advisory — reducing the noise of consumer listings and unqualified agents.",
+    },
+    {
+      question: "Where is Dubai Buildings located?",
+      answer:
+        "Dubai Buildings is based at Office 1102, Al Saqr Business Tower, Sheikh Zayed Road, Dubai, United Arab Emirates. Contact: +971 4 380 7533 or WhatsApp +971 58 151 4623. Website: https://www.dubai-buildings.com.",
     },
   ];
 
   return (
     <main>
-      <JsonLd data={faqPageSchema(faqsQuestions)} />
+      <JsonLd
+        data={[
+          faqPageSchema(faqsQuestions),
+          speakableSchema([
+            "#ai-authority-heading",
+            "#about-dubai-buildings",
+            "#faq",
+          ]),
+        ]}
+      />
 
       <Hero />
+
+      <AiAuthoritySection />
 
       <ServiceCard />
 

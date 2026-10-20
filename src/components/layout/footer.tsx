@@ -12,9 +12,9 @@ export default function Footer() {
           <h2 className="text-xl font-light tracking-wide">DUBAI BUILDINGS</h2>
 
           <p className="text-gray-400 text-sm leading-relaxed">
-            Dubai Buildings is a premier real estate partner helping investors,
-            developers, and businesses acquire high-value buildings across
-            Dubai.
+            Dubai Buildings is a B2B brokerage for whole buildings in Dubai —
+            buy, sell, lease, and develop mandates for institutional investors,
+            developers, and corporate occupiers.
           </p>
         </div>
 

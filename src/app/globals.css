@@ -36,3 +36,10 @@ input[type="number"] {
 html {
     scroll-behavior: smooth;
 }
+
+/* Hide reCAPTCHA v3 badge — legal notice is shown near forms instead */
+.grecaptcha-badge {
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}

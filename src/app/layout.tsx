@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Dubai Buildings is a leading B2B real estate service provider in Dubai helping investors, developers, and occupiers buy, sell, lease, and develop commercial and residential buildings with professional guidance.",
+    "Dubai Buildings is the B2B specialist for whole buildings in Dubai — helping institutional investors, developers, and corporate occupiers buy, sell, lease, and develop commercial and residential buildings.",
 
   alternates: {
     canonical: "/",

@@ -12,6 +12,8 @@ import { Label } from "@/components/ui/label";
 import { PhoneInput } from "@/components/ui/phone-input";
 
 import { DateTimePicker } from "../ui/date-time-picker";
+import RecaptchaLegalNotice from "@/components/ui/recaptcha-legal-notice";
+import { useRecaptchaToken } from "@/hooks/use-recaptcha-token";
 
 interface FormData {
   mode: string;
@@ -35,6 +37,7 @@ export default function BuySellForm({
   const router = useRouter();
   const pathname = usePathname();
   const formRef = React.useRef<HTMLFormElement>(null);
+  const { getToken } = useRecaptchaToken();
 
   const [currentStep, setCurrentStep] = useState(1);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -203,33 +206,35 @@ export default function BuySellForm({
     e.preventDefault();
 
     setIsDisabled(true);
-    const payload = {
-      mode: formData?.mode,
-      name: formData?.name,
-      email: formData?.email,
-      phone: formData?.phone,
-      date: formData?.date,
-      time: formData?.time,
-      category: formData?.category,
-      assistanceType: formData?.assistanceType,
-      userRole: formData?.userRole,
-    };
 
     try {
-      const res = await fetch(
-        "https://hooks.zapier.com/hooks/catch/15977350/uxbi82k/",
-        {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
+      const recaptchaToken = await getToken("contact_form_submit");
+
+      const payload = {
+        mode: formData?.mode,
+        name: formData?.name,
+        email: formData?.email,
+        phone: formData?.phone,
+        date: formData?.date,
+        time: formData?.time,
+        category: formData?.category,
+        assistanceType: formData?.assistanceType,
+        userRole: formData?.userRole,
+        recaptchaToken,
+        "g-recaptcha-response": recaptchaToken,
+      };
+
+      await fetch("https://hooks.zapier.com/hooks/catch/15977350/uxbi82k/", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify(payload),
+      });
 
       router.push("/thank-you");
-      onClose();
+      onClose?.();
 
       setFormData({
         mode: mode,
@@ -242,18 +247,13 @@ export default function BuySellForm({
       });
       setIsDisabled(false);
     } catch (error) {
-      setFormData({
-        mode: mode,
-        name: "",
-        email: "",
-        phone: "",
-        date: new Date(),
-        time: "",
-        category: "",
-      });
       setIsDisabled(false);
-
       console.error(error);
+      alert(
+        error instanceof Error
+          ? error.message
+          : "reCAPTCHA verification failed. Please try again.",
+      );
     }
   };
 
@@ -825,7 +825,7 @@ export default function BuySellForm({
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
-                  className=" space-y-10 md:max-w-xl md:px-4 w-full"
+                  className=" space-y-4 md:max-w-xl md:px-4 w-full"
                 >
                   <Button
                     type="button"
@@ -836,6 +836,7 @@ export default function BuySellForm({
                     <span>Submit</span>
                     <ArrowRight className="text-black w-4 h-4" />
                   </Button>
+                  <RecaptchaLegalNotice className="text-white/70" />
                 </motion.div>
               </>
             )}

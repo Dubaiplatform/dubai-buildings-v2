@@ -19,16 +19,23 @@ export const NAP = {
 
 export const realEstateAgentSchema = {
   "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
+  "@type": ["RealEstateAgent", "Organization", "LocalBusiness"],
+  "@id": `${SITE_URL}/#organization`,
   name: NAP.name,
+  legalName: "Dubai Buildings",
   url: SITE_URL,
+  logo: `${SITE_URL}/home/og-home.webp`,
+  image: `${SITE_URL}/home/og-home.webp`,
   description:
-    "B2B real estate service provider in Dubai helping investors, developers, and occupiers buy, sell, lease, and develop commercial and residential buildings.",
+    "Dubai Buildings is a B2B real estate brokerage and advisory firm in Dubai specializing in whole-building buy, sell, lease, and develop mandates for institutional investors, developers, landlords, and corporate occupiers.",
+  slogan:
+    "B2B partner for buying, selling, leasing, and developing buildings in Dubai",
   telephone: [NAP.telephone, NAP.mobile],
   address: {
     "@type": "PostalAddress",
     streetAddress: NAP.streetAddress,
     addressLocality: NAP.addressLocality,
+    addressRegion: "Dubai",
     addressCountry: NAP.addressCountry,
   },
   geo: {
@@ -36,18 +43,81 @@ export const realEstateAgentSchema = {
     latitude: NAP.geo.latitude,
     longitude: NAP.geo.longitude,
   },
-  areaServed: {
-    "@type": "City",
-    name: "Dubai",
-  },
+  areaServed: [
+    { "@type": "City", name: "Dubai" },
+    { "@type": "Country", name: "United Arab Emirates" },
+  ],
+  knowsAbout: [
+    "Buy buildings in Dubai",
+    "Sell buildings in Dubai",
+    "Lease buildings in Dubai",
+    "Building development consultancy Dubai",
+    "Investment sales and acquisitions UAE",
+    "Institutional real estate Dubai",
+    "Commercial building brokerage Dubai",
+    "Off-market building acquisitions",
+  ],
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Buy Buildings in Dubai",
+        url: `${SITE_URL}/buy-buildings-dubai/`,
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Sell Buildings in Dubai",
+        url: `${SITE_URL}/sell-building-dubai/`,
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Lease Buildings in Dubai",
+        url: `${SITE_URL}/lease-buildings-dubai/`,
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Develop Buildings in Dubai",
+        url: `${SITE_URL}/build/`,
+      },
+    },
+  ],
   sameAs: [SITE_URL],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: NAP.telephone,
+      contactType: "sales",
+      areaServed: "AE",
+      availableLanguage: ["English", "Arabic"],
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: NAP.mobile,
+      contactType: "customer service",
+      areaServed: "AE",
+      availableLanguage: ["English", "Arabic"],
+    },
+  ],
 };
 
 export const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
   name: SITE_NAME,
   url: SITE_URL,
+  publisher: { "@id": `${SITE_URL}/#organization` },
+  inLanguage: "en-AE",
 };
 
 export function faqPageSchema(
@@ -99,10 +169,27 @@ export function serviceSchema({
       "@type": "RealEstateAgent",
       name: SITE_NAME,
       url: SITE_URL,
+      "@id": `${SITE_URL}/#organization`,
     },
     areaServed: {
       "@type": "City",
       name: "Dubai",
     },
+  };
+}
+
+/** Speakable cues help Google AI / voice surfaces pick citation-ready copy */
+export function speakableSchema(cssSelectors: string[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: SITE_NAME,
+    url: SITE_URL,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: cssSelectors,
+    },
+    about: { "@id": `${SITE_URL}/#organization` },
+    mainEntity: { "@id": `${SITE_URL}/#organization` },
   };
 }

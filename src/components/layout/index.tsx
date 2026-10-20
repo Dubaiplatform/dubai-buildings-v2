@@ -10,6 +10,7 @@ import Header from "./header";
 import Footer from "./footer";
 import FloatingButton from "./floating-button";
 import AnalyticsClickTracker from "@/components/seo/analytics-click-tracker";
+import RecaptchaProvider from "@/components/providers/recaptcha-provider";
 
 interface Props {
   children: React.ReactNode;
@@ -22,27 +23,29 @@ export default function Layout({ children, ...delegated }: Props) {
   const isHome = pathname === "/";
 
   return (
-    <main className="relative min-h-screen">
-      <AnalyticsClickTracker />
-      <Header isHome={isHome} />
+    <RecaptchaProvider>
+      <main className="relative min-h-screen">
+        <AnalyticsClickTracker />
+        <Header isHome={isHome} />
 
-      <FloatingButton />
+        <FloatingButton />
 
-      {/* Page Transition */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={pathname}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ duration: 0.35, ease: "easeInOut" }}
-          className={`relative ${isHome ? "" : "pt-10"}`}
-        >
-          <> {children}</>
-        </motion.div>
-      </AnimatePresence>
+        {/* Page Transition */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={pathname}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className={`relative ${isHome ? "" : "pt-10"}`}
+          >
+            <> {children}</>
+          </motion.div>
+        </AnimatePresence>
 
-      <Footer />
-    </main>
+        <Footer />
+      </main>
+    </RecaptchaProvider>
   );
 }

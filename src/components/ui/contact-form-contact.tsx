@@ -6,10 +6,13 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
 import { countriesList } from "@/components/ulits/country-list";
+import RecaptchaLegalNotice from "@/components/ui/recaptcha-legal-notice";
+import { useRecaptchaToken } from "@/hooks/use-recaptcha-token";
 
 export default function ContactFormInContact() {
   const countryRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const { getToken } = useRecaptchaToken();
 
   const [countrySearch, setCountrySearch] = useState("");
   const [isCountryOpen, setIsCountryOpen] = useState(false);
@@ -81,25 +84,26 @@ export default function ContactFormInContact() {
 
     if (Object.values(newErrors).some(Boolean)) return;
 
-    const payload = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.countryCode + formData.phone,
-      bedrooms: formData?.bedrooms,
-    };
-
     try {
-      const res = await fetch(
-        "https://hooks.zapier.com/hooks/catch/15977350/uxbi82k/",
-        {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: JSON.stringify(payload),
+      const recaptchaToken = await getToken("contact_page_submit");
+
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.countryCode + formData.phone,
+        bedrooms: formData?.bedrooms,
+        recaptchaToken,
+        "g-recaptcha-response": recaptchaToken,
+      };
+
+      await fetch("https://hooks.zapier.com/hooks/catch/15977350/uxbi82k/", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-      );
+        body: JSON.stringify(payload),
+      });
 
       setFormData({
         name: "",
@@ -113,22 +117,14 @@ export default function ContactFormInContact() {
         flag: "🇦🇪",
         name: "UAE",
       });
-      // setShowThankYou(true);
       router.push("/thank-you");
     } catch (error) {
-      setFormData({
-        name: "",
-        email: "",
-        countryCode: "+971",
-        phone: "",
-        bedrooms: "",
-      });
-      setSelectedCountry({
-        code: "+971",
-        flag: "🇦🇪",
-        name: "UAE",
-      });
       console.error(error);
+      alert(
+        error instanceof Error
+          ? error.message
+          : "reCAPTCHA verification failed. Please try again.",
+      );
     }
   };
 
@@ -318,6 +314,8 @@ export default function ContactFormInContact() {
           >
             Submit
           </motion.button>
+
+          <RecaptchaLegalNotice className="mt-4 text-center" />
         </div>
 
         {showThankYou && (
