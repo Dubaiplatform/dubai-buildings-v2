@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NAP } from "@/lib/seo";
+import { NAP, SOCIAL_PROFILES } from "@/lib/seo";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Brand */}
         <div className="space-y-4">
-          <h2 className="text-xl font-light tracking-wide">DUBAI BUILDINGS</h2>
+          <p className="text-xl font-light tracking-wide">DUBAI BUILDINGS</p>
 
           <p className="text-gray-400 text-sm leading-relaxed">
             Dubai Buildings is a B2B brokerage for whole buildings in Dubai —
@@ -20,9 +20,9 @@ export default function Footer() {
 
         {/* Navigation */}
         <div>
-          <h3 className="text-sm tracking-widest text-gray-300 mb-5 font-semibold">
+          <p className="text-sm tracking-widest text-gray-300 mb-5 font-semibold">
             EXPLORE
-          </h3>
+          </p>
 
           <div className="flex flex-col gap-3 text-gray-400 text-sm">
             <Link
@@ -54,9 +54,9 @@ export default function Footer() {
 
         {/* Company */}
         <div>
-          <h3 className="text-sm tracking-widest text-gray-300 mb-5 font-semibold">
+          <p className="text-sm tracking-widest text-gray-300 mb-5 font-semibold">
             COMPANY
-          </h3>
+          </p>
 
           <div className="flex flex-col gap-3 text-gray-400 text-sm">
             <Link href="/about-us/" className="hover:text-white transition">
@@ -75,9 +75,9 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <h3 className="text-sm tracking-widest text-gray-300 mb-5 font-semibold">
+          <p className="text-sm tracking-widest text-gray-300 mb-5 font-semibold">
             CONTACT
-          </h3>
+          </p>
 
           <div className="space-y-3 text-gray-400 text-sm">
             <p>{NAP.streetAddress}</p>
@@ -105,6 +105,29 @@ export default function Footer() {
             >
               WhatsApp
             </a>
+
+            <a
+              href={`mailto:${NAP.email}`}
+              className="block hover:text-white transition"
+            >
+              {NAP.email}
+            </a>
+
+            {SOCIAL_PROFILES.length > 0 && (
+              <div className="flex flex-wrap gap-4 pt-2">
+                {SOCIAL_PROFILES.map((profile) => (
+                  <a
+                    key={profile.url}
+                    href={profile.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition"
+                  >
+                    {profile.name}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

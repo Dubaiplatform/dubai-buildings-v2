@@ -8,6 +8,8 @@ import Form from "@/components/form";
 import { FAQ } from "@/components/ui/faq";
 import ContactModal from "@/components/ui/contact-modal";
 import Link from "next/link";
+import Breadcrumbs from "@/components/seo/breadcrumbs";
+import { serviceBreadcrumbs } from "@/lib/service-pages";
 
 export default function WhyInvestClient() {
   const [activeModal, setActiveModal] = React.useState<any>(null);
@@ -605,7 +607,7 @@ export default function WhyInvestClient() {
           className="absolute inset-0 bg-center bg-cover"
           style={{ backgroundImage: "url('/services/our-services.webp')" }}
           role="img"
-          aria-label="Buy Buildings Dubai"
+          aria-label="Dubai Buildings real estate services"
         />
 
         {/* Dark Overlay */}
@@ -619,13 +621,15 @@ export default function WhyInvestClient() {
         </div>
       </section>
 
+      <Breadcrumbs items={serviceBreadcrumbs()} />
+
       <div className="">
         <div className="flex md:flex-row sm:flex-col flex-col justify-center items-center">
           <div className="bg-[#E8EBEA] flex justify-center items-center md:p-20 sm:p-5 p-5 md:h-[70vh]  sm:h-[50vh] h-[50vh] md:w-[50%] sm:w-full w-full">
             <div className="relative w-full h-full">
               <Image
                 src="/services/investment-sales-acquisition-services.webp"
-                alt="UAE Currency"
+                alt="Investment sales and acquisition advisory for buildings in Dubai"
                 fill
                 className="object-cover"
                 // sizes="160px"
@@ -693,7 +697,7 @@ export default function WhyInvestClient() {
             <div className="relative w-full h-full">
               <Image
                 src="/services/land.webp"
-                alt="UAE Currency"
+                alt="Land and development consultancy for plots in Dubai"
                 fill
                 className="object-cover"
                 // sizes="160px"
@@ -708,7 +712,7 @@ export default function WhyInvestClient() {
             <div className="relative w-full h-full">
               <Image
                 src="/services/healthcare.webp"
-                alt="UAE Currency"
+                alt="Healthcare development consultancy for hospitals and clinics in Dubai"
                 fill
                 className="object-cover"
                 // sizes="160px"
@@ -774,7 +778,7 @@ export default function WhyInvestClient() {
             <div className="relative w-full h-full">
               <Image
                 src="/services/education-development-consultancy.webp"
-                alt="UAE Currency"
+                alt="Education development consultancy for schools and campuses in Dubai"
                 fill
                 className="object-cover"
                 // sizes="160px"
@@ -789,7 +793,7 @@ export default function WhyInvestClient() {
             <div className="relative w-full h-full">
               <Image
                 src="/services/hospitality-development-consultancy.webp"
-                alt="UAE Currency"
+                alt="Hospitality development consultancy for hotels in Dubai"
                 fill
                 className="object-cover"
                 // sizes="160px"
@@ -855,7 +859,7 @@ export default function WhyInvestClient() {
             <div className="relative w-full h-full">
               <Image
                 src="/services/industrial-and-logistics.webp"
-                alt="UAE Currency"
+                alt="Industrial and logistics property investments in Dubai"
                 fill
                 className="object-cover"
                 // sizes="160px"
@@ -870,7 +874,7 @@ export default function WhyInvestClient() {
             <div className="relative w-full h-full">
               <Image
                 src="/services/residential-investment.webp"
-                alt="UAE Currency"
+                alt="Residential investment buildings in Dubai"
                 fill
                 className="object-cover"
                 // sizes="160px"
@@ -934,7 +938,7 @@ export default function WhyInvestClient() {
             <div className="relative w-full h-full">
               <Image
                 src="/services/commercial-agency.webp"
-                alt="UAE Currency"
+                alt="Commercial agency leasing services for offices and retail in Dubai"
                 fill
                 className="object-cover"
                 // sizes="160px"
@@ -949,7 +953,7 @@ export default function WhyInvestClient() {
             <div className="relative w-full h-full">
               <Image
                 src="/services/asset-management.webp"
-                alt="UAE Currency"
+                alt="Asset management for residential and commercial buildings in Dubai"
                 fill
                 className="object-cover"
                 // sizes="160px"

@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
 import AboutClient from "./about-client";
+import JsonLd from "@/components/seo/json-ld";
+import { breadcrumbSchema, faqPageSchema } from "@/lib/seo";
+import { aboutFaqs } from "./faqs";
 
 export const metadata: Metadata = {
   title: "About Dubai Buildings",
   description:
-    "Dubai Buildings is a premier B2B real estate service provider in Dubai helping investors, developers, and corporate occupiers buy, sell, lease, and develop buildings with professional guidance.",
+    "Dubai Buildings is a B2B real estate advisory in Dubai helping investors, developers and corporate occupiers buy, sell, lease and develop whole buildings.",
 
   alternates: {
-    canonical: "https://www.dubai-buildings.com/about-us",
+    canonical: "https://www.dubai-buildings.com/about-us/",
   },
 
   openGraph: {
@@ -43,5 +46,18 @@ export const metadata: Metadata = {
 };
 
 export default function About() {
-  return <AboutClient />;
+  return (
+    <>
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "About Dubai Buildings", path: "/about-us/" },
+          ]),
+          faqPageSchema(aboutFaqs),
+        ]}
+      />
+      <AboutClient />
+    </>
+  );
 }

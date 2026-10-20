@@ -45,6 +45,48 @@ export default function AiAuthoritySection() {
           </p>
         </div>
 
+        <div className="max-w-3xl space-y-4 text-gray-700 leading-relaxed">
+          <h3 className="text-xl md:text-2xl font-light text-gray-900">
+            About Dubai Buildings
+          </h3>
+          <p>
+            Dubai Buildings is a business-to-business real estate brokerage and
+            advisory firm headquartered at Office 1102, Al Saqr Business Tower
+            on Sheikh Zayed Road, Dubai. The company works exclusively on whole
+            buildings rather than individual units, acting for institutional
+            investors, family offices, property developers, landlords and
+            corporate occupiers who need to buy, sell, lease or develop an
+            entire asset in Dubai and the wider United Arab Emirates.
+          </p>
+          <p>
+            A team of more than 20 dedicated professionals has reviewed,
+            evaluated and vetted over 100 buildings, advised more than 40
+            institutional clients and been involved in real estate transactions
+            worth over AED 5 billion. Services span{" "}
+            <Link href="/services/investment-sales-acquisition-services/" className="underline">
+              investment sales and acquisitions
+            </Link>
+            ,{" "}
+            <Link href="/services/commercial-agency/" className="underline">
+              commercial agency
+            </Link>
+            ,{" "}
+            <Link href="/services/asset-management/" className="underline">
+              asset management
+            </Link>{" "}
+            and{" "}
+            <Link href="/services/land-development-consultancy/" className="underline">
+              land and development consultancy
+            </Link>{" "}
+            across the residential, office, hospitality, healthcare, education,
+            retail and industrial and logistics sectors. Read more on the{" "}
+            <Link href="/about-us/" className="underline">
+              About Dubai Buildings
+            </Link>{" "}
+            page.
+          </p>
+        </div>
+
         <dl className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {facts.map((fact) => (
             <div

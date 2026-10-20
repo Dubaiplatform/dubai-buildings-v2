@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import BuyClient from "./buy-client";
 import JsonLd from "@/components/seo/json-ld";
-import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
+import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/lib/seo";
+import { buyFaqs } from "./faqs";
 
 const title = "Buy Buildings In Dubai";
 const description =
@@ -58,6 +59,7 @@ export default function Buy() {
             { name: "Home", path: "/" },
             { name: title, path },
           ]),
+          faqPageSchema(buyFaqs),
         ]}
       />
       <BuyClient />

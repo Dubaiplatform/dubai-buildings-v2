@@ -3,6 +3,8 @@
 import React from "react";
 
 import { FAQ } from "@/components/ui/faq";
+import Breadcrumbs from "@/components/seo/breadcrumbs";
+import { serviceBreadcrumbs } from "@/lib/service-pages";
 import ContactModal from "@/components/ui/contact-modal";
 
 export default function InvestmentsLogisticsInvestmentsClient() {
@@ -60,6 +62,8 @@ export default function InvestmentsLogisticsInvestmentsClient() {
           </h1>
         </div>
       </section>
+
+      <Breadcrumbs items={serviceBreadcrumbs("investments-logistics-investments")} />
 
       <section className="section-padding">
         <div>

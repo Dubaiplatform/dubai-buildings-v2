@@ -1,54 +1,34 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
 
-import Form from "@/components/form";
 import { FAQ } from "@/components/ui/faq";
 import StatsSection from "@/components/pages/home/stats-section";
+import { NAP } from "@/lib/seo";
+import { aboutFaqs } from "./faqs";
+
+const sectors = [
+  "Residential apartment buildings and villa compounds",
+  "Grade A and Grade B office buildings",
+  "Hotels, hotel apartments and serviced residences",
+  "Hospitals, clinics and medical centres",
+  "Schools, nurseries and university campuses",
+  "Retail, showrooms and mixed-use developments",
+  "Warehouses, industrial and logistics facilities",
+  "Development land and plots",
+];
 
 export default function About() {
-  const [showMoreAbout, setShowMoreAbout] = useState(false);
-
-  const faqsQuestions = [
-    {
-      question: "What services does Dubai Buildings provide?",
-      answer:
-        "Dubai Buildings is a business-to-business real estate advisory firm that helps investors, developers, and corporate occupiers buy, sell, lease, and develop buildings across Dubai.",
-    },
-    {
-      question: "Who can benefit from Dubai Buildings services?",
-      answer:
-        "Our services are designed for institutional investors, property developers, corporate tenants, and building owners who require professional assistance with large-scale real estate transactions in Dubai.",
-    },
-    {
-      question: "How do you find buyers for buildings in Dubai?",
-      answer:
-        "We use our extensive network of local and international investors who are actively looking to buy buildings in Dubai. Our targeted marketing strategy ensures that your property reaches qualified buyers who are financially capable of completing the transaction.",
-    },
-    {
-      question:
-        "Why should I work with Dubai Buildings instead of a traditional agent?",
-      answer:
-        "Unlike traditional agents, we focus on a professional, research-driven approach, offering verified opportunities and tailored solutions that match each client’s specific investment or business requirements.",
-    },
-    {
-      question:
-        "Does Dubai Buildings work with international investors and companies?",
-      answer:
-        "Yes. We regularly work with international investors, developers, and global companies looking to invest in, lease, or develop buildings in Dubai.",
-    },
-  ];
-
   return (
     <main>
       <section className="relative w-full h-[35vh] sm:h-[55vh] overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-center bg-cover"
-          style={{ backgroundImage: "url('/about.webp')" }} // change image path if needed
+          style={{ backgroundImage: "url('/about.webp')" }}
           role="img"
-          aria-label="Buy Buildings Dubai"
+          aria-label="Dubai Buildings office on Sheikh Zayed Road, Dubai"
         />
 
         {/* Dark Overlay */}
@@ -57,63 +37,168 @@ export default function About() {
         {/* Content */}
         <div className="relative z-10 flex items-center justify-center h-full">
           <h1 className="text-white text-3xl sm:text-4xl md:text-6xl lg:text-[52px] font-light text-center">
-            About Us
+            About Dubai Buildings
           </h1>
         </div>
       </section>
 
       <section className="section-padding">
-        {/* Text Content */}
-        <div className="text-center space-y-6 max-w-3xl mx-auto">
-          <div className="tracking-wide text-gray-700 space-y-4">
-            {/* First paragraph always visible */}
+        <article className="max-w-3xl mx-auto space-y-10 tracking-wide text-gray-700">
+          {/* Who we are */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
+              Who we are
+            </h2>
             <p className="text-justify">
-              Dubai Buildings is a premier business-to-business real estate
-              service provider in Dubai, specializing in connecting
-              institutional investors, developers, and corporate occupiers with
-              the right property opportunities. We understand the challenges
-              businesses face when searching for a reliable partner to support
-              their real estate requirements in Dubai’s fast-moving market. Our
-              team simplifies the process by carefully sourcing suitable
-              properties and delivering tailored solutions that align with each
-              client’s investment or operational goals.
+              Dubai Buildings is a business-to-business real estate brokerage
+              and advisory firm based in Dubai, United Arab Emirates. We work
+              exclusively on whole buildings. Where a conventional agency
+              markets individual apartments, offices and shops, Dubai Buildings
+              acts for the owners, investors, developers and corporate occupiers
+              who need to buy, sell, lease or develop an entire asset. Our
+              office is at {NAP.streetAddress}, Dubai, and our team serves
+              clients across Dubai and the wider UAE.
             </p>
-
-            {/* Animated content */}
-            <AnimatePresence initial={false}>
-              {showMoreAbout && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="overflow-hidden"
-                >
-                  <p className="text-justify">
-                    Instead of spending time browsing hundreds of inaccurate
-                    property listings or dealing with unreliable agents in the
-                    market, Dubai Buildings offers a professional and
-                    client-focused approach. Our experienced team provides
-                    verified opportunities, market insights, and strategic
-                    guidance to ensure that every property search is efficient
-                    and transparent.
-                  </p>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {/* Button */}
-            <button
-              onClick={() => setShowMoreAbout(!showMoreAbout)}
-              className="text-black font-semibold underline"
-            >
-              {showMoreAbout ? "Show Less" : "Show More"}
-            </button>
+            <p className="text-justify">
+              We understand the challenges businesses face when searching for a
+              reliable partner to support their real estate requirements in
+              Dubai&apos;s fast-moving market. Instead of spending time browsing
+              hundreds of inaccurate property listings or dealing with
+              unreliable agents, our clients receive verified opportunities,
+              market insight and strategic guidance from a team that has
+              reviewed, evaluated and vetted more than 100 buildings and has
+              been involved in real estate transactions worth over AED 5
+              billion.
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* <Form isHome={true} /> */}
+          {/* What we do */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
+              What we do
+            </h2>
+            <p className="text-justify">
+              Our work falls into four mandates. Investors engage us to{" "}
+              <Link href="/buy-buildings-dubai/" className="underline">
+                buy buildings in Dubai
+              </Link>
+              , from fully leased income-producing towers to value-add and
+              redevelopment opportunities, many of which are sourced off
+              market. Owners ask us to{" "}
+              <Link href="/sell-building-dubai/" className="underline">
+                sell their building
+              </Link>{" "}
+              through targeted, often confidential, disposals to a
+              pre-qualified pool of institutional and private buyers.
+              Corporate tenants and landlords use us to{" "}
+              <Link href="/lease-buildings-dubai/" className="underline">
+                lease whole buildings
+              </Link>
+              , and developers and landowners work with our consultancy team to{" "}
+              <Link href="/build/" className="underline">
+                develop buildings
+              </Link>{" "}
+              that match market demand.
+            </p>
+            <p className="text-justify">
+              Supporting these mandates is a full set of{" "}
+              <Link href="/services/" className="underline">
+                advisory services
+              </Link>
+              : investment sales and acquisitions, commercial agency,
+              residential investment, land and development consultancy,
+              hospitality, healthcare and education development consultancy,
+              industrial and logistics investments, and asset management for
+              buildings once they are owned or let. Our asset management team
+              currently looks after more than 4,000 units across the UAE.
+            </p>
+          </div>
+
+          {/* Sectors */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
+              Building types we work with
+            </h2>
+            <ul className="list-disc pl-5 space-y-1 text-left">
+              {sectors.map((sector) => (
+                <li key={sector}>{sector}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* How we work */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
+              How we work
+            </h2>
+            <p className="text-justify">
+              Every engagement starts with a written brief: the asset class,
+              location, size, budget or target yield, and the timeline. From
+              there our team sources matching buildings or counterparties from
+              a network built over years of working alongside one of the
+              UAE&apos;s largest licensed real estate agencies, with more than
+              100 agents active in the residential and commercial markets every
+              day. That network gives us a live view of pricing, demand and
+              upcoming availability that is not visible on public portals.
+            </p>
+            <p className="text-justify">
+              Before any opportunity is presented, we verify it. Title deeds,
+              Ejari-registered tenancy schedules, service charge statements,
+              completion certificates and operating accounts are collected and
+              checked so that clients make decisions on real numbers. We then
+              support negotiation, due diligence and the transfer or lease
+              registration at the Dubai Land Department, and we stay involved
+              through handover. Clients who prefer a single point of contact
+              for the life of the asset can move straight into our asset
+              management service after completion.
+            </p>
+          </div>
+
+          {/* Office */}
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
+              Our office
+            </h2>
+            <div className="relative w-full h-[260px] md:h-[420px] overflow-hidden">
+              <Image
+                src="/about.webp"
+                alt="Dubai Buildings office, Al Saqr Business Tower, Sheikh Zayed Road"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <address className="not-italic space-y-1">
+              <p className="font-medium text-gray-900">Dubai Buildings</p>
+              <p>{NAP.streetAddress}</p>
+              <p>{NAP.addressLocality}, United Arab Emirates</p>
+              <p>
+                Phone:{" "}
+                <a href={`tel:${NAP.telephone}`} className="underline">
+                  {NAP.telephoneDisplay}
+                </a>{" "}
+                | Mobile and WhatsApp:{" "}
+                <a href={NAP.whatsappUrl} className="underline">
+                  {NAP.mobileDisplay}
+                </a>
+              </p>
+              <p>
+                Email:{" "}
+                <a href={`mailto:${NAP.email}`} className="underline">
+                  {NAP.email}
+                </a>
+              </p>
+            </address>
+            <p className="text-justify">
+              To discuss a building you own, an acquisition you are planning or
+              a space you need to occupy,{" "}
+              <Link href="/contact-us/" className="underline">
+                contact the Dubai Buildings team
+              </Link>
+              .
+            </p>
+          </div>
+        </article>
+      </section>
 
       <StatsSection />
 
@@ -123,7 +208,7 @@ export default function About() {
           className="absolute inset-0 bg-fixed bg-center bg-cover"
           style={{ backgroundImage: "url('/lease/lease2.webp')" }}
           role="img"
-          aria-label="Dubai Building"
+          aria-label="Commercial buildings in Dubai"
         />
 
         {/* Dark overlay */}
@@ -140,7 +225,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* <FAQ questions={faqsQuestions} /> */}
+      <FAQ questions={aboutFaqs} />
     </main>
   );
 }

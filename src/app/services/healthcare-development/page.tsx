@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/seo/json-ld";
+import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
+import { SERVICE_PAGES, serviceBreadcrumbs, servicePath } from "@/lib/service-pages";
 import HealthcareDevelopmentClient from "./healthcare-development-client";
+
+const description =
+  "Healthcare development consultancy in Dubai from Dubai Buildings: feasibility, site selection and advisory for hospitals, clinics and medical operators.";
 
 export const metadata: Metadata = {
   title: "Healthcare Development Consultancy in Dubai",
-  description:
-    "Specialized healthcare development consultancy in Dubai. Dubai Buildings provides feasibility studies, operator sourcing, and strategic advisory to help investors and developers maximize value in medical real estate.",
+  description,
 
   alternates: {
     canonical:
@@ -43,6 +48,23 @@ export const metadata: Metadata = {
   },
 };
 
+const slug = "healthcare-development";
+const path = servicePath(slug);
+
 export default function LandDevelopments() {
-  return <HealthcareDevelopmentClient />;
+  return (
+    <>
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: SERVICE_PAGES[slug],
+            description,
+            path,
+          }),
+          breadcrumbSchema(serviceBreadcrumbs(slug)),
+        ]}
+      />
+      <HealthcareDevelopmentClient />
+    </>
+  );
 }

@@ -41,10 +41,10 @@ function Counter({ end, suffix = "+", label }: StatProps) {
 
   return (
     <div ref={ref} className="text-center space-y-4">
-      <h2 className="text-4xl md:text-6xl font-light text-white">
+      <p className="text-4xl md:text-6xl font-light text-white">
         {count}
         {suffix}
-      </h2>
+      </p>
       <p className="text-lg md:text-2xl text-white/80 font-medium">{label}</p>
     </div>
   );

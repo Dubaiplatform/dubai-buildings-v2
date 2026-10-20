@@ -1,40 +1,13 @@
 "use client";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import ExpandableCopy from "@/components/ui/expandable-copy";
 
 import BuySellForm from "@/components/form/contact-form";
 import { FAQ } from "@/components/ui/faq";
+import { leaseFaqs } from "./faqs";
 
 export default function LeaseClient() {
-  const [showMoreLease, setShowMoreLease] = useState(false);
 
-  const faqsQuestions = [
-    {
-      question: "How can I sell my building in Dubai?",
-      answer:
-        "To sell your building in Dubai, you can work with a specialized real estate advisory firm that has access to qualified investors and developers. Our team helps property owners market their buildings to serious buyers and manage the entire sales process from evaluation to closing.",
-    },
-    {
-      question: "What types of buildings can be sold in Dubai?",
-      answer:
-        "Owners can sell various types of properties including residential buildings, commercial buildings, mixed-use developments, and fully leased income-generating assets across different communities in Dubai.",
-    },
-    {
-      question: "How do you find buyers for buildings in Dubai?",
-      answer:
-        "We use our extensive network of local and international investors who are actively looking to buy buildings in Dubai. Our targeted marketing strategy ensures that your property reaches qualified buyers who are financially capable of completing the transaction.",
-    },
-    {
-      question: "What is the typical value of buildings sold in Dubai?",
-      answer:
-        "Building values in Dubai vary depending on location, size, rental income, and development potential. Many building transactions exceed AED 100 million, especially for well-located residential or commercial assets.",
-    },
-    {
-      question: "How long does it take to sell a building in Dubai?",
-      answer:
-        "The timeline depends on the property type, pricing strategy, and market demand. With the right marketing and access to qualified investors, buildings in Dubai can be sold efficiently once the right buyer is identified.",
-    },
-  ];
 
   return (
     <main>
@@ -60,81 +33,169 @@ export default function LeaseClient() {
 
       <section className="section-padding">
         {/* Text Content */}
-        <div className="space-y-6">
-          <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-semibold">
-              Find the building that best fits your requirements.
-            </h2>
+        <div className="text-center space-y-6 max-w-3xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-semibold">
+            Find the building that best fits your requirements.
+          </h2>
 
-            <div className="tracking-wide text-gray-700 space-y-2">
-              {/* First visible paragraph */}
+          <ExpandableCopy
+            intro={
               <p className="text-justify">
-                Dubai has become one of the world’s leading business and
+                Dubai has become one of the world&apos;s leading business and
                 hospitality hubs, attracting international companies, hotel
-                operators, and corporate tenants looking for strategic locations
-                to expand their operations. As the demand for commercial space
-                continues to grow, many businesses are searching to lease
-                buildings in Dubai that meet their operational requirements and
-                long-term growth plans.
+                operators, and corporate tenants looking for strategic
+                locations to expand their operations. As the demand for
+                commercial space continues to grow, many businesses are
+                searching to lease buildings in Dubai that meet their
+                operational requirements and long-term growth plans. Dubai
+                Buildings acts for both tenants looking for a whole building
+                and landlords looking for a reliable occupier.
               </p>
+            }
+            more={
+              <>
+                <p className="text-justify">
+                  Whether a company needs a full building for hospitality,
+                  corporate headquarters, or mixed-use operations, Dubai offers
+                  a wide range of opportunities across prime locations. Our
+                  team specializes in helping businesses lease buildings in
+                  Dubai by identifying properties that align with their
+                  business goals, location preferences, and budget. With
+                  extensive market knowledge and industry experience, we help
+                  tenants navigate the process efficiently while ensuring they
+                  secure the most suitable building for their operations.
+                </p>
 
-              {/* Animated content */}
-              <AnimatePresence initial={false}>
-                {showMoreLease && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="overflow-hidden space-y-2"
+                <p className="text-justify">
+                  Finding the right property can be challenging, especially for
+                  businesses with specific operational needs. Companies looking
+                  to lease buildings in Dubai often require buildings that meet
+                  strict criteria such as location accessibility, building
+                  size, infrastructure quality, and proximity to key commercial
+                  districts. Over the years, our{" "}
+                  <Link href="/services/commercial-agency/" className="underline">
+                    commercial agency
+                  </Link>{" "}
+                  team has assisted thousands of tenants, including world-class
+                  hotel and hospitality brands, in securing the right buildings
+                  across Dubai.
+                </p>
+
+                <h3 className="text-xl font-semibold text-left pt-4">
+                  For tenants: leasing a whole building in Dubai
+                </h3>
+
+                <p className="text-justify">
+                  Through our strong industry connections and market expertise,
+                  we provide tenants with access to exclusive opportunities
+                  that are not always publicly listed. This gives businesses a
+                  significant advantage when they are looking to lease
+                  buildings in Dubai, allowing them to identify suitable
+                  properties before they become widely available in the market.
+                  A typical tenant mandate covers the required built-up area,
+                  parking, power and cooling capacity, permitted use under the
+                  plot zoning, and the preferred districts, from Sheikh Zayed
+                  Road and Business Bay to Dubai South and the free zones.
+                </p>
+
+                <p className="text-justify">
+                  We then shortlist buildings, arrange inspections, and
+                  negotiate the heads of terms: rent, lease length, rent-free
+                  and fit-out periods, renewal options, and the split of
+                  maintenance responsibilities. Hotel operators work with our{" "}
+                  <Link
+                    href="/services/hospitality-development-consultancy/"
+                    className="underline"
                   >
-                    <p className="text-justify">
-                      Whether a company needs a full building for hospitality,
-                      corporate headquarters, or mixed-use operations, Dubai
-                      offers a wide range of opportunities across prime
-                      locations. Our team specializes in helping businesses
-                      lease buildings in Dubai by identifying properties that
-                      align with their business goals, location preferences, and
-                      budget. With extensive market knowledge and industry
-                      experience, we help tenants navigate the process
-                      efficiently while ensuring they secure the most suitable
-                      building for their operations.
-                    </p>
+                    hospitality
+                  </Link>{" "}
+                  specialists, while schools and clinics draw on our{" "}
+                  <Link
+                    href="/services/education-development-consultancy/"
+                    className="underline"
+                  >
+                    education
+                  </Link>{" "}
+                  and{" "}
+                  <Link
+                    href="/services/healthcare-development/"
+                    className="underline"
+                  >
+                    healthcare
+                  </Link>{" "}
+                  teams to confirm that a building can be licensed for the
+                  intended use before any lease is signed.
+                </p>
 
-                    <p className="text-justify">
-                      Finding the right property can be challenging, especially
-                      for businesses with specific operational needs. Companies
-                      looking to lease buildings in Dubai often require
-                      buildings that meet strict criteria such as location
-                      accessibility, building size, infrastructure quality, and
-                      proximity to key commercial districts. Over the years, we
-                      have successfully assisted thousands of tenants, including
-                      world-class hotel and hospitality brands, in securing the
-                      right buildings across Dubai.
-                    </p>
+                <h3 className="text-xl font-semibold text-left pt-4">
+                  For landlords: sourcing the best tenant for your building
+                </h3>
 
-                    <p className="text-justify">
-                      Through our strong industry connections and market
-                      expertise, we provide tenants with access to exclusive
-                      opportunities that are not always publicly listed. This
-                      gives businesses a significant advantage when they are
-                      looking to lease buildings in Dubai, allowing them to
-                      identify suitable properties before they become widely
-                      available in the market.
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                <p className="text-justify">
+                  Landlords with a vacant or soon-to-be-vacant building want a
+                  single, creditworthy occupier on a long lease rather than
+                  dozens of individual tenancies. Dubai Buildings markets whole
+                  buildings directly to corporate occupiers, hotel and
+                  serviced-apartment operators, staff accommodation providers,
+                  education and healthcare groups, and logistics companies. We
+                  pre-qualify each candidate for covenant strength and trade
+                  licence status so that only serious tenants reach the
+                  negotiating table.
+                </p>
 
-              {/* Button */}
-              <button
-                onClick={() => setShowMoreLease(!showMoreLease)}
-                className="text-black font-semibold underline mt-2"
-              >
-                {showMoreLease ? "Show Less" : "Show More"}
-              </button>
-            </div>
-          </div>
+                <p className="text-justify">
+                  Once the lease is agreed we register it with Ejari, coordinate
+                  handover, and can continue to look after the building through
+                  our{" "}
+                  <Link href="/services/asset-management/" className="underline">
+                    asset management
+                  </Link>{" "}
+                  service, covering rent collection, service charges,
+                  maintenance contractors, and periodic reporting to the owner.
+                  Landlords who would rather exit the asset can also ask us to{" "}
+                  <Link href="/sell-building-dubai/" className="underline">
+                    sell the building
+                  </Link>{" "}
+                  to an investor, often with the new lease in place to support
+                  the price.
+                </p>
+
+                <h3 className="text-xl font-semibold text-left pt-4">
+                  Lease structures for whole buildings in Dubai
+                </h3>
+
+                <p className="text-justify">
+                  Whole-building leases in Dubai usually run from three to ten
+                  years, and longer for hotel, school and hospital operators
+                  who are investing heavily in fit-out. Rent is typically
+                  quoted as an annual figure paid by post-dated cheques, with
+                  the number of cheques, the rent-free period and the annual
+                  escalation all negotiable. Landlords may lease the building
+                  as a bare shell, with core and shell plus central services,
+                  or fully fitted. Our team explains the implications of each
+                  structure, from who maintains the chillers and lifts to how
+                  service charges and municipality fees are treated, so both
+                  parties sign a lease that will still work in year seven.
+                </p>
+
+                <h3 className="text-xl font-semibold text-left pt-4">
+                  Why lease through Dubai Buildings
+                </h3>
+
+                <p className="text-justify">
+                  Whole-building leases in Dubai are commercial agreements with
+                  long terms and significant fit-out investment on both sides,
+                  so the quality of the match matters more than the speed of
+                  the first viewing. Our team brings verified building
+                  information, a pre-qualified pool of occupiers and landlords,
+                  and experience of the lease structures used by institutional
+                  owners in the UAE. Share your requirement below, whether you
+                  are a tenant searching for a building or an owner looking for
+                  a tenant, and we will come back with a shortlist.
+                </p>
+              </>
+            }
+          />
         </div>
       </section>
 
@@ -157,7 +218,7 @@ export default function LeaseClient() {
           className="absolute inset-0 bg-fixed bg-center bg-cover"
           style={{ backgroundImage: "url('/lease/lease2.webp')" }}
           role="img"
-          aria-label="Dubai Building"
+          aria-label="Building for lease in Dubai"
         />
 
         {/* Dark overlay */}
@@ -173,7 +234,7 @@ export default function LeaseClient() {
         </div>
       </section>
 
-      <FAQ questions={faqsQuestions} />
+      <FAQ questions={leaseFaqs} />
     </main>
   );
 }

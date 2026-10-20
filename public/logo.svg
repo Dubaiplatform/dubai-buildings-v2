@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Dubai Buildings">
+  <rect width="512" height="512" fill="#000000"/>
+  <g fill="#ffffff">
+    <rect x="128" y="176" width="48" height="160"/>
+    <rect x="196" y="120" width="56" height="216"/>
+    <rect x="272" y="152" width="48" height="184"/>
+    <rect x="340" y="200" width="44" height="136"/>
+    <rect x="112" y="344" width="288" height="8"/>
+  </g>
+  <text x="256" y="416" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="40" font-weight="300" letter-spacing="6" fill="#ffffff">DUBAI BUILDINGS</text>
+</svg>

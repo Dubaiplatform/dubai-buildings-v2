@@ -89,6 +89,15 @@ export default function ContactUs() {
                 WhatsApp: {NAP.mobileDisplay}
               </a>
             </div>
+            <div className="space-y-2 text-sm md:text-base">
+              <p className="font-medium text-gray-900">Email</p>
+              <a
+                href={`mailto:${NAP.email}`}
+                className="block hover:text-black transition"
+              >
+                {NAP.email}
+              </a>
+            </div>
           </div>
 
           <div>

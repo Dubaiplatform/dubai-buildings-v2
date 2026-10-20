@@ -1,6 +1,10 @@
 export const SITE_URL = "https://www.dubai-buildings.com";
 export const SITE_NAME = "Dubai Buildings";
 
+/** Prefilled text that opens in WhatsApp when a visitor taps a WhatsApp link. */
+const WHATSAPP_MESSAGE =
+  "Hello Dubai Buildings, I found you on www.dubai-buildings.com and would like to discuss a building in Dubai.";
+
 export const NAP = {
   name: SITE_NAME,
   streetAddress: "Office 1102, Al Saqr Business Tower, Sheikh Zayed Road",
@@ -8,14 +12,27 @@ export const NAP = {
   addressCountry: "AE",
   telephone: "+97143807533",
   telephoneDisplay: "+971 4 380 7533",
+  email: "info@dubai-buildings.com",
   mobile: "+971581514623",
   mobileDisplay: "+971 58 151 4623",
-  whatsappUrl: "https://wa.me/971581514623",
+  whatsappMessage: WHATSAPP_MESSAGE,
+  whatsappUrl: `https://wa.me/971581514623?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
   geo: {
     latitude: 25.2176,
     longitude: 55.2769,
   },
 };
+
+/**
+ * Official social / directory profiles for the brand. Each URL is emitted as
+ * `sameAs` in the Organization schema and linked from the footer, so only add
+ * a profile once it is live and uses the exact name "Dubai Buildings".
+ */
+export const SOCIAL_PROFILES: { name: string; url: string }[] = [
+  // { name: "LinkedIn", url: "https://www.linkedin.com/company/dubai-buildings" },
+  // { name: "Instagram", url: "https://www.instagram.com/dubaibuildings" },
+  // { name: "Google Business Profile", url: "https://g.page/dubai-buildings" },
+];
 
 export const realEstateAgentSchema = {
   "@context": "https://schema.org",
@@ -23,14 +40,16 @@ export const realEstateAgentSchema = {
   "@id": `${SITE_URL}/#organization`,
   name: NAP.name,
   legalName: "Dubai Buildings",
+  alternateName: "Dubai Buildings Real Estate",
   url: SITE_URL,
-  logo: `${SITE_URL}/home/og-home.webp`,
+  logo: `${SITE_URL}/logo.svg`,
   image: `${SITE_URL}/home/og-home.webp`,
   description:
     "Dubai Buildings is a B2B real estate brokerage and advisory firm in Dubai specializing in whole-building buy, sell, lease, and develop mandates for institutional investors, developers, landlords, and corporate occupiers.",
   slogan:
     "B2B partner for buying, selling, leasing, and developing buildings in Dubai",
   telephone: [NAP.telephone, NAP.mobile],
+  email: NAP.email,
   address: {
     "@type": "PostalAddress",
     streetAddress: NAP.streetAddress,
@@ -91,11 +110,12 @@ export const realEstateAgentSchema = {
       },
     },
   ],
-  sameAs: [SITE_URL],
+  sameAs: SOCIAL_PROFILES.map((profile) => profile.url),
   contactPoint: [
     {
       "@type": "ContactPoint",
       telephone: NAP.telephone,
+      email: NAP.email,
       contactType: "sales",
       areaServed: "AE",
       availableLanguage: ["English", "Arabic"],

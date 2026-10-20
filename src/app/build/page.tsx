@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import BuildClient from "./build-client";
 import JsonLd from "@/components/seo/json-ld";
-import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
+import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/lib/seo";
+import { buildFaqs } from "./faqs";
 
 const title = "Develop Buildings in Dubai";
 const description =
@@ -58,6 +59,7 @@ export default function Build() {
             { name: "Home", path: "/" },
             { name: title, path },
           ]),
+          faqPageSchema(buildFaqs),
         ]}
       />
       <BuildClient />

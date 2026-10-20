@@ -1,40 +1,13 @@
 "use client";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import ExpandableCopy from "@/components/ui/expandable-copy";
 
 import { FAQ } from "@/components/ui/faq";
+import { sellFaqs } from "./faqs";
 import BuySellForm from "@/components/form/contact-form";
 
 export default function SellClient() {
-  const [showMoreSell, setShowMoreSell] = useState(false);
 
-  const faqsQuestions = [
-    {
-      question: "How can I sell my building in Dubai?",
-      answer:
-        "To sell your building in Dubai, you can work with a specialized real estate advisory firm that has access to qualified investors and developers. Our team helps property owners market their buildings to serious buyers and manage the entire sales process from evaluation to closing.",
-    },
-    {
-      question: "What types of buildings can be sold in Dubai?",
-      answer:
-        "Owners can sell various types of properties including residential buildings, commercial buildings, mixed-use developments, and fully leased income-generating assets across different communities in Dubai.",
-    },
-    {
-      question: "How do you find buyers for buildings in Dubai?",
-      answer:
-        "We use our extensive network of local and international investors who are actively looking to buy buildings in Dubai. Our targeted marketing strategy ensures that your property reaches qualified buyers who are financially capable of completing the transaction.",
-    },
-    {
-      question: "What is the typical value of buildings sold in Dubai?",
-      answer:
-        "Building values in Dubai vary depending on location, size, rental income, and development potential. Many building transactions exceed AED 100 million, especially for well-located residential or commercial assets.",
-    },
-    {
-      question: "How long does it take to sell a building in Dubai?",
-      answer:
-        "The timeline depends on the property type, pricing strategy, and market demand. With the right marketing and access to qualified investors, buildings in Dubai can be sold efficiently once the right buyer is identified.",
-    },
-  ];
 
   return (
     <main>
@@ -65,76 +38,166 @@ export default function SellClient() {
             Source the best buyer for your building.
           </h2>
 
-          <div className="tracking-wide text-gray-700 space-y-4">
-            {/* First visible part */}
-            <p className="text-justify">
-              Selling a building in Dubai requires the right strategy, market
-              knowledge, and access to qualified investors. Property owners who
-              want to sell buildings in Dubai need a partner that understands
-              the market and can connect them with serious buyers. Our team
-              specializes in sourcing the best buyer for each opportunity,
-              ensuring that building owners receive maximum value for their
-              assets.
-            </p>
+          <ExpandableCopy
+            intro={
+              <p className="text-justify">
+                Selling a building in Dubai requires the right strategy, market
+                knowledge, and access to qualified investors. Property owners
+                who want to sell buildings in Dubai need a partner that
+                understands the market and can connect them with serious
+                buyers. Dubai Buildings specializes in sourcing the best buyer
+                for each opportunity, ensuring that building owners receive
+                maximum value for their assets.
+              </p>
+            }
+            more={
+              <>
+                <p className="text-justify">
+                  When clients decide to sell buildings in Dubai, they benefit
+                  from our extensive network of investors, developers, and
+                  institutional buyers actively looking for large-scale
+                  property acquisitions. Over the years, we have built strong
+                  relationships with qualified investors who are specifically
+                  interested in acquiring residential, commercial, and
+                  mixed-use buildings across Dubai. This network allows us to
+                  efficiently match the right buyer with the right property,
+                  making the process of selling buildings in Dubai smooth,
+                  professional, and highly effective.
+                </p>
 
-            {/* Animated content */}
-            <AnimatePresence initial={false}>
-              {showMoreSell && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="overflow-hidden space-y-4"
-                >
-                  <p className="text-justify">
-                    When clients decide to sell buildings in Dubai, they benefit
-                    from our extensive network of investors, developers, and
-                    institutional buyers actively looking for large-scale
-                    property acquisitions. Over the years, we have built strong
-                    relationships with qualified investors who are specifically
-                    interested in acquiring residential, commercial, and
-                    mixed-use buildings across Dubai. This network allows us to
-                    efficiently match the right buyer with the right property,
-                    making the process of selling buildings in Dubai smooth,
-                    professional, and highly effective.
-                  </p>
+                <p className="text-justify">
+                  One of the key advantages of working with our team is our
+                  proven track record of successfully closing high-value
+                  transactions. We have facilitated numerous deals involving
+                  buildings valued in excess of AED 100 million, demonstrating
+                  our expertise in handling complex building acquisitions and
+                  sales. Investors looking to{" "}
+                  <Link href="/buy-buildings-dubai/" className="underline">
+                    buy buildings in Dubai
+                  </Link>{" "}
+                  trust our process because we carefully present
+                  well-structured opportunities that align with their
+                  investment goals. This trust allows us to bring qualified
+                  buyers to sellers who want to sell buildings in Dubai quickly
+                  and efficiently.
+                </p>
 
-                  <p className="text-justify">
-                    One of the key advantages of working with our team is our
-                    proven track record of successfully closing high-value
-                    transactions. We have facilitated numerous deals involving
-                    buildings valued in excess of AED 100 million, demonstrating
-                    our expertise in handling complex building acquisitions and
-                    sales. Investors looking to buy buildings in Dubai trust our
-                    process because we carefully present well-structured
-                    opportunities that align with their investment goals. This
-                    trust allows us to bring qualified buyers to sellers who
-                    want to sell buildings in Dubai quickly and efficiently.
-                  </p>
+                <h3 className="text-xl font-semibold text-left pt-4">
+                  Valuing and positioning your building
+                </h3>
 
-                  <p className="text-justify">
-                    Our industry knowledge also helps us position each building
-                    correctly within the market. Every building has unique
-                    characteristics, including location, tenant profile, rental
-                    income, and development potential. By understanding these
-                    factors, we can target the right investors who are actively
-                    seeking opportunities to buy buildings in Dubai, ensuring
-                    that sellers reach the most relevant and financially capable
-                    buyers.
-                  </p>
-                </motion.div>
-              )}
-            </AnimatePresence>
+                <p className="text-justify">
+                  Our industry knowledge also helps us position each building
+                  correctly within the market. Every building has unique
+                  characteristics, including location, tenant profile, rental
+                  income, and development potential. Before any marketing
+                  begins, our{" "}
+                  <Link
+                    href="/services/investment-sales-acquisition-services/"
+                    className="underline"
+                  >
+                    investment sales
+                  </Link>{" "}
+                  team prepares an opinion of value based on the net operating
+                  income, comparable building sales, current yields for the
+                  asset class, and any upside from vacant space, rent reviews,
+                  or redevelopment. By understanding these factors, we can
+                  target the right investors who are actively seeking
+                  opportunities to buy buildings in Dubai, ensuring that
+                  sellers reach the most relevant and financially capable
+                  buyers.
+                </p>
 
-            {/* Button */}
-            <button
-              onClick={() => setShowMoreSell(!showMoreSell)}
-              className="text-black font-semibold underline"
-            >
-              {showMoreSell ? "Show Less" : "Show More"}
-            </button>
-          </div>
+                <h3 className="text-xl font-semibold text-left pt-4">
+                  Preparing the building for sale
+                </h3>
+
+                <p className="text-justify">
+                  Buyers of whole buildings move faster when the information is
+                  ready. We assemble a sale pack containing the title deed and
+                  affection plan, the full tenancy schedule with Ejari
+                  registrations, service charge and utility statements, the
+                  building completion certificate, and recent maintenance
+                  records. Where a building is under-let or has deferred
+                  maintenance, our{" "}
+                  <Link href="/services/asset-management/" className="underline">
+                    asset management
+                  </Link>{" "}
+                  team can advise on quick improvements that raise the
+                  achievable price before the asset goes to market.
+                </p>
+
+                <h3 className="text-xl font-semibold text-left pt-4">
+                  Confidential and off-market disposals
+                </h3>
+
+                <p className="text-justify">
+                  Many owners who sell buildings in Dubai do not want tenants,
+                  staff, or competitors to know the asset is for sale. Dubai
+                  Buildings runs confidential disposals where the building is
+                  introduced only to a short list of pre-qualified investors
+                  under a non-disclosure agreement. Interested parties receive
+                  the sale pack, submit offers by a set date, and the owner
+                  chooses between competing bids rather than negotiating with a
+                  single buyer. This approach regularly achieves stronger
+                  pricing than an open listing while protecting the
+                  building&apos;s operations.
+                </p>
+
+                <h3 className="text-xl font-semibold text-left pt-4">
+                  Who buys whole buildings in Dubai
+                </h3>
+
+                <p className="text-justify">
+                  The buyer pool for a whole building is narrower than for an
+                  apartment but far better capitalised. Demand comes from UAE
+                  and GCC family offices seeking stable rental income, real
+                  estate funds and institutional investors building Dubai
+                  portfolios, developers looking for redevelopment or
+                  conversion sites, and owner-occupiers such as hotel groups,
+                  schools and healthcare operators who want to control their
+                  own premises. Dubai Buildings maintains active relationships
+                  with each of these groups and knows which buyers are currently
+                  funded and searching, so your building is shown to the
+                  parties most likely to complete rather than to the widest
+                  possible audience.
+                </p>
+
+                <h3 className="text-xl font-semibold text-left pt-4">
+                  From offer to transfer
+                </h3>
+
+                <p className="text-justify">
+                  Once an offer is accepted we manage the memorandum of
+                  understanding, the deposit, and the buyer&apos;s due diligence
+                  period, coordinating access for technical inspections and
+                  responding to legal queries on the tenancy contracts. We then
+                  arrange the no-objection certificate from the developer where
+                  required, settle any outstanding service charges, and attend
+                  the transfer at the Dubai Land Department. Tenants, security
+                  deposits, and building documentation are handed over on the
+                  day of transfer so that the sale is complete for both sides.
+                </p>
+
+                <p className="text-justify">
+                  Owners who are not ready to sell can also ask us to{" "}
+                  <Link href="/lease-buildings-dubai/" className="underline">
+                    lease the building
+                  </Link>{" "}
+                  to a corporate tenant or to review{" "}
+                  <Link
+                    href="/services/land-development-consultancy/"
+                    className="underline"
+                  >
+                    development options
+                  </Link>{" "}
+                  for the plot. Share your building details below and a member
+                  of the Dubai Buildings team will respond with an initial view
+                  on value and the likely buyer pool.
+                </p>
+              </>
+            }
+          />
         </div>
       </section>
 
@@ -157,7 +220,7 @@ export default function SellClient() {
           className="absolute inset-0 bg-fixed bg-center bg-cover"
           style={{ backgroundImage: "url('/sell/sell2.webp')" }}
           role="img"
-          aria-label="Dubai Building"
+          aria-label="Building for sale in Dubai"
         />
 
         {/* Dark overlay */}
@@ -173,7 +236,7 @@ export default function SellClient() {
         </div>
       </section>
 
-      <FAQ questions={faqsQuestions} />
+      <FAQ questions={sellFaqs} />
     </main>
   );
 }

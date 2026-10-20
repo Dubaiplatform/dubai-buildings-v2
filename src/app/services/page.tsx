@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
 import ServicesClient from "./services-client";
+import JsonLd from "@/components/seo/json-ld";
+import { breadcrumbSchema } from "@/lib/seo";
+import { serviceBreadcrumbs } from "@/lib/service-pages";
 
 export const metadata: Metadata = {
   title: "Real Estate Services in Dubai",
   description:
-    "Explore professional real estate services in Dubai with Dubai Buildings. We help investors, landlords, and businesses buy, sell, lease, and develop buildings with expert guidance.",
+    "Explore Dubai Buildings' real estate services in Dubai: investment sales, commercial agency, asset management and development consultancy for whole buildings.",
 
   alternates: {
-    canonical: "https://www.dubai-buildings.com/services",
+    canonical: "https://www.dubai-buildings.com/services/",
   },
 
   openGraph: {
@@ -43,5 +46,10 @@ export const metadata: Metadata = {
 };
 
 export default function Services() {
-  return <ServicesClient />;
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema(serviceBreadcrumbs())} />
+      <ServicesClient />
+    </>
+  );
 }

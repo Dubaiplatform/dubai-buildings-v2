@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import SellClient from "./sell-client";
 import JsonLd from "@/components/seo/json-ld";
-import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
+import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/lib/seo";
+import { sellFaqs } from "./faqs";
 
 const title = "Sell Your Building in Dubai";
 const description =
@@ -58,6 +59,7 @@ export default function Sell() {
             { name: "Home", path: "/" },
             { name: title, path },
           ]),
+          faqPageSchema(sellFaqs),
         ]}
       />
       <SellClient />

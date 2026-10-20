@@ -1,21 +1,26 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/seo/json-ld";
+import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
+import { SERVICE_PAGES, serviceBreadcrumbs, servicePath } from "@/lib/service-pages";
 import InvestSalesClient from "./invest-sales-client";
+
+const description =
+  "Investment sales and acquisition services in Dubai from Dubai Buildings: off-market building deals, market research and deal structuring for investors.";
 
 export const metadata: Metadata = {
   title: "Investment Sales & Acquisitions in Dubai | Expert Property Advisors",
-  description:
-    "Maximize your real estate returns with Dubai Buildings’ investment sales and acquisition services. We connect investors with high-value opportunities, offering market research, deal structuring, and data-driven insights across Dubai.",
+  description,
 
   alternates: {
     canonical:
-      "https://www.dubai-buildings.com/servicesinvestment-sales-acquisition-services/",
+      "https://www.dubai-buildings.com/services/investment-sales-acquisition-services/",
   },
 
   openGraph: {
     title: "Investment Sales & Acquisitions in Dubai",
     description:
       "Access exclusive real estate investment opportunities in Dubai. Dubai Buildings provides expert advisory, market research, and deal execution for investors.",
-    url: "https://www.dubai-buildings.com/servicesinvestment-sales-acquisition-services/",
+    url: "https://www.dubai-buildings.com/services/investment-sales-acquisition-services/",
     siteName: "Dubai Buildings",
     locale: "en_AE",
     type: "website",
@@ -43,6 +48,23 @@ export const metadata: Metadata = {
   },
 };
 
+const slug = "investment-sales-acquisition-services";
+const path = servicePath(slug);
+
 export default function InvestmentSales() {
-  return <InvestSalesClient />;
+  return (
+    <>
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: SERVICE_PAGES[slug],
+            description,
+            path,
+          }),
+          breadcrumbSchema(serviceBreadcrumbs(slug)),
+        ]}
+      />
+      <InvestSalesClient />
+    </>
+  );
 }

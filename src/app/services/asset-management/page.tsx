@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/seo/json-ld";
+import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
+import { SERVICE_PAGES, serviceBreadcrumbs, servicePath } from "@/lib/service-pages";
 import CommercialAgencyClient from "./asset-management-client";
+
+const description =
+  "Professional asset management in Dubai from Dubai Buildings: lease management, rent collection, financial reporting and strategic advisory for whole buildings.";
 
 export const metadata: Metadata = {
   title: "Asset Management Services in Dubai",
-  description:
-    "Dubai Buildings provides professional asset management services in Dubai. We manage residential, commercial, and mixed-use properties, offering lease management, rent collection, financial reporting, and strategic advisory to maximize returns.",
+  description,
 
   alternates: {
     canonical: "https://www.dubai-buildings.com/services/asset-management/",
@@ -42,6 +47,23 @@ export const metadata: Metadata = {
   },
 };
 
+const slug = "asset-management";
+const path = servicePath(slug);
+
 export default function CommercialAgency() {
-  return <CommercialAgencyClient />;
+  return (
+    <>
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: SERVICE_PAGES[slug],
+            description,
+            path,
+          }),
+          breadcrumbSchema(serviceBreadcrumbs(slug)),
+        ]}
+      />
+      <CommercialAgencyClient />
+    </>
+  );
 }

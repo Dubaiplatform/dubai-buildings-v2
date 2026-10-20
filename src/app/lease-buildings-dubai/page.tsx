@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import LeaseClient from "./lease-client";
 import JsonLd from "@/components/seo/json-ld";
-import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
+import { breadcrumbSchema, faqPageSchema, serviceSchema } from "@/lib/seo";
+import { leaseFaqs } from "./faqs";
 
 const title = "Lease Buildings in Dubai";
 const description =
@@ -58,6 +59,7 @@ export default function Lease() {
             { name: "Home", path: "/" },
             { name: title, path },
           ]),
+          faqPageSchema(leaseFaqs),
         ]}
       />
       <LeaseClient />

@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/seo/json-ld";
+import { breadcrumbSchema, serviceSchema } from "@/lib/seo";
+import { SERVICE_PAGES, serviceBreadcrumbs, servicePath } from "@/lib/service-pages";
 import InvestmentsLogisticsInvestmentsClient from "./investments-logistics-investments-client";
+
+const description =
+  "Industrial and logistics investments in Dubai from Dubai Buildings: warehouses, logistics facilities and industrial assets for investors and occupiers.";
 
 export const metadata: Metadata = {
   title: "Industrial & Logistics Investments in Dubai",
-  description:
-    "Dubai Buildings provides expert industrial and logistics investment services in Dubai. We offer market research, property appraisals, leasing, acquisitions, and development consultancy to maximize returns for investors and occupiers.",
+  description,
 
   alternates: {
     canonical:
@@ -43,6 +48,23 @@ export const metadata: Metadata = {
   },
 };
 
+const slug = "investments-logistics-investments";
+const path = servicePath(slug);
+
 export default function LandDevelopments() {
-  return <InvestmentsLogisticsInvestmentsClient />;
+  return (
+    <>
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: SERVICE_PAGES[slug],
+            description,
+            path,
+          }),
+          breadcrumbSchema(serviceBreadcrumbs(slug)),
+        ]}
+      />
+      <InvestmentsLogisticsInvestmentsClient />
+    </>
+  );
 }

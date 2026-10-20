@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 const defaultTitle =
-  "Buy, Sell, Lease & Develop Buildings in Dubai | Dubai Buildings";
+  "Dubai Buildings | Buy, Sell, Lease & Develop Whole Buildings in Dubai";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dubai-buildings.com"),
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Dubai Buildings is the B2B specialist for whole buildings in Dubai — helping institutional investors, developers, and corporate occupiers buy, sell, lease, and develop commercial and residential buildings.",
+    "Dubai Buildings is the B2B specialist for whole buildings in Dubai, helping investors, developers and corporate occupiers buy, sell, lease and develop.",
 
   alternates: {
     canonical: "/",
